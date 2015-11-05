@@ -86,6 +86,10 @@ bundle exec rake diagram:all
 
 ## ユーザー概念
 
+### 使用するgem
+
+- devise
+
 ## タグ
 
 
