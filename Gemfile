@@ -20,5 +20,6 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
   gem "railroady"
+  gem 'rails-erd'
 end
 
