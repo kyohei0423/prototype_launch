@@ -3,6 +3,7 @@
 
 - コミットメッセージ記述方法
 - er図とクラス図の出力方法
+- erbをslimに変換
 - コア機能
   - 問題投稿
   - 解答投稿
@@ -70,6 +71,19 @@ bundle exec rake diagram:all
 
 /doc下にsvgファイルが保存される
 
+# erbをslimに変換
+
+app/views/以下の.erbをslimに一括変換するRubyワンライナー
+
+```command
+for i in app/views/**/*.erb; do erb2slim $i ${i%erb}slim && rm $i; done
+```
+
+app/views/devise以下にあるファイルを変換
+
+```command
+for file in app/views/devise/**/*.erb; do erb2slim $file ${file%erb}slim && rm $file; done
+```
 
 # コア機能
 
@@ -85,6 +99,10 @@ bundle exec rake diagram:all
 ## 解答投稿機能
 
 ## ユーザー概念
+
+### 使用するgem
+
+- devise
 
 ## タグ
 
