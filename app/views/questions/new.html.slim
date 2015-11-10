@@ -1,13 +1,13 @@
 = content_tag(:div)
 = form_for(@question) do |f|
   .field
-    = f.text_field :title, autofocus: true, placeholder: "Title"
+    = f.text_field :title, autofocus: true, placeholder: "タイトル"
     br
   .field
-    = f.text_area :sentence, placeholder: "Sentence", cols: "50", rows: "100"
+    = f.text_area :sentence, placeholder: "本文", cols: "50", rows: "100"
     br
   .field
-    = f.number_field :time_limit, placeholder: "Minutes"
+    = f.number_field :time_limit, placeholder: "回答時間（分）"
     br
   .actions
-    = f.submit "保存"
+    = f.submit "投稿"
