@@ -5,5 +5,8 @@
   .field
     = f.text_area :sentence, placeholder: "Sentence", cols: "50", rows: "100"
     br
+  .field
+    = f.number_field :time_limit, placeholder: "Minutes"
+    br
   .actions
     = f.submit "保存"
