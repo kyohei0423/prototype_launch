@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :title
       t.text :sentence
       t.integer :time_limit
-      t.integer :user_id
+      t.references :user
 
       t.timestamps null: false
     end
