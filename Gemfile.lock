@@ -208,6 +208,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (= 0.3.18)
+  omniauth
   omniauth-facebook
   pry-rails
   railroady
