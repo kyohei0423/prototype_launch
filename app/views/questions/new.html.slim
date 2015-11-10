@@ -1,0 +1,9 @@
+= form_for(@question) do |f|
+  .field
+    = f.text_field :title, autofocus: true, placeholder: "Title"
+    br
+  .field
+    = f.text_area :sentence, placeholder: "Sentence", cols: "50", rows: "100"
+    br
+  .actions
+    = f.submit "保存"
