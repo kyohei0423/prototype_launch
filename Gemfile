@@ -15,6 +15,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'config'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'byebug'
