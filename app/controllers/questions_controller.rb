@@ -4,7 +4,8 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = current_user.question.create(create_params)
+    @question = Question.create(create_params)
+    redirect_to :root
   end
 
   private
