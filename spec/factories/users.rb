@@ -1,8 +1,9 @@
 FactoryGirl.define do
+  password = Forgery(:basic).password
   factory :user do
-    email                 'aaa@gmail.com'
-    password              '00000000'
-    password_confirmation '00000000'
-    confirmed_at          Time.zone.now
+    email                     Forgery('email').address
+    password                  password
+    password_confirmation     password
+    confirmed_at              Time.zone.now
   end
 end
