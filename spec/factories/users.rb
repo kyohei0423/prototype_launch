@@ -1,9 +1,10 @@
 FactoryGirl.define do
-  password = Forgery(:basic).password
+  PASSWORD = Forgery(:basic).password
+  EMAIL = Forgery('email').address
   factory :user do
-    email                     Forgery('email').address
-    password                  password
-    password_confirmation     password
+    email                     EMAIL
+    password                  PASSWORD
+    password_confirmation     PASSWORD
     confirmed_at              Time.zone.now
   end
 end
