@@ -4,18 +4,11 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = current_user.questions.create(create_params)
-    if @question.title.empty? && @question.sentence.empty?
-      flash[:alert] = "Title and Sentence can't be blank."
-      redirect_to action: :new
-    elsif @question.title.empty?
-      flash[:alert] = "Title can't be blank."
-      redirect_to action: :new
-    elsif @question.sentence.empty?
-      flash[:alert] = "Sentence can't be blank"
-      redirect_to action: :new
+    @question = current_user.questions.new(question_params)
+    if @question.save
+      redirect_to root_path
     else
-      redirect_to :root
+      render :new
     end
   end
 
