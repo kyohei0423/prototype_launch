@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
   end
 
   private
-  def create_params
+  def question_params
     params.require(:question).permit(:title, :sentence, :time_limit)
   end
 end
