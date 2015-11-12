@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :answer do
-    sentence        { Faker::ipster.paragraph }
-    user_id         { Faker::Number.number }
-    question_id     { Faker::Number.number }
+    sentence        'hogehoghohgoehgoehogehogheoge'
+    user_id         { Faker::Number.number(1) }
+    question_id     { Faker::Number.number(1) }
   end
 end
