@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  password = Forgery(:basic).password
+  password = Forgery(:basic).password(at_least: 8)
   email = Forgery('email').address
   factory :user do
     email                     email
