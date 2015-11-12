@@ -1,0 +1,7 @@
+= render partial: 'common/error_msg', locals: { object: @answer }
+= form_for [@question, @answer] do |f|
+  .field
+    = f.text_area :sentence, placeholder: "本文", cols: "50", rows: "100"
+    br
+  .actions
+    = f.submit "投稿"
