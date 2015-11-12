@@ -12,7 +12,7 @@ class AnswersController < ApplicationController
   def create
     @answer = current_user.answers.new(answer_params)
     if @answer.save
-      redirect_to question_answer_path(params[:question_id], @answer), notice: '解答の投稿が完了しました。'
+      redirect_to question_answer_path(@question, @answer), notice: '解答の投稿が完了しました。'
     else
       render :new
     end
