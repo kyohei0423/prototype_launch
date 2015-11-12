@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_action :set_question, only: [:new, :show]
+  before_action :set_question, only: [:new, :create, :show]
   before_action :set_answer, only: :show
 
   def show
