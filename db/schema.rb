@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111173322) do
+ActiveRecord::Schema.define(version: 20151111173954) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "sentence",    limit: 65535
@@ -59,4 +59,5 @@ ActiveRecord::Schema.define(version: 20151111173322) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
+  add_foreign_key "questions", "users"
 end
