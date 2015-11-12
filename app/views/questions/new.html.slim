@@ -1,12 +1,5 @@
-- if @question.errors.any?
-  h2
-    = @question.errors.count
-    | 件のエラーがあります。
-  ul
-    - @question.errors.full_messages.each do |msg|
-      li= msg
-
-= form_for(@question) do |f|
+= render partial: 'common/error_msg', locals: { object: @question }
+= form_for @question do |f|
   .field
     = f.text_field :title, autofocus: true, placeholder: "タイトル"
     br

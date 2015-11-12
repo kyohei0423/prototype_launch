@@ -110,6 +110,7 @@ for file in app/views/devise/**/*.erb; do erb2slim $file ${file%erb}slim && rm $
 # データベース設計
 
 - questions
+  - title
   - sentence
   - time_limit
   - user_id
@@ -122,4 +123,5 @@ for file in app/views/devise/**/*.erb; do erb2slim $file ${file%erb}slim && rm $
   - password
   - git, facebook, twitter, gplusアカウントからログインできるようにしたい
 - tags
-
+- groups
+  - name
