@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
   def create
     @question = current_user.questions.new(question_params)
     if @question.save
-      redirect_to question_path(@question), notice: '問題を投稿が完了しました。'
+      redirect_to question_path(@question), notice: '問題の投稿が完了しました。'
     else
       render :new
     end
