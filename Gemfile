@@ -29,6 +29,7 @@ group :development do
   gem "railroady"
   gem 'rails-erd'
   gem 'html2slim'
+  gem 'bullet'
 end
 
 
