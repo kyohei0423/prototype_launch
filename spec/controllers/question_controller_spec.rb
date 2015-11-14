@@ -7,6 +7,12 @@ describe QuestionsController do
       get :show, id: question
       expect(assigns(:question)).to eq question
     end
+
+    it 'render the :show template' do
+      question = create(:question)
+      get :show, id: question
+      expect(response).to render_template :show
+    end
   end
 
   describe 'GET #new' do
