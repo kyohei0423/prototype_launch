@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :question do
+    user
     title      "hoge"
     sentence   "hogehoge"
     time_limit "120"
-    user_id    { Faker::Number.number(1) }
   end
 end
