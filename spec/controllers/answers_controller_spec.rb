@@ -70,6 +70,19 @@ describe AnswersController do
         post :create, answer: attributes_for(:answer), question_id: question.id
         expect(response).to redirect_to question_answer_path(question, assigns(:answer))
       end
+
+      it 'hax notice' do
+        post :create, answer: attributes_for(:answer), question_id: question.id
+        expect(flash[:notice]).to eq '解答の投稿が完了しました。'
+      end
+    end
+
+    context 'when fail' do
+      it 'not create new answer' do
+        expect{
+          post :create, answer: { sentence: '' }, question_id: question.id
+        }.not_to change(Answer, :count)
+      end
     end
   end
 end
