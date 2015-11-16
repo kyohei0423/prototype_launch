@@ -40,6 +40,11 @@ describe QuestionsController do
         post :create, question: attributes_for(:question)
         expect(response).to redirect_to question_path(assigns(:question))
       end
+
+      it 'has the notice' do
+        post :create, question: attributes_for(:question)
+        expect(flash[:notice]).to eq('問題の投稿が完了しました。')
+      end
     end
   end
 end
