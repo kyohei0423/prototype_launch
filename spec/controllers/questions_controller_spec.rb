@@ -28,11 +28,18 @@ describe QuestionsController do
   end
 
   describe 'POST #create' do
-    before { sign_in create(:user) }
-    it 'saves the new constant in the database' do
-      expect{
+    context 'when successful' do
+      before { sign_in create(:user) }
+      it 'should create new question' do
+        expect{
+          post :create, question: attributes_for(:question)
+        }.to change(Question, :count).by(1)
+      end
+
+      it 'should redirect to the :show template' do
         post :create, question: attributes_for(:question)
-      }.to change(Question, :count).by(1)
+        expect(response).to redirect_to question_path(assigns(:question))
+      end
     end
   end
 end
