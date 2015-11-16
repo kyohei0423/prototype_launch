@@ -28,9 +28,9 @@ describe QuestionsController do
   end
 
   describe 'POST #create' do
-    context 'when successful' do
-      before { sign_in create(:user) }
+    before { sign_in create(:user) }
 
+    context 'when successful' do
       it 'create new question' do
         expect{
           post :create, question: attributes_for(:question)
@@ -49,8 +49,6 @@ describe QuestionsController do
     end
 
     context 'when fail' do
-      before { sign_in create(:user) }
-
       it 'not create new question' do
         expect{
           post :create, question: {title: '', sentence: ''}

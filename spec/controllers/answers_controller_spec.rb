@@ -54,4 +54,8 @@ describe AnswersController do
       expect(response).to render_template :new
     end
   end
+
+  describe 'POST #create' do
+    before{ sign_in create(:user) }
+  end
 end
