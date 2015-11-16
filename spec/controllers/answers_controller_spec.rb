@@ -35,6 +35,13 @@ describe AnswersController do
     end
 
     it 'assigns the requesed constant to @question' do
+      get :show, id: answer, question_id: question
+      expect(assigns(:question)).to eq question
+    end
+
+    it 'assigns the requesed constant to @answer' do
+      get :show, id: answer, question_id: question
+      expect(assigns(:answer)).to eq answer
     end
   end
 end
