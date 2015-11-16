@@ -57,5 +57,19 @@ describe AnswersController do
 
   describe 'POST #create' do
     before{ sign_in create(:user) }
+    let(:question) { create(:question) }
+
+    context 'when successful' do
+      it 'create new answer' do
+        expect{
+          post :create, answer: attributes_for(:answer), question_id: question.id
+        }.to change(Answer, :count).by(1)
+      end
+
+      it 'redirect to the :show' do
+        post :create, answer: attributes_for(:answer), question_id: question.id
+        expect(response).to redirect_to question_answer_path(question, assigns(:answer))
+      end
+    end
   end
 end
