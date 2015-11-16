@@ -30,13 +30,13 @@ describe QuestionsController do
   describe 'POST #create' do
     context 'when successful' do
       before { sign_in create(:user) }
-      it 'should create new question' do
+      it 'create new question' do
         expect{
           post :create, question: attributes_for(:question)
         }.to change(Question, :count).by(1)
       end
 
-      it 'should redirect to the :show template' do
+      it 'redirect to the :show template' do
         post :create, question: attributes_for(:question)
         expect(response).to redirect_to question_path(assigns(:question))
       end
@@ -44,6 +44,20 @@ describe QuestionsController do
       it 'has the notice' do
         post :create, question: attributes_for(:question)
         expect(flash[:notice]).to eq('問題の投稿が完了しました。')
+      end
+    end
+
+    context 'when fail' do
+      before { sign_in create(:user) }
+      it 'not create new question' do
+        expect{
+          post :create, question: {title: '', sentence: ''}
+        }.not_to change(Question, :count)
+      end
+
+      it 'render to the :new template' do
+        post :create, question: {title: '', sentende: ''}
+        expect(response).to render_template :new
       end
     end
   end
