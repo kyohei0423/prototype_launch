@@ -27,7 +27,7 @@ describe AnswersController do
 
     it 'render the :show template' do
       get :show, id: answer, question_id: question
-      expect(response).to render_template(:show)
+      expect(response).to render_template :show
     end
   end
 
@@ -41,12 +41,17 @@ describe AnswersController do
 
     it 'assigns a new Answer to @answer' do
       get :new, question_id: question
-      expect(assigns(:answer)).to be_a_new(Answer)
+      expect(assigns(:answer)).to be_a_new Answer
     end
 
     it 'assigns the requesed constant to @question' do
       get :new, question_id: question
       expect(assigns(:question)).to eq question
+    end
+
+    it 'render the :new template' do
+      get :new, question_id: question
+      expect(response).to render_template :new
     end
   end
 end
