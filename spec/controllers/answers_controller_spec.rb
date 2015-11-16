@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe AnswersController do
   describe 'GET #new' do
-    before { sign_in create(:user) }
     let(:question) { create(:question) }
 
     it 'execute before_action :set_question' do
@@ -19,7 +18,6 @@ describe AnswersController do
       get :new, question_id: question
       expect(assigns(:question)).to eq question
     end
-
   end
 
   describe 'GET #show' do
