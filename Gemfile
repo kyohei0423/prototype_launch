@@ -20,12 +20,12 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'forgery'
+  gem 'pry-rails'
+  gem 'spring'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
-  gem 'spring'
-  gem 'pry-rails'
   gem "railroady"
   gem 'rails-erd'
   gem 'html2slim'
