@@ -51,12 +51,12 @@ describe QuestionsController do
     context 'when fail' do
       it 'not create new question' do
         expect{
-          post :create, question: {title: '', sentence: ''}
+          post :create, question: { title: '', sentence: '' }
         }.not_to change(Question, :count)
       end
 
       it 'render to the :new template' do
-        post :create, question: {title: '', sentende: ''}
+        post :create, question: { title: '', sentende: '' }
         expect(response).to render_template :new
       end
     end
