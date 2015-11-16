@@ -21,6 +21,19 @@ describe AnswersController do
   end
 
   describe 'GET #show' do
+    let(:question) { create(:question) }
+    let(:answer) { create(:answer) }
+
+    it 'execute before_action :set_question' do
+      expect(subject).to receive(:set_question)
+      get :show, id: answer, question_id: question
+    end
+
+    it 'execute before_action :set_answer' do
+      expect(subject).to receive(:set_answer)
+      get :show, id: answer, question_id: question
+    end
+
     it 'assigns the requesed constant to @question' do
     end
   end
