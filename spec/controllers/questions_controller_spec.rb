@@ -16,6 +16,7 @@ describe QuestionsController do
   end
 
   describe 'GET #new' do
+    before{ controller.stub(:authenticate_user!).and_return(true) }
     it 'assigns a new Question to @question' do
       get :new
       expect(assigns(:question)).to be_a_new(Question)
