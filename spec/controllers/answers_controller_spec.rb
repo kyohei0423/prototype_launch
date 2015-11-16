@@ -10,14 +10,14 @@ describe AnswersController do
       get :new, question_id: question
     end
 
-    it 'execete before_action :set_answer' do
-      expect(subject).to receive(:set_answer)
-      get :new, question_id: question
-    end
-
     it 'assigns a new Answer to @answer' do
       get :new, question_id: question
       expect(assigns(:answer)).to be_a_new(Answer)
+    end
+
+    it 'assigns the requesed constant to @question' do
+      get :new, question_id: question
+      expect(assigns(:question)).to eq question
     end
 
   end
