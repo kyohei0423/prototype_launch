@@ -2,14 +2,14 @@ require 'rails_helper'
 
 describe QuestionsController do
   describe 'GET #show' do
+    let(:question) { create(:question) }
+
     it 'assigns the requesed constant to @question' do
-      question = create(:question)
       get :show, id: question
       expect(assigns(:question)).to eq question
     end
 
     it 'render the :show template' do
-      question = create(:question)
       get :show, id: question
       expect(response).to render_template :show
     end
@@ -30,6 +30,7 @@ describe QuestionsController do
   describe 'POST #create' do
     context 'when successful' do
       before { sign_in create(:user) }
+
       it 'create new question' do
         expect{
           post :create, question: attributes_for(:question)
@@ -49,6 +50,7 @@ describe QuestionsController do
 
     context 'when fail' do
       before { sign_in create(:user) }
+
       it 'not create new question' do
         expect{
           post :create, question: {title: '', sentence: ''}
