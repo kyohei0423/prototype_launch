@@ -62,17 +62,17 @@ describe AnswersController do
     context 'when successful' do
       it 'create new answer' do
         expect{
-          post :create, answer: attributes_for(:answer), question_id: question.id
+          post :create, answer: attributes_for(:answer), question_id: question
         }.to change(Answer, :count).by(1)
       end
 
       it 'redirect to the :show' do
-        post :create, answer: attributes_for(:answer), question_id: question.id
+        post :create, answer: attributes_for(:answer), question_id: question
         expect(response).to redirect_to question_answer_path(question, assigns(:answer))
       end
 
       it 'hax notice' do
-        post :create, answer: attributes_for(:answer), question_id: question.id
+        post :create, answer: attributes_for(:answer), question_id: question
         expect(flash[:notice]).to eq '解答の投稿が完了しました。'
       end
     end
@@ -80,8 +80,13 @@ describe AnswersController do
     context 'when fail' do
       it 'not create new answer' do
         expect{
-          post :create, answer: { sentence: '' }, question_id: question.id
+          post :create, answer: { sentence: '' }, question_id: question
         }.not_to change(Answer, :count)
+      end
+
+      it 'render the :new template' do
+        post :create, answer: { sentence: '' }, question_id: question
+        expect(response).to render_template :new
       end
     end
   end
