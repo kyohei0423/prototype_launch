@@ -1,7 +1,4 @@
 .content
   article.categories
     ul.categories-menu.clearfix
-      - @tags.each do |tag|
-        li.categories-list
-          span.categories-name
-            = tag.name
+      = render partial: 'tags/tag', collection: @tags
