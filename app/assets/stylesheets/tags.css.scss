@@ -1,3 +1,4 @@
+
 .content {
 
   .categories {
@@ -46,6 +47,81 @@
           max-width: 100%;
           height: auto;
           border: none;
+        }
+      }
+    }
+  }
+}
+
+// ############## 770px以下 600px以上 ##############
+@media (max-width: 1000px) {
+  .content {
+    .categories {
+      width: 770px;
+
+      .categories-menu {
+        .categories-list {
+          margin: 0 12px 12px 0;
+
+          &:nth-child(4n) {
+            margin: 0;
+          }
+          &:nth-child(5n) {
+            margin: 0 12px 12px 0;
+          }
+          &:nth-child(4n+1) {
+            clear: both;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ############## 600px以下 470px以上 ##############
+@media (max-width: 830px) {
+  .content {
+    .categories {
+      width: 590px;
+
+      .categories-menu {
+        .categories-list {
+          margin: 0 12px 12px 0;
+
+          &:nth-child(3n) {
+            margin: 0;
+          }
+          &:nth-child(4n) {
+            margin: 0 12px 12px 0;
+          }
+          &:nth-child(3n+1) {
+            clear: both;
+          }
+          &:nth-child(4n+1) {
+            clear: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ############## 470px以下 ##############
+@media (max-width: 600px) {
+  .content {
+    .categories {
+      width: 400px;
+
+      .categories-menu {
+        .categories-list {
+          margin: 0 12px 12px 0;
+
+          &:nth-child(3n) {
+            margin: 0 12px 12px 0;
+          }
+          &:nth-child(3n+1) {
+            clear: none;
+          }
         }
       }
     }
