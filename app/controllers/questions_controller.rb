@@ -24,6 +24,6 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-      params.require(:question).permit(:title, :sentence, :time_limit)
+      params.require(:question).permit(:title, :sentence, :time_limit, :tag_list)
     end
 end
