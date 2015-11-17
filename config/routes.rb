@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :questions, only: [:new, :create, :show] do
     resources :answers, only: [:new, :create, :show]
   end
-  resources :tags, only: [:index]
+  resources :tags, only: [:index, :show]
 end
