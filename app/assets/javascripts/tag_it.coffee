@@ -1,2 +1,4 @@
 $(document).on 'ready page:load', ->
-  $('#article-tags').tagit()
+  $('#question-tags').tagit
+    fieldName:   'question[tag_list]'
+    singleField: true

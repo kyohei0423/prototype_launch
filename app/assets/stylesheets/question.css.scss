@@ -3,6 +3,10 @@ $question-list-description: 14px;
 $question-list-height: 130px;
 $accent-green-color: rgb(109,194,184);
 
+.ui-helper-hidden-accessible {
+  display: none;
+}
+
 .content {
 
   .categories {
