@@ -1,6 +1,7 @@
 $question-list-title: 18px;
 $question-list-description: 14px;
 $question-list-height: 130px;
+$accent-green-color: rgb(109,194,184);
 
 .content {
 
@@ -42,7 +43,7 @@ $question-list-height: 130px;
             display: block;
             &:hover {
               font-size: 18px;
-              color: #44e;
+              color: $accent-green-color;
               transition: all .1s;
             }
           }
@@ -106,6 +107,11 @@ $question-list-height: 130px;
               color: #999;
               font-size: 8px;
               font-weight: bold;
+
+              &:hover {
+                color: $accent-green-color;
+                border-color: $accent-green-color;
+              }
             }
           }
         }
@@ -115,27 +121,28 @@ $question-list-height: 130px;
           float: left;
           height: $question-list-height;
           position: relative;
-          display: table;
 
           p {
-            padding-right: 10px;
-            text-align: right;
             height: 40px;
+            text-align: right;
             position: absolute;
             top: 0;
             bottom: 0;
             left: 0;
             right: 0;
             margin: auto 0;
-            display: table-cell;
-            vertical-align: middle;
+
+            span, img {
+              margin: 0 5px;
+            }
+
+            img {
+              width: 40px;
+              vertical-align: bottom;
+            }
 
             span {
-              margin: 0 5px;
-
-              img {
-                width: 40px;
-              }
+              vertical-align: 8px;
             }
           }
         }
