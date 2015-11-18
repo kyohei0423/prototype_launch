@@ -101,16 +101,20 @@ $accent-green-color: rgb(109,194,184);
             .question-tags-list {
               float: left;
               margin: 5px 5px 5px 0;
-              padding: 2px;
-              border: 1px solid #999;
-              border-radius: 6px;
-              color: #999;
-              font-size: 8px;
-              font-weight: bold;
 
-              &:hover {
-                color: $accent-green-color;
-                border-color: $accent-green-color;
+              a {
+                font-size: 8px;
+                font-weight: bold;
+                border-radius: 6px;
+                border: 1px solid #999;
+                padding: 3px;
+                display: block;
+                text-decoration: none;
+                color: #999;
+                &:hover {
+                  border-color: $accent-green-color;
+                  color: $accent-green-color;
+                }
               }
             }
           }
