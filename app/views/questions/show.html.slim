@@ -2,4 +2,8 @@ p
   = @question.title
   b= @question.time_limit
   = link_to '解答を作成', new_question_answer_path(@question)
+p
+  = @question.description
+p
+  = @question.tag_list
 p= @question.sentence

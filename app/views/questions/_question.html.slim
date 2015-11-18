@@ -1,0 +1,21 @@
+li.questions-list.clearfix.box-sizing
+  .stock-count
+      span.fa.fa-thumbs-o-up
+        | 100
+  .question-image
+    = image_tag 'http://kinocode.jp/new/wp-content/uploads/2015/10/950805bc8a944944bdef670a2b591238.png'
+  .question-context.box-sizing
+    h3.question-title
+      = question.title
+    .question-description
+      span
+        = question.description
+    ul.question-tags.clearfix
+      - question.tags.each do |tag|
+        li.question-tags-list.box-sizing
+          = link_to tag.name, tag_path(tag)
+  .question-info
+    p
+      span.fa.fa-archive
+      = image_tag 'http://simpleicon.com/wp-content/uploads/user1.svg'
+      span.fa.fa-comment-o 100

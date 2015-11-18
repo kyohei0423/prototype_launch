@@ -4,6 +4,11 @@
     = f.text_field :title, autofocus: true, placeholder: "タイトル"
     br
   .field
+    ul#question-tags
+  .field
+    = f.text_field :description, autofocus: true, placeholder: "まえがき"
+    br
+  .field
     = f.text_area :sentence, placeholder: "本文", cols: "50", rows: "50"
     br
   .field

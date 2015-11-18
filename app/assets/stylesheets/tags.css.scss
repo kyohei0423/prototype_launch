@@ -1,0 +1,135 @@
+$categoryPanelWidth: 180px;
+$categoryPanelHeight: 160px;
+$categoryPanelColor: orange;
+$hoverCategoryPanelColor: black;
+
+.content {
+
+  .categories {
+    margin: 0 auto;
+    padding: 30px 10px;
+    width: 950px;
+
+    .categories-menu {
+      margin: 0;
+      padding: 0 1px;
+      list-style: none;
+
+      .categories-list {
+        margin: 0 12px 12px 0;
+        width: $categoryPanelWidth;
+        height: $categoryPanelHeight;
+        float: left;
+
+        &:nth-child(5n) {
+          margin: 0;
+        }
+
+        .categories-name {
+          background-color: $categoryPanelColor;
+          font-weight: bold;
+          font-size: 18px;
+          text-decoration: none;
+          color: #444;
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: relative;
+
+          &:hover {
+            background-color: $hoverCategoryPanelColor;
+            transition: all .5s;
+            color: white;
+          }
+
+          span {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+          }
+        }
+
+        .categories-image {
+          max-width: 100%;
+          height: auto;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+// ############## 770px以下 600px以上 ##############
+@media screen and (max-width: 1000px) {
+  .content {
+    .categories {
+      width: 760px;
+
+      .categories-menu {
+        .categories-list {
+          margin: 0 12px 12px 0;
+
+          &:nth-child(4n) {
+            margin: 0;
+          }
+          &:nth-child(5n) {
+            margin: 0 12px 12px 0;
+          }
+          &:nth-child(4n+1) {
+            clear: both;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ############## 600px以下 470px以上 ##############
+@media screen and (max-width: 810px) {
+  .content {
+    .categories {
+      width: 570px;
+
+      .categories-menu {
+        .categories-list {
+          margin: 0 12px 12px 0;
+
+          &:nth-child(3n) {
+            margin: 0;
+          }
+          &:nth-child(4n) {
+            margin: 0 12px 12px 0;
+          }
+          &:nth-child(3n+1) {
+            clear: both;
+          }
+          &:nth-child(4n+1) {
+            clear: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ############## 470px以下 ##############
+@media screen and (max-width: 620px) {
+  .content {
+    .categories {
+      width: 380px;
+
+      .categories-menu {
+        .categories-list {
+          margin: 0 12px 12px 0;
+
+          &:nth-child(3n) {
+            margin: 0 12px 12px 0;
+          }
+          &:nth-child(3n+1) {
+            clear: none;
+          }
+        }
+      }
+    }
+  }
+}

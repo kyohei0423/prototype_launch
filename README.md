@@ -123,5 +123,14 @@ for file in app/views/devise/**/*.erb; do erb2slim $file ${file%erb}slim && rm $
   - password
   - git, facebook, twitter, gplusアカウントからログインできるようにしたい
 - tags
+  - name
+  -taggings_count
+- taggings
+  - tag_id
+  - taggable_id
+  - taggable_type
+  - tagger_id
+  - tagger_type
+  - context
 - groups
   - name
