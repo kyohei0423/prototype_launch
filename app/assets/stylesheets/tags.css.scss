@@ -60,10 +60,10 @@ $hover-category-panel-color: black;
 }
 
 // ############## 770px以下 600px以上 ##############
-@media (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   .content {
     .categories {
-      width: 770px;
+      width: 760px;
 
       .categories-menu {
         .categories-list {
@@ -85,10 +85,10 @@ $hover-category-panel-color: black;
 }
 
 // ############## 600px以下 470px以上 ##############
-@media (max-width: 830px) {
+@media screen and (max-width: 810px) {
   .content {
     .categories {
-      width: 590px;
+      width: 570px;
 
       .categories-menu {
         .categories-list {
@@ -113,10 +113,10 @@ $hover-category-panel-color: black;
 }
 
 // ############## 470px以下 ##############
-@media (max-width: 700px) {
+@media screen and (max-width: 620px) {
   .content {
     .categories {
-      width: 400px;
+      width: 380px;
 
       .categories-menu {
         .categories-list {
