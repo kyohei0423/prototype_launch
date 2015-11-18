@@ -1,13 +1,9 @@
-.jumbotron
-
-.feed
-  .question
-    .image-box
-      = image_tag("pl2_header.png", alt: "IMAGE")
-    .content
-      .title
-        h3 rails基本機能
-      .sentence
-        p railsの基本機能をサルでもわかるように問題演習を重ねる
-    .user-avatar
-      = image_tag("avatar.jpg")
+.content
+  .jumbotron
+  article.categories
+    .clearfix
+      .top-bar
+        h2.heading Yesterday　
+        .description November 15th
+    ul.questions-menu.box-sizing
+      = render @questions
