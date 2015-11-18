@@ -1,7 +1,7 @@
-$category-panel-width: 180px;
-$category-panel-height: 160px;
-$category-panel-color: orange;
-$hover-category-panel-color: black;
+$categoryPanelWidth: 180px;
+$categoryPanelHeight: 160px;
+$categoryPanelColor: orange;
+$hoverCategoryPanelColor: black;
 
 .content {
 
@@ -17,8 +17,8 @@ $hover-category-panel-color: black;
 
       .categories-list {
         margin: 0 12px 12px 0;
-        width: $category-panel-width;
-        height: $category-panel-height;
+        width: $categoryPanelWidth;
+        height: $categoryPanelHeight;
         float: left;
 
         &:nth-child(5n) {
@@ -26,7 +26,7 @@ $hover-category-panel-color: black;
         }
 
         .categories-name {
-          background-color: $category-panel-color;
+          background-color: $categoryPanelColor;
           font-weight: bold;
           font-size: 18px;
           text-decoration: none;
@@ -37,7 +37,7 @@ $hover-category-panel-color: black;
           position: relative;
 
           &:hover {
-            background-color: $hover-category-panel-color;
+            background-color: $hoverCategoryPanelColor;
             transition: all .5s;
             color: white;
           }
