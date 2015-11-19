@@ -1,8 +1,31 @@
-= link_to 'ホーム', root_path
-| 　
-= link_to '投稿する', new_question_path
-| 　
-- if user_signed_in?
-  = link_to 'ユーザーページヘ', user_path(current_user)
-| 　
-= link_to 'カテゴリー一覧', tags_path
+.header-main
+  .header-left
+    .search-box
+      p SEARCH
+      i.fa.fa-search
+  .header-center
+    .newest-sort
+      = link_to "NEWEST", '#', style: "text-decoration: none;"
+    .ranking-sort
+      = link_to "RANKING", '#', style: "text-decoration: none;"
+
+    .to-home
+      = link_to 'HOME', root_path, style: "text-decoration: none;"
+
+    .easier-sort
+      = link_to 'EASIER', '#', style: "text-decoration: none;"
+
+    .to-categories
+      = link_to 'CATEGORY', tags_path, style: "text-decoration: none;"
+
+  .header-right
+    .new-question-button
+      = link_to 'POST', new_question_path, style: "text-decoration: none;"
+
+    .mypage-or-login-button
+      - if user_signed_in?
+        = link_to 'MYPAGE',  user_path(current_user), style: "text-decoration: none;"
+
+      - else
+        = link_to 'LOGIN', new_user_session, style: "text-decoration: none;"
+
