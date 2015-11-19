@@ -1,3 +1,4 @@
+$contentWidth: 950px;
 $categoryPanelWidth: 180px;
 $categoryPanelHeight: 160px;
 $categoryPanelColor: orange;
@@ -8,7 +9,7 @@ $hoverCategoryPanelColor: black;
   .categories {
     margin: 0 auto;
     padding: 30px 10px;
-    width: 950px;
+    width: $contentWidth;
 
     .categories-menu {
       margin: 0;
