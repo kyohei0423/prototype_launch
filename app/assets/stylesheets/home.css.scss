@@ -19,16 +19,20 @@ $accent-green-color: rgb(109,194,184);
     margin: 0 auto;
     padding: 30px 10px;
     width: 950px;
+    border-bottom: 1px solid #bbbbbb;
 
     .top-bar {
+
       .heading {
         float: left;
       }
 
-      .description {
+      .detail {
+        margin-left: 10px;
+        margin-top: 4px;
         font-size: 14px;
+        color: #bbbbbb;
         float: left;
-        color: gray;
       }
     }
 
