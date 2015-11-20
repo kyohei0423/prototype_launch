@@ -1,18 +1,18 @@
 = render partial: 'common/error_msg', locals: { object: @question }
-= form_for @question do |f|
-  .field
-    = f.text_field :title, autofocus: true, placeholder: "タイトル"
-    br
-  .field
-    ul#question-tags
-  .field
-    = f.text_field :description, autofocus: true, placeholder: "まえがき"
-    br
-  .field
-    = f.text_area :sentence, placeholder: "本文", cols: "50", rows: "50"
-    br
-  .field
-    = f.number_field :time_limit, placeholder: "回答時間（分）"
-    br
-  .actions
-    = f.submit "投稿"
+.content
+  .form-content.fix-height
+    = form_for @question, html: { class: 'form-box fix-height' } do |f|
+      .field.title-field
+        = f.text_field :title, autofocus: true, placeholder: "タイトル", class: 'title fix-width fix-form'
+      ul#question-tags
+      .field.description-field
+        = f.text_area :description, autofocus: true, placeholder: "まえがき", col: 2, class: 'description fix-width fix-form'
+      .input-text-field.clearfix
+        = f.text_area :sentence, placeholder: "本文", placeholder: 'MarkDownで入力', class: 'input-textarea box-sizing fix-height fix-form', id: 'input-textarea'
+        .output-field.box-sizing
+      .footer
+        ul.clearfix
+          li
+            = f.submit "投稿", class: 'submit-btn'
+          li
+            = f.number_field :time_limit, placeholder: "回答時間（分）", class: 'fix-form'
