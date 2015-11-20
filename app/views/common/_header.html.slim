@@ -34,7 +34,7 @@
     .header-right
       ul
         li.new-question-button
-        = link_to 'POST', new_question_path, style: "text-decoration: none;"
+          = link_to 'POST', new_question_path, style: "text-decoration: none;", class: "to-new-question"
 
         li.mypage-or-login-button
           - if user_signed_in?
