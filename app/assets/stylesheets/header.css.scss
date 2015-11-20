@@ -119,6 +119,7 @@
                 text-decoration: none;
 
                 &:hover {
+                  color: #000000;
                   background-color: #eeeeee;
                 }
               }
@@ -134,15 +135,22 @@
     margin-right: 7px;
     float: right;
     width: 33%;
-    text-align: right;
 
     ul {
+      float: right;
 
       li {
         list-style: none;
         margin: 0 10px;
         font-size: 13px;
-        float: right;
+        float: left;
+
+        .mypage {
+
+           &:hover {
+            color: #00BFFF;
+           }
+        }
       }
 
       .new-question-button {

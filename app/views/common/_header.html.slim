@@ -1,3 +1,4 @@
+.hidden-block
 .header-main
   .clearfix
     .header-left
@@ -37,13 +38,11 @@
 
         li.mypage-or-login-button
           - if user_signed_in?
-            = link_to 'MYPAGE',  user_path(current_user), style: "text-decoration: none;"
+            = link_to 'MYPAGE',  user_path(current_user), style: "text-decoration: none;", class: "mypage"
 
           - else
             = link_to 'LOGIN', new_user_session, style: "text-decoration: none;"
 hr
 
 / ドロップダウン周りを押したらメニューを閉じる
-/ ドロップダウンメニュー内のオプションにホバーつける
 / 投稿ボタン。ゴーストボタンは使わない
-/ MYPAGEボタンにもホバー
