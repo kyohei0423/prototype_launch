@@ -10,6 +10,8 @@ $formFooterHeight: 50px;
 $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeight+$formFooterHeight);
 
 .content {
+  height: 100%;
+
   .categories {
     margin: 0 auto;
     padding: 30px 10px;
@@ -199,8 +201,9 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
         height: calc(100% - #{$formExceptTextareaHeight});
 
         .input-textarea, .output-field {
-          display: inline-block;
+          float: left;
           width: 50%;
+          padding: 5px;
         }
 
         .input-textarea {
@@ -212,6 +215,10 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
           background-color: white;
           border: 1px solid #ddd;
           border-left: none;
+
+          #output-area {
+            height: 100%;
+          }
         }
       }
 
