@@ -1,12 +1,16 @@
-window.addEventListener("load", function() {
-  $('.hidden-block').hide();
+$(window).load(function () {
+  var $hidden_block = $('.hidden-block')
+  var $menuicon = $('#menuicon')
+  var $menu = $("#menu")
 
-  $('#menuicon').click(function(){
-    $("#menu").slideToggle();
-    $('.hidden-block').show();
+  $hidden_block.hide();
+
+  $menuicon.click(function(){
+    $menu.slideToggle();
+    $hidden_block.show();
   });
 
-  $('.hidden-block').click(function(){
-    $("#menu").slideUp();
+  $hidden_block.click(function(){
+    $menu.slideUp();
   });
 });

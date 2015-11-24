@@ -1,48 +1,44 @@
 .hidden-block
-.header-main
-  .clearfix
-    .header-left
-      .search-box
-        span SEARCH
-        i.fa.fa-search
-    .header-center
-      ul
-        li
-          = link_to "NEWEST", '#', class: "newest-sort", style: "text-decoration: none;"
-        li
-          = link_to "RANKING", '#', class: "ranking-sort", style: "text-decoration: none;"
+.header-main.clearfix
+  .header-left
+    .search-box
+      span SEARCH
+      span.fa.fa-search
+  .header-center
+    ul
+      li
+        = link_to "NEWEST", '#', class: "newest-sort"
+      li
+        = link_to "RANKING", '#', class: "ranking-sort"
 
-        li
-          = link_to 'HOME', root_path, class: "to-home", style: "text-decoration: none;"
+      li
+        = link_to 'HOME', root_path, class: "to-home"
 
-        li
-          = link_to 'EASIER', '#', class: "easier-sort", style: "text-decoration: none;"
+      li
+        = link_to 'EASIER', '#', class: "easier-sort"
 
-        li
-          = link_to 'CATEGORY', tags_path, class: "to-category", style: "text-decoration: none;"
-        li
-          #menuicon
-            i.fa.fa-angle-double-down
+      li
+        = link_to 'CATEGORY', tags_path, class: "to-category"
+      li
+        #menuicon
+          span.fa.fa-angle-double-down
 
-          nav.menu#menu
-            ul
-              li
-                = link_to 'ABOUT', '#', class: "link"
-              li
-                = link_to 'FAQ', '#', class: "link"
+        nav.menu#menu
+          ul
+            li
+              = link_to 'ABOUT', '#', class: "link"
+            li
+              = link_to 'FAQ', '#', class: "link"
 
-    .header-right
-      ul
-        li.new-question-button
-          = link_to 'POST', new_question_path, style: "text-decoration: none;", class: "to-new-question"
+  .header-right
+    ul
+      li.new-question-button
+        = link_to 'POST', new_question_path, class: "to-new-question"
 
-        li.mypage-or-login-button
-          - if user_signed_in?
-            = link_to 'MYPAGE',  user_path(current_user), style: "text-decoration: none;", class: "mypage"
+      li.mypage-or-login-button
+        - if user_signed_in?
+          = link_to 'MYPAGE',  user_path(current_user), class: "mypage"
 
-          - else
-            = link_to 'LOGIN', new_user_session, style: "text-decoration: none;"
+        - else
+          = link_to 'LOGIN', new_user_session
 hr
-
-/ ドロップダウン周りを押したらメニューを閉じる
-/ 投稿ボタン。ゴーストボタンは使わない
