@@ -16,4 +16,5 @@
 //= require tag-it
 //= require marked
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
