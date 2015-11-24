@@ -7,21 +7,22 @@ $menuIconHoverColor: #dddddd;
 $subBoxHoverColor: black;
 
 .header-main {
+  // margin-top: 20px;
 
   .header-left {
+    margin-top: 16px;
     float: left;
     width: 33%;
     height: 32px;
 
     .search-box {
       margin-left: 7px;
-      margin-top: 5px;
       border-radius: 4px;
       height: 30px;
       background-color: $subBoxColor;
       width: 50%;
       height: 25px;
-      padding-top: 7px;
+      padding-top: 6px;
 
       span {
         font-size: 12px;
@@ -32,7 +33,6 @@ $subBoxHoverColor: black;
 
       .fa-search {
         float: right;
-        margin-top: 2px;
         margin-right: 7px;
         color: $iconColor;
         text-decoration: none;
@@ -41,6 +41,7 @@ $subBoxHoverColor: black;
   }
 
   .header-center {
+    margin-top: 20px;
     width: 33%;
     font-size: $basicHeaderFontSize;
     float: left;
@@ -160,6 +161,9 @@ $subBoxHoverColor: black;
         float: right;
 
         .mypage {
+          position: absolute;
+          top: 20px;
+          right: 7px;
 
           &:hover {
             color: #00BFFF;
@@ -169,7 +173,7 @@ $subBoxHoverColor: black;
 
       .new-question-button {
         position: absolute;
-        top: 7px;
+        top: 15px;
         right: 30px;
         width: 50px;
         height: 25px;
@@ -196,4 +200,8 @@ $subBoxHoverColor: black;
       }
     }
   }
+}
+
+hr {
+  margin: 0 7px;
 }

@@ -1,15 +1,37 @@
-$contentWidth: 950px;
-$categoryPanelWidth: 180px;
-$categoryPanelHeight: 160px;
-$categoryPanelColor: orange;
-$hoverCategoryPanelColor: black;
+$question-list-title: 18px;
+$question-list-description: 14px;
+$question-list-height: 130px;
+$accent-green-color: rgb(109,194,184);
 
 .content {
+
+  .jumbotron {
+    background: image-url("header_bg.png") center 92px no-repeat fixed;
+    background-size:  100% auto;
+    padding: 80px 0;
+    margin-bottom: 0;
+  }
 
   .categories {
     margin: 0 auto;
     padding: 30px 10px;
-    width: $contentWidth;
+    width: 950px;
+    border-bottom: 1px solid #bbbbbb;
+
+    .top-bar {
+
+      .heading {
+        float: left;
+      }
+
+      .detail {
+        margin-left: 10px;
+        margin-top: 4px;
+        font-size: 14px;
+        color: #bbbbbb;
+        float: left;
+      }
+    }
 
     .categories-menu {
       margin: 0;
@@ -61,10 +83,10 @@ $hoverCategoryPanelColor: black;
 }
 
 // ############## 770px以下 600px以上 ##############
-@media screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
   .content {
     .categories {
-      width: 760px;
+      width: 770px;
 
       .categories-menu {
         .categories-list {
@@ -86,10 +108,10 @@ $hoverCategoryPanelColor: black;
 }
 
 // ############## 600px以下 470px以上 ##############
-@media screen and (max-width: 810px) {
+@media (max-width: 830px) {
   .content {
     .categories {
-      width: 570px;
+      width: 590px;
 
       .categories-menu {
         .categories-list {
@@ -114,10 +136,10 @@ $hoverCategoryPanelColor: black;
 }
 
 // ############## 470px以下 ##############
-@media screen and (max-width: 620px) {
+@media (max-width: 700px) {
   .content {
     .categories {
-      width: 380px;
+      width: 400px;
 
       .categories-menu {
         .categories-list {

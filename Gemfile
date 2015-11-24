@@ -7,6 +7,8 @@ gem 'slim'
 gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-sass'
 gem 'font-awesome-rails'
+gem 'therubyracer'
+gem 'bootstrap-sass'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
@@ -17,6 +19,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'config'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'gon'
+gem 'marked-rails'
 
 group :development, :test do
   gem 'byebug'
