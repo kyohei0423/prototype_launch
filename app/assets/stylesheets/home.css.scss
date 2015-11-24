@@ -6,13 +6,10 @@ $accent-green-color: rgb(109,194,184);
 .content {
 
   .jumbotron {
-  background-image: image-url("header_bg.png");
-  background-position:  center 92px;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size:  100% auto;
-  padding: 80px 0;
-  margin-bottom: 0;
+    background: image-url("header_bg.png") center 92px no-repeat fixed;
+    background-size:  100% auto;
+    padding: 80px 0;
+    margin-bottom: 0;
   }
 
   .categories {
