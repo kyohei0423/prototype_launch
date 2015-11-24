@@ -1,3 +1,6 @@
 $(window).on('load', function() {
-  document.getElementById('output-area').innerHTML = marked("# Marked in browser\n\nRendered by **marked**.");
+  $('#input-textarea').on('keyup', function() {
+    var text = $('#input-textarea').val();
+    document.getElementById('output-area').innerHTML = marked(text);
+  });
 });
