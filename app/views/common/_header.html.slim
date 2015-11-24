@@ -1,12 +1,12 @@
-.header-main.row
+.header-main.row.clearfix
   .header-left.col-md-4.col-xs-12
     .input-group
-      input type='text' class="form-control" placeholder="Search for..."
+      input type='text' class="form-control search-box" placeholder="Search for..."
       span class='input-group-btn'
         button class='btn btn-default' type='button'
           span.fa.fa-search
   .header-center.col-md-4.col-xs-6
-    ul
+    ul.clearfix
       li
         = link_to "NEWEST", '#', class: "newest-sort"
       li
@@ -20,27 +20,17 @@
 
       li
         = link_to 'CATEGORY', tags_path, class: "to-category"
-      li
-        #menuicon
+      li.dropdown
+        #drop-down-icon data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
           span.fa.fa-angle-double-down
-
-        nav.menu#menu
-          ul
-            li
-              = link_to 'ABOUT', '#', class: "link"
-            li
-              = link_to 'FAQ', '#', class: "link"
-
+        ul.dropdown-menu.dropdown-menu-left.menu aria-labelledby="dropdownMenu1"
+          li
+            = link_to 'ABOUT', '#', class: "link"
+          li
+            = link_to 'FAQ', '#', class: "link"
   .header-right.col-md-4.col-xs-6
-    ul
-      li.new-question-button
-        = link_to 'POST', new_question_path, class: "to-new-question"
-
-      li.mypage-or-login-button
-        - if user_signed_in?
-          = link_to 'MYPAGE',  user_path(current_user), class: "mypage"
-
-        - else
-          = link_to 'LOGIN', new_user_session
-
-hr.header-line
+    - if user_signed_in?
+      = link_to 'MYPAGE',  user_path(current_user), class: "mypage"
+    - else
+      = link_to 'LOGIN', new_user_session
+    = link_to 'POST', new_question_path, class: "btn btn-danger"
