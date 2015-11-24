@@ -1,16 +1,16 @@
 $(window).load(function () {
-  var $hidden_block = $('.hidden-block')
-  var $menuicon = $('#menuicon')
-  var $menu = $("#menu")
+  var $hiddenBlock = $('.hidden-block'),
+    $menuicon = $('#menuicon'),
+    $menu = $("#menu")
 
-  $hidden_block.hide();
+  $hiddenBlock.hide();
 
   $menuicon.click(function(){
     $menu.slideToggle();
-    $hidden_block.show();
+    $hiddenBlock.show();
   });
 
-  $hidden_block.click(function(){
+  $hiddenBlock.click(function(){
     $menu.slideUp();
   });
 });

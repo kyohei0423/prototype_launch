@@ -129,8 +129,7 @@ $subBoxHoverColor: black;
                 display: block;
                 padding: 5px;
                 color: $iconColor;
-                font-size: $basicHeaderFontSize
-          ;
+                font-size: $basicHeaderFontSize;
                 text-decoration: none;
 
                 &:hover {
@@ -157,8 +156,7 @@ $subBoxHoverColor: black;
       li {
         list-style: none;
         margin: 0 10px;
-        font-size: $basicHeaderFontSize
-  ;
+        font-size: $basicHeaderFontSize;
         float: right;
 
         .mypage {
