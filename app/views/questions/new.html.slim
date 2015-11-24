@@ -4,7 +4,7 @@
     = form_for @question, html: { class: 'form-box fix-height' } do |f|
       .field.title-field
         = f.text_field :title, autofocus: true, placeholder: "タイトル", class: 'title fix-width fix-form'
-      ul#question-tags
+      ul#question-tags{ autofocus: true }
       .field.description-field
         = f.text_area :description, autofocus: true, placeholder: "まえがき", col: 2, class: 'description fix-width fix-form'
       .input-text-field.clearfix
