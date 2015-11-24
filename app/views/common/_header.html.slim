@@ -1,10 +1,11 @@
-.hidden-block
-.header-main.clearfix
-  .header-left
-    .search-box
-      span SEARCH
-      span.fa.fa-search
-  .header-center
+.header-main.row
+  .header-left.col-md-4.col-xs-12
+    .input-group
+      input type='text' class="form-control" placeholder="Search for..."
+      span class='input-group-btn'
+        button class='btn btn-default' type='button'
+          span.fa.fa-search
+  .header-center.col-md-4.col-xs-6
     ul
       li
         = link_to "NEWEST", '#', class: "newest-sort"
@@ -30,7 +31,7 @@
             li
               = link_to 'FAQ', '#', class: "link"
 
-  .header-right
+  .header-right.col-md-4.col-xs-6
     ul
       li.new-question-button
         = link_to 'POST', new_question_path, class: "to-new-question"
