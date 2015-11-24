@@ -1,7 +1,12 @@
 = render partial: 'common/error_msg', locals: { object: @answer }
-= form_for [@question, @answer] do |f|
-  .field
-    = f.text_area :sentence, placeholder: "本文", cols: "50", rows: "50"
-    br
-  .actions
-    = f.submit "投稿"
+.content
+  .form-content.fix-height
+    = form_for [@question, @answer], html: { class: 'form-box fix-height' } do |f|
+      .input-text-field.clearfix
+        = f.text_area :sentence, placeholder: "本文", placeholder: 'MarkDownで入力', class: 'input-textarea box-sizing fix-height fix-form', id: 'input-textarea-answer'
+        .output-field.box-sizing
+          #output-area-answer.box-sizing
+      .footer
+        ul.clearfix
+          li
+            = f.submit "投稿"

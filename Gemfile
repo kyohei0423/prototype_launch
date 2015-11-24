@@ -19,6 +19,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'config'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'gon'
+gem 'marked-rails'
 
 group :development, :test do
   gem 'byebug'

@@ -22,3 +22,22 @@ h1, h2, h3, h4, h5, h6, p, body {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
+
+.fix-height {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  height: 100%;
+}
+
+.fix-width {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+}
+
+.fix-form {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
