@@ -230,10 +230,16 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
           padding: 0;
           margin: 0;
           list-style: none;
+          height: 100%;
 
           li {
             display: inline-block;
             float: right;
+            height: 100%;
+          }
+
+          .time-limit {
+            width: 60px;
           }
         }
       }
