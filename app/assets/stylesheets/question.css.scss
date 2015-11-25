@@ -175,6 +175,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
         height: $formDescriptionHeight;
       }
 
+
       .input-text-field {
         height: calc(100% - #{$formExceptTextareaHeight});
 
@@ -182,14 +183,13 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
           float: left;
           width: 50%;
           padding: 5px;
+          height: 100%;
         }
 
-        .input-textarea {
-          resize: none;
-        }
+        .input-textarea { resize: none; }
 
         .output-field {
-          height: 100%;
+          // height: 100%;
           background-color: white;
           border: 1px solid #ddd;
           border-left: none;
@@ -200,26 +200,31 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
         }
       }
 
+      .input-answer { height: 100%; }
+
       .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
         background-color: $formBackgroundColor;
         height: $formFooterHeight;
 
-        ul {
-          padding: 0;
-          margin: 0;
-          list-style: none;
-          height: 100%;
+        .time-limit-field, .base-time-limit {
+          height: 35px;
+          padding: 10px 0;
+        }
 
-          li {
-            display: inline-block;
-            float: right;
-            height: 100%;
-          }
-
-          .time-limit {
-            width: 60px;
+        .base-time-limit {
+          text-align: right;
+          span { line-height: 34px; }
+        }
+        .time-limit {
+          span {
+            border: none;
           }
         }
+
+        .submit-btn { margin: 10px 0; }
       }
     }
   }
