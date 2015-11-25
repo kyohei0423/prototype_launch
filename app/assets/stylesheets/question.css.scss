@@ -201,25 +201,28 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       }
 
       .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
         background-color: $formBackgroundColor;
         height: $formFooterHeight;
 
-        ul {
-          padding: 0;
-          margin: 0;
-          list-style: none;
-          height: 100%;
+        .time-limit-field, .base-time-limit {
+          height: 35px;
+          padding: 10px 0;
+        }
 
-          li {
-            display: inline-block;
-            float: right;
-            height: 100%;
-          }
-
-          .time-limit {
-            width: 60px;
+        .base-time-limit {
+          text-align: right;
+          span { line-height: 34px; }
+        }
+        .time-limit {
+          span {
+            border: none;
           }
         }
+
+        .submit-btn { margin: 10px 0; }
       }
     }
   }
