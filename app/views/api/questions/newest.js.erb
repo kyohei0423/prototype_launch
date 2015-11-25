@@ -1,3 +1,7 @@
+$('#home-timeline').switchClass('categories-menu', 'questions-menu box-sizing');
 $('#home-timeline').html(
   '<%= j(render partial: 'questions/question', collection: @questions) %>'
+);
+$('.top-bar').html(
+  '<h2>Yeaterday<span>November 15th</span></h2>'
 )

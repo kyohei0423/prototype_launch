@@ -1,0 +1,5 @@
+$('#home-timeline').switchClass('questions-menu box-sizing', 'categories-menu');
+$('#home-timeline').html(
+  '<%= j(render partial: 'tags/tag', collection: @tags) %>'
+);
+$('.top-bar h2').text('タグ一覧');
