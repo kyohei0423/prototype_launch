@@ -1,0 +1,7 @@
+$('#home-timeline').switchClass('categories-menu', 'questions-menu box-sizing')
+$('#home-timeline').html(
+  '<%= j(render partial: 'questions/question', collection: @questions) %>'
+);
+$('.top-bar h2').text(
+  '<%= @tag.name %> に関する投稿一覧'
+)

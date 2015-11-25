@@ -13,7 +13,7 @@ li.questions-list.box-sizing.row
     ul.question-tags.clearfix
       - question.tags.each do |tag|
         li.question-tags-list.box-sizing
-          = link_to tag.name, tag_path(tag)
+          = link_to tag.name, tag_path(tag), remote: true
   .question-info.col-md-4.col-sm-4.hidden-xs.row
     .col-xs-4.info-box.info-contents
       span.fa.fa-archive
