@@ -6,6 +6,6 @@ class HomeController < ApplicationController
 
   private
     def set_questions
-      @questions = Question.all
+      @questions = Question.order(created_at: :DESC)
     end
 end
