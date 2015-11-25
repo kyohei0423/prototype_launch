@@ -1,5 +1,6 @@
-$('#home-timeline').switchClass('categories-menu', 'questions-menu box-sizing');
-$('#home-timeline').html(
+var $homeTimeLine = $('#home-timeline')
+$homeTimeLine.switchClass('categories-menu', 'questions-menu box-sizing');
+$homeTimeLine.html(
   '<%= j(render partial: 'questions/question', collection: @questions) %>'
 );
 $('.top-bar h2').text(
