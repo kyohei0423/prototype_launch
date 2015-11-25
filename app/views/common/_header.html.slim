@@ -5,7 +5,7 @@
       span class='input-group-btn'
         button class='btn btn-default' type='button'
           span.fa.fa-search
-  .header-center.col-md-4.col-xs-6
+  .header-center.col-md-5.col-xs-6
     ul.clearfix
       li
         = link_to "NEWEST", '#', class: "newest-sort"
@@ -25,7 +25,7 @@
             = link_to 'ABOUT', '#', class: "link"
           li
             = link_to 'FAQ', '#', class: "link"
-  .header-right.col-md-4.col-xs-6
+  .header-right.col-md-3.col-xs-6
     - if user_signed_in?
       = link_to 'MYPAGE',  user_path(current_user), class: "mypage"
     - else
