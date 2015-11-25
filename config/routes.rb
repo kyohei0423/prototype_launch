@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :tags, only: [:index, :show]
 
   namespace :api do
-    resources :questions, only: :index do
+    resources :questions do
       collection do
         get 'newest'
         get 'popular'
