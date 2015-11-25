@@ -175,6 +175,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
         height: $formDescriptionHeight;
       }
 
+
       .input-text-field {
         height: calc(100% - #{$formExceptTextareaHeight});
 
@@ -182,14 +183,13 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
           float: left;
           width: 50%;
           padding: 5px;
+          height: 100%;
         }
 
-        .input-textarea {
-          resize: none;
-        }
+        .input-textarea { resize: none; }
 
         .output-field {
-          height: 100%;
+          // height: 100%;
           background-color: white;
           border: 1px solid #ddd;
           border-left: none;
@@ -199,6 +199,8 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
           }
         }
       }
+
+      .input-answer { height: 100%; }
 
       .footer {
         position: fixed;
