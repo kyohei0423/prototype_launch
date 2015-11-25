@@ -1,10 +1,10 @@
-li.questions-list.clearfix.box-sizing
-  .stock-count
+li.questions-list.box-sizing.row
+  .stock-count.col-xs-1
       span.fa.fa-thumbs-o-up
         | 100
-  .question-image
+  .question-image.col-xs-1
     = image_tag 'http://kinocode.jp/new/wp-content/uploads/2015/10/950805bc8a944944bdef670a2b591238.png'
-  .question-context.box-sizing
+  .question-context.box-sizing.col-xs-6
     h3.question-title
       = question.title
     .question-description
@@ -14,8 +14,12 @@ li.questions-list.clearfix.box-sizing
       - question.tags.each do |tag|
         li.question-tags-list.box-sizing
           = link_to tag.name, tag_path(tag)
-  .question-info
-    p
+  .question-info.col-xs-4.row
+    .col-xs-5.info-box.info-contents
       span.fa.fa-archive
-      = image_tag 'http://simpleicon.com/wp-content/uploads/user1.svg'
-      span.fa.fa-comment-o 100
+    .col-xs-3.info-box.info-img
+      span
+        = image_tag 'http://simpleicon.com/wp-content/uploads/user1.svg'
+    .col-xs-4.info-box
+      | 100
+      span.fa.fa-comment-o.info-comment

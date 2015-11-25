@@ -11,13 +11,12 @@
 <%= render partial: 'common/header' %>
 
 <% if notice %>
-  <p class="notice"><%= notice %></p>
+  <p class="alert alert-success"><%= notice %></p>
 <% end %>
 <% if alert %>
-  <p class="alert"><%= alert %></p>
+  <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 
 <%= yield %>
-
 </body>
 </html>
