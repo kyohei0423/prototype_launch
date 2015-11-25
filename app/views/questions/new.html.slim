@@ -1,5 +1,5 @@
 = render partial: 'common/error_msg', locals: { object: @question }
-.content
+.content.box-sizing
   .form-content.fix-height
     = form_for @question, html: { class: 'form-box fix-height' } do |f|
       .field.title-field
