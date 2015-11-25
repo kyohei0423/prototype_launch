@@ -1,6 +1,6 @@
 $questionListTitle: 18px;
 $questionListDescription: 14px;
-$questionListHeight: 130px;
+$questionListHeight: 110px;
 $accentGreenColor: rgb(109,194,184);
 $formBackgroundColor: #eee;
 $formTitleHeight: 48px;
@@ -13,9 +13,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
   height: 100%;
 
   .categories {
-    margin: 0 auto;
     padding: 30px 10px;
-    width: 950px;
 
     .questions-menu {
       margin: 0;
@@ -32,9 +30,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
         }
 
         .stock-count {
-          width: 50px;
-          height: $questionListHeight;
-          float: left;
+          height: 100%;
           display: -webkit-box;
           display: -moz-box;
           display: -o-box;
@@ -57,8 +53,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
         }
 
         .question-image {
-          width: 100px;
-          height: $questionListHeight;
+          height: 100%;
           float: left;
           position: relative;
 
@@ -74,20 +69,18 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
         }
 
         .question-context {
-          width: 580px;
           height: 100%;
-          float: left;
-          padding: 5px;
+          padding-top: 5px;
+          padding-bottom: 5px;
 
           .question-title {
-            height: 50px;
+            height: 33%;
             overflow: hidden;
-            line-height: 50px;
             font-size: $questionListTitle;
           }
 
           .question-description {
-            height: 40px;
+            height: 33%;
             overflow: hidden;
             font-size: $questionListDescription;
 
@@ -102,7 +95,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
             margin: 0;
             padding: 0;
             list-style: none;
-            height: 40px;
+            height: 33%;
             overflow: hidden;
 
             .question-tags-list {
@@ -128,32 +121,17 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
         }
 
         .question-info {
-          width: 200px;
-          float: left;
-          height: $questionListHeight;
-          position: relative;
+          height: 100%;
 
-          p {
-            height: 40px;
+          .info-box {
+            height: 100%;
             text-align: right;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto 0;
-
-            span, img {
-              margin: 0 5px;
-            }
-
-            img {
-              width: 40px;
-              vertical-align: bottom;
-            }
-
             span {
-              vertical-align: 8px;
+              line-height: 130px;
+            }
+            img {
+              max-width: 80%;
+              max-height: 80%;
             }
           }
         }

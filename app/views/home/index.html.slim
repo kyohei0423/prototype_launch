@@ -1,10 +1,8 @@
 .content
-  article.categories
-    .clearfix
-      .top-bar
-        .clearfix
-          h2.heading Yesterday
-          .detail November 15th
-        hr
+  article.categories.container
+    .top-bar.clearfix
+      h2
+        | Yesterday
+        span November 15th
     ul.questions-menu.box-sizing
       = render @questions

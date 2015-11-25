@@ -3,149 +3,18 @@ $question-list-description: 14px;
 $question-list-height: 130px;
 $accent-green-color: rgb(109,194,184);
 
-.content {
+.top-bar {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
 
-  .categories {
-    margin: 0 auto;
-    padding: 30px 10px;
-    width: 950px;
-    border-bottom: 1px solid #bbbbbb;
-
-    .top-bar {
-
-      .heading {
-        float: left;
-      }
-
-      .detail {
-        margin-left: 10px;
-        margin-top: 4px;
-        font-size: 14px;
-        color: #bbbbbb;
-        float: left;
-      }
-    }
-
-    .categories-menu {
-      margin: 0;
-      padding: 0 1px;
-      list-style: none;
-
-      .categories-list {
-        margin: 0 12px 12px 0;
-        width: $categoryPanelWidth;
-        height: $categoryPanelHeight;
-        float: left;
-
-        &:nth-child(5n) {
-          margin: 0;
-        }
-
-        .categories-name {
-          background-color: $categoryPanelColor;
-          font-weight: bold;
-          font-size: 18px;
-          text-decoration: none;
-          color: #444;
-          display: block;
-          width: 100%;
-          height: 100%;
-          position: relative;
-
-          &:hover {
-            background-color: $hoverCategoryPanelColor;
-            transition: all .5s;
-            color: white;
-          }
-
-          span {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-          }
-        }
-
-        .categories-image {
-          max-width: 100%;
-          height: auto;
-          border: none;
-        }
-      }
-    }
-  }
-}
-
-// ############## 770px以下 600px以上 ##############
-@media (max-width: 1000px) {
-  .content {
-    .categories {
-      width: 770px;
-
-      .categories-menu {
-        .categories-list {
-          margin: 0 12px 12px 0;
-
-          &:nth-child(4n) {
-            margin: 0;
-          }
-          &:nth-child(5n) {
-            margin: 0 12px 12px 0;
-          }
-          &:nth-child(4n+1) {
-            clear: both;
-          }
-        }
-      }
-    }
-  }
-}
-
-// ############## 600px以下 470px以上 ##############
-@media (max-width: 830px) {
-  .content {
-    .categories {
-      width: 590px;
-
-      .categories-menu {
-        .categories-list {
-          margin: 0 12px 12px 0;
-
-          &:nth-child(3n) {
-            margin: 0;
-          }
-          &:nth-child(4n) {
-            margin: 0 12px 12px 0;
-          }
-          &:nth-child(3n+1) {
-            clear: both;
-          }
-          &:nth-child(4n+1) {
-            clear: none;
-          }
-        }
-      }
-    }
-  }
-}
-
-// ############## 470px以下 ##############
-@media (max-width: 700px) {
-  .content {
-    .categories {
-      width: 400px;
-
-      .categories-menu {
-        .categories-list {
-          margin: 0 12px 12px 0;
-
-          &:nth-child(3n) {
-            margin: 0 12px 12px 0;
-          }
-          &:nth-child(3n+1) {
-            clear: none;
-          }
-        }
-      }
+  h2 {
+    line-height: 200%;
+    font-size: 18px;
+    span {
+      font-weight: normal;
+      font-size: 14px;
+      color: #bbbbbb;
+      margin-left: 10px;
     }
   }
 }
