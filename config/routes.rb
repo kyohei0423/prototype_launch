@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :tags, only: [:index, :show]
 
-  namespace :api, defaults: { format: :json } do
+  namespace :api do
     resources :questions, only: :index do
       collection do
         get 'newest'
