@@ -77,6 +77,15 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
             height: 33%;
             overflow: hidden;
             font-size: $questionListTitle;
+            a {
+              color: #444;
+              height: 100%;
+              display: block;
+              text-decoration: none;
+              &:hover {
+                color: $accentGreenColor;
+              }
+            }
           }
 
           .question-description {

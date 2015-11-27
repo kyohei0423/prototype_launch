@@ -6,7 +6,7 @@ li.questions-list.box-sizing.row
     = image_tag 'http://kinocode.jp/new/wp-content/uploads/2015/10/950805bc8a944944bdef670a2b591238.png'
   .question-context.box-sizing.col-md-6.col-sm-5.col-xs-8
     h3.question-title
-      = question.title
+      = link_to question.title, question_path(question)
     .question-description
       span
         = question.description
