@@ -8,9 +8,9 @@
   .header-center.col-md-5.col-xs-6
     ul.clearfix
       li
-        = link_to "NEWEST", '#', class: "newest-sort"
+        = link_to "NEWEST", newest_api_questions_path, class: "newest-sort", remote: true
       li
-        = link_to "RANKING", '#', class: "ranking-sort"
+        = link_to "POPULAR", '#', class: "ranking-sort"
       li
         = link_to 'HOME', root_path, class: "to-home"
       li

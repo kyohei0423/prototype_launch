@@ -1,0 +1,8 @@
+var $homeTimeLine = $('#home-timeline')
+$homeTimeLine.switchClass('categories-menu', 'questions-menu box-sizing');
+$homeTimeLine.html(
+  '<%= j(render partial: 'questions/question', collection: @questions) %>'
+);
+$('.top-bar h2').html(
+  '<h2>Yeaterday<span>November 15th</span></h2>'
+)

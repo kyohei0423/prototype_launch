@@ -2,7 +2,7 @@ class TagsController < ApplicationController
   before_action :set_tag, only: :show
 
   def index
-    @tags = ActsAsTaggableOn::Tag.most_used
+    @tags = ActsAsTaggableOn::Tag.includes(:taggings).most_used
   end
 
   def show
