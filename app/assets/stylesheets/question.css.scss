@@ -93,10 +93,17 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
             overflow: hidden;
             font-size: $questionListDescription;
 
-            span {
+            a {
               display: -webkit-box;
               -webkit-box-orient: vertical;
               -webkit-line-clamp: 2;
+              color: #444;
+              height: 100%;
+              display: block;
+              text-decoration: none;
+              &:hover {
+                color: $accentGreenColor;
+              }
             }
           }
 

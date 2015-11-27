@@ -9,7 +9,7 @@ li.questions-list.box-sizing.row
       = link_to question.title, question_path(question)
     .question-description
       span
-        = question.description
+        = link_to question.description, question_path(question)
     ul.question-tags.clearfix
       - question.tags.each do |tag|
         li.question-tags-list.box-sizing
