@@ -1,0 +1,7 @@
+.content
+  article.categories.container
+    .top-bar.clearfix
+      h2
+        | タグ一覧
+    ul#home-timeline.categories-menu
+      = render partial: 'tags/tag', collection: @tags
