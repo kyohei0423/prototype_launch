@@ -1,0 +1,9 @@
+.content
+  article.categories.container
+    .top-bar.clearfix
+      h2
+        = @tag.name
+        | に関する投稿一覧
+    ul#home-timeline.questions-menu.box-sizing
+      = render partial: 'questions/question', collection: @questions
+
