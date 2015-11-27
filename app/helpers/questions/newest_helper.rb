@@ -1,0 +1,2 @@
+module Questions::NewestHelper
+end

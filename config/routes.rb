@@ -3,21 +3,14 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
+  namespace :questions do
+    resources :newest, only: :index
+  end
   resources :questions, only: [:new, :create, :show] do
     resources :answers, only: [:new, :create, :show]
   end
 
   resources :tags, only: [:index, :show]
-
-  namespace :api do
-    resources :questions do
-      collection do
-        get 'newest'
-        get 'popular'
-        get 'easier'
-      end
-    end
-  end
 
   root 'home#index'
 end
