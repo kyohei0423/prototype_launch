@@ -1,9 +1,9 @@
 .header-main.row.clearfix
   .header-left.col-md-4.col-xs-12
     .input-group
-      = form_tag("/search", remote: true, method: :get) do
+      = form_tag("/search", remote: true, method: :get, class: "search_form") do
         = text_field_tag :search, "", id: "inc_search", class: "search__query", name: "keyword", placeholder: "Search for..."
-        span class='input-group-btn'
+        span class='input-group-btn search_icon'
           button class='btn btn-default searchsubmit' title="検索" type='submit'
             span.fa.fa-search
 
