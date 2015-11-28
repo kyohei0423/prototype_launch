@@ -1,10 +1,12 @@
 .header-main.row.clearfix
   .header-left.col-md-4.col-xs-12
     .input-group
-      input type='text' class="form-control search-box" placeholder="Search for..."
-      span class='input-group-btn'
-        button class='btn btn-default' type='button'
-          span.fa.fa-search
+      = form_tag("/search", remote: true, method: :get) do
+        = text_field_tag :search, "", id: "inc_search", class: "search__query", name: "keyword", placeholder: "Search for..."
+        span class='input-group-btn'
+          button class='btn btn-default searchsubmit' title="検索" type='submit'
+            span.fa.fa-search
+
   .header-center.col-md-5.col-xs-6
     ul.clearfix
       li
