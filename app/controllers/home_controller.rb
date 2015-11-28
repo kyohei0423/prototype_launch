@@ -5,11 +5,15 @@ class HomeController < ApplicationController
   end
 
   def search
-    @questions = Book.where('title LIKE(?)',"%#{search_params[:keyword]}%").order('title ASC').limit(20)
+    @questions = Question.where('title LIKE(?)',"%#{search_params[:keyword]}%").order('title ASC').limit(20)
   end
 
   private
     def set_questions
       @questions = Question.all
+    end
+
+    def search_params
+      params.permit(:keyword)
     end
 end
