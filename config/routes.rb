@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :answers, only: [:new, :create, :show]
   end
   resources :tags, only: [:index, :show]
+  get 'search' => 'home#search'
 end
