@@ -21,6 +21,7 @@ gem 'config'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'gon'
 gem 'marked-rails'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   gem 'byebug'
