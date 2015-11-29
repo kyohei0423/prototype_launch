@@ -7,10 +7,10 @@ $(window).on('load', function() {
     });
   };
 
-  $('#inc_search').on('keyup', function() {
+  $('#question_search_box').on('keyup', function() {
     var input = $.trim($(this).val()),
-        preFunc = null;
-    clearTimeout(preFunc);
-    preFunc = setTimeout(ajaxSearch, 500, input);
+        timer = null;
+    clearTimeout(timer);
+    timer = setTimeout(ajaxSearch, 500, input);
   });
 });
