@@ -276,6 +276,10 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
         }
       }
     }
+    .comments {
+      border-top: 1px solid #ddd;
+      margin-top: 30px;
+    }
   }
 
   .sub-content {
