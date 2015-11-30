@@ -7,7 +7,9 @@
           h3.description= @question.description
           p.user-info.clearfix
             span.username= @question.user.email
-            span.content-date= @question.fetch_created_date
+            span.content-date
+              i.fa.fa-clock-o
+              = @question.fetch_created_date
       .col-md-3
         .sub-content
 

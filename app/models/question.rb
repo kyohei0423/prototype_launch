@@ -8,6 +8,6 @@ class Question < ActiveRecord::Base
   acts_as_taggable
 
   def fetch_created_date
-    created_at.strftime('%Y/%m/%d')
+    created_at.strftime('%Y年%m月%d日 %H時%m分')
   end
 end

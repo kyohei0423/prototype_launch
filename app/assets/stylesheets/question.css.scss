@@ -272,6 +272,9 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       .content-date {
         float: right;
         color: #339af7;
+        i {
+          margin-right: 5px;
+        }
       }
     }
   }
