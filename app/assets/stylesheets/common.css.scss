@@ -16,6 +16,16 @@ h1, h2, h3, h4, h5, h6, p, body {
   padding-top: 20px;
 }
 
+.btn-notsuccess {
+  background-color: transparent;
+  color: #5cb85c;
+  border: 1px solid #4cae4c;
+  &:hover {
+    color: white;
+    background-color: #5cb85c;
+  }
+}
+
 .clearfix:after {
   content: '';
   display: block;
