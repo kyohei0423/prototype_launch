@@ -279,10 +279,11 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
     .comments {
       border-top: 1px solid #ddd;
       margin-top: 30px;
-      padding-top: 20px;
+      padding-top: 30px;
       .comment {
         .comment-header {
           height: 50px;
+          margin-bottom: 10px;
           .comment-header-user {
             float: left;
             height: 100%;
@@ -317,7 +318,25 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
           }
         }
         .comment-body {
-
+          border-top: 1px solid #ddd;
+          position: relative;
+          margin-bottom: 20px;
+          &:before {
+            content: "";
+            border: 10px solid transparent;
+            border-bottom: 10px solid #ddd;
+            position: absolute;
+            left: 15px;
+            top: -20px;
+          }
+          &:after {
+            content: "";
+            border: 10px solid transparent;
+            border-bottom: 10px solid white;
+            position: absolute;
+            left: 14px;
+            top: -19px;
+          }
         }
       }
     }
