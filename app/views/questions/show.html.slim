@@ -14,6 +14,15 @@
             // TODO: データベースにあるマークダウンをhtmlに変換して表示する
             = @question.sentence
           .comments
+            .comment
+              .comment-header.clearfix
+                .comment-header-user
+                  = image_tag 'imgres.png'
+                  ul
+                    li saino
+                    li 10000 stock
+                .comment-header-date
+              .comment-body
       .col-md-3
         .sub-content
 

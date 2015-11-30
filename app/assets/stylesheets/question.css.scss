@@ -279,6 +279,41 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
     .comments {
       border-top: 1px solid #ddd;
       margin-top: 30px;
+      padding-top: 20px;
+      .comment {
+        .comment-header {
+          .comment-header-user {
+            float: left;
+            img {
+              vertical-align: bottom;
+              width: 50px;
+              height: 50px;
+              margin-right: 5px;
+            }
+            ul {
+              display: inline-block;
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              height: 50px;
+              li {
+                font-size: 14px;
+                line-height: 25px;
+                &:first-child {
+                  color: #339af7;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+          .comment-header-date {
+            float: right;
+          }
+        }
+        .comment-body {
+
+        }
+      }
     }
   }
 
