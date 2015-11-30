@@ -10,6 +10,9 @@
             span.content-date
               i.fa.fa-clock-o
               = @question.fetch_created_date
+          .article-content
+            // TODO: データベースにあるマークダウンをhtmlに変換して表示する
+            = @question.sentence
       .col-md-3
         .sub-content
 
