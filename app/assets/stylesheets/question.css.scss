@@ -244,4 +244,17 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       }
     }
   }
+
+  .main-content, .sub-content {
+    background-color: white;
+    border: 1px solid #ddd;
+    height: 400px;
+  }
+
+  .main-content {
+  }
+
+  .sub-content {
+    border-radius: 5px;
+  }
 }
