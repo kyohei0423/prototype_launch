@@ -252,6 +252,17 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
   }
 
   .main-content {
+    padding: 25px 20px;
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .description {
+      font-weight: bold;
+      color: #888;
+      margin-bottom: 20px;
+    }
   }
 
   .sub-content {
