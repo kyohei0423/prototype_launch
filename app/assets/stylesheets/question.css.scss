@@ -343,6 +343,27 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
   }
 
   .sub-content {
+    padding: 25px 10px;
     border-radius: 5px;
+    height: 500px;
+    .stock-and-comment {
+      .detail:first-child {
+        border-right: 1px solid #ddd;
+      }
+      .detail {
+        width: 50%;
+        float: left;
+        text-align: center;
+        .numbers {
+          font-size: 25px;
+        }
+        span {
+          color: #444;
+          font-size: 12px;
+          position: relative;
+          bottom: 5px;
+        }
+      }
+    }
   }
 }
