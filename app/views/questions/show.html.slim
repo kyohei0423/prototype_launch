@@ -5,6 +5,8 @@
         .main-content
           h2.title= @question.title
           h3.description= @question.description
+          p.user-info
+            span= @question.user.email
       .col-md-3
         .sub-content
 

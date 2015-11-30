@@ -263,6 +263,11 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       color: #888;
       margin-bottom: 20px;
     }
+    .user-info {
+      span {
+        color: #888;
+      }
+    }
   }
 
   .sub-content {
