@@ -282,8 +282,10 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       padding-top: 20px;
       .comment {
         .comment-header {
+          height: 50px;
           .comment-header-user {
             float: left;
+            height: 100%;
             img {
               vertical-align: bottom;
               width: 50px;
@@ -306,8 +308,12 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
               }
             }
           }
-          .comment-header-date {
+          .comment-header-meta {
             float: right;
+            height: 100%;
+            line-height: 50px;
+            color: #888;
+            font-size: 14px;
           }
         }
         .comment-body {
