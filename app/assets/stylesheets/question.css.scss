@@ -264,8 +264,13 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       margin-bottom: 20px;
     }
     .user-info {
-      span {
+      margin: 30px 0 20px;
+      .username {
         color: #888;
+        float: left;
+      }
+      .content-date {
+        float: right;
       }
     }
   }
