@@ -29,5 +29,5 @@
     - if user_signed_in?
       = link_to 'MYPAGE',  user_path(current_user), class: "mypage"
     - else
-      = link_to 'LOGIN', new_user_session
+      = link_to 'LOGIN', new_user_session_path, class: 'mypage'
     = link_to 'POST', new_question_path, class: "btn btn-danger"
