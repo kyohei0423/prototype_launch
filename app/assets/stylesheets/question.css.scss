@@ -346,10 +346,10 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
     padding: 25px 10px;
     border-radius: 5px;
     .sub-box {
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       h3 {
         padding-left: 5px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         i {
           margin-right: 5px;
         }
@@ -393,6 +393,49 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
           height: 20px;
           margin: 0 2px 2px 0;
         }
+      }
+    }
+    .ranking {
+      .nav-tabs {
+        padding: 0;
+        margin: 0 0 10px;
+        list-style: none;
+        li {
+          cursor: pointer;
+          text-align: center;
+          width: 33%;
+          padding: 10px 5px;
+          &.active {
+            color: #2289e6;
+            border-top: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+            border-bottom: transparent;
+          }
+        }
+      }
+      .elements {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+          margin-bottom: 10px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          counter-increment: chapter;
+          line-height: 1.5;
+          &:before {
+            content: counter(chapter);
+            background-color: #339af7;
+            border: 1px solid #2289e6;
+            color: white;
+            padding: 2px 4px;
+          }
+        }
+      }
+      .week, .month {
+        display: none;
       }
     }
   }
