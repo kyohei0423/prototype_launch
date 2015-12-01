@@ -346,6 +346,9 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
     padding: 25px 10px;
     border-radius: 5px;
     height: 500px;
+    .sub-box {
+      margin-bottom: 20px;
+    }
     .stock-and-comment {
       .detail:first-child {
         border-right: 1px solid #ddd;
