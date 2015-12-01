@@ -349,6 +349,9 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       margin-bottom: 25px;
       h3 {
         padding-left: 5px;
+        i {
+          margin-right: 5px;
+        }
         span {
           font-size: 25px;
         }
