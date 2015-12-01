@@ -347,7 +347,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
     border-radius: 5px;
     height: 500px;
     .sub-box {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     .stock-and-comment {
       .detail:first-child {
@@ -365,6 +365,29 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
           font-size: 12px;
           position: relative;
           bottom: 5px;
+        }
+      }
+    }
+    .answerd-users {
+      font-size: 20px;
+      h3 {
+        text-align: center;
+        span {
+          font-size: 25px;
+        }
+      }
+      .users {
+        width: 200px;
+        margin: 10px auto 0;
+        max-height: 140px;
+        overflow: auto;
+        img {
+          border: none;
+          border-radius: 10px;
+          overflow: hidden;
+          width: 20px;
+          height: 20px;
+          margin: 0 2px 2px 0;
         }
       }
     }
