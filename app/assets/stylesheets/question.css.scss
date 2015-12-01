@@ -347,6 +347,12 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
     border-radius: 5px;
     .sub-box {
       margin-bottom: 25px;
+      h3 {
+        padding-left: 5px;
+        span {
+          font-size: 25px;
+        }
+      }
     }
     .stock-and-comment {
       margin-bottom: 20px;
@@ -370,12 +376,6 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
     }
     .answerd-users {
       font-size: 20px;
-      h3 {
-        text-align: center;
-        span {
-          font-size: 25px;
-        }
-      }
       .users {
         width: 200px;
         margin: 10px auto 0;
