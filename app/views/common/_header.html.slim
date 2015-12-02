@@ -29,7 +29,15 @@
             = link_to 'FAQ', '#', class: "link"
   .header-right.col-md-3.col-xs-6
     - if user_signed_in?
-      = link_to 'MYPAGE',  user_path(current_user), class: "mypage"
+      .dropdown style='display: inline-block; margin-right: 10px;'
+        p#dropdownMenu1 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+          | 名前
+        ul.dropdown-menu.pull-right aria-labelledby="dropdownMenuDivider"
+          li
+            = link_to 'MYPAGE', user_path(current_user), class: "mypage"
+          li.divider role='separator'
+          li
+            = link_to 'SIGN OUT', destroy_user_session_path, method: :delete
     - else
       = link_to 'LOGIN', new_user_session_path, class: "login"
     = link_to 'POST', new_question_path, class: "btn btn-danger"
