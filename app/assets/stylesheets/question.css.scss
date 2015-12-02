@@ -244,4 +244,199 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       }
     }
   }
+
+  .main-content, .sub-content {
+    background-color: white;
+    border: 1px solid #ddd;
+  }
+
+  .main-content {
+    padding: 25px 20px;
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .description {
+      font-weight: bold;
+      color: #888;
+      margin-bottom: 20px;
+    }
+    .user-info {
+      margin: 30px 0 20px;
+      .username {
+        color: #888;
+        float: left;
+      }
+      .content-date {
+        float: right;
+        color: #339af7;
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+    .comments {
+      border-top: 1px solid #ddd;
+      margin-top: 30px;
+      padding-top: 30px;
+      .comment {
+        .comment-header {
+          height: 50px;
+          margin-bottom: 10px;
+          .comment-header-user {
+            float: left;
+            height: 100%;
+            img {
+              vertical-align: bottom;
+              width: 50px;
+              height: 50px;
+              margin-right: 5px;
+            }
+            ul {
+              display: inline-block;
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              height: 50px;
+              li {
+                font-size: 14px;
+                line-height: 25px;
+                &:first-child {
+                  color: #339af7;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+          .comment-header-meta {
+            float: right;
+            height: 100%;
+            line-height: 50px;
+            color: #888;
+            font-size: 14px;
+          }
+        }
+        .comment-body {
+          border-top: 1px solid #ddd;
+          position: relative;
+          margin-bottom: 20px;
+          &:before {
+            content: "";
+            border: 10px solid transparent;
+            border-bottom: 10px solid #ddd;
+            position: absolute;
+            left: 15px;
+            top: -20px;
+          }
+          &:after {
+            content: "";
+            border: 10px solid transparent;
+            border-bottom: 10px solid white;
+            position: absolute;
+            left: 14px;
+            top: -19px;
+          }
+        }
+      }
+    }
+  }
+
+  .sub-content {
+    padding: 25px 10px;
+    border-radius: 5px;
+    .sub-box {
+      margin-bottom: 30px;
+      h3 {
+        padding-left: 5px;
+        margin-bottom: 20px;
+        i {
+          margin-right: 5px;
+        }
+        span {
+          font-size: 25px;
+        }
+      }
+    }
+    .stock-and-comment {
+      margin-bottom: 20px;
+      .detail:first-child {
+        border-right: 1px solid #ddd;
+      }
+      .detail {
+        width: 50%;
+        float: left;
+        text-align: center;
+        .numbers {
+          font-size: 25px;
+        }
+        span {
+          color: #444;
+          font-size: 12px;
+          position: relative;
+          bottom: 5px;
+        }
+      }
+    }
+    .answerd-users {
+      font-size: 20px;
+      .users {
+        width: 200px;
+        margin: 0 auto;
+        max-height: 140px;
+        overflow: auto;
+        img {
+          border: none;
+          border-radius: 10px;
+          overflow: hidden;
+          width: 20px;
+          height: 20px;
+          margin: 0 2px 2px 0;
+        }
+      }
+    }
+    .ranking {
+      .nav-tabs {
+        padding: 0;
+        margin: 0 0 10px;
+        list-style: none;
+        li {
+          cursor: pointer;
+          text-align: center;
+          width: 33%;
+          padding: 10px 5px;
+          &.active {
+            color: #2289e6;
+            border-top: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+            border-bottom: transparent;
+          }
+        }
+      }
+      .elements {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+          margin-bottom: 10px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          counter-increment: chapter;
+          line-height: 1.5;
+          &:before {
+            content: counter(chapter);
+            background-color: #339af7;
+            border: 1px solid #2289e6;
+            color: white;
+            padding: 2px 4px;
+          }
+        }
+      }
+      .week, .month {
+        display: none;
+      }
+    }
+  }
 }
