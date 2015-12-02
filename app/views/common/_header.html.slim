@@ -1,10 +1,12 @@
 .header-main.row.clearfix
   .header-left.col-md-4.col-xs-12
     .input-group
-      input type='text' class="form-control search-box" placeholder="Search for..."
-      span class='input-group-btn'
-        button class='btn btn-default' type='button'
-          span.fa.fa-search
+      = form_tag("/search", remote: true, method: :get, class: "search_form") do
+        = text_field_tag :search, "", id: "question_search_box", class: "search__query", name: "keyword", placeholder: "Search for..."
+        span class='input-group-btn search_icon'
+          button class='btn btn-default searchsubmit' title="検索" type='submit'
+            span.fa.fa-search
+
   .header-center.col-md-5.col-xs-6
     ul.clearfix
       li
@@ -29,5 +31,5 @@
     - if user_signed_in?
       = link_to 'MYPAGE',  user_path(current_user), class: "mypage"
     - else
-      = link_to 'LOGIN', new_user_session_path, class: 'mypage'
+      = link_to 'LOGIN', new_user_session_path, class: "login"
     = link_to 'POST', new_question_path, class: "btn btn-danger"

@@ -8,6 +8,21 @@ $subBoxHoverColor: black;
   border-bottom: 1px solid #ddd;
   width: 100%;
 
+  .header-left {
+
+    .search_form {
+
+      .search__query {
+        float: left;
+        height: 34px;
+      }
+
+      .search_icon {
+        float: left;
+      }
+    }
+  }
+
   .header-center {
     font-size: $basicHeaderFontSize;
 
@@ -88,6 +103,10 @@ $subBoxHoverColor: black;
     }
 
     .mypage {
+      margin-right: 10px;
+    }
+
+    .login {
       margin-right: 10px;
     }
   }
