@@ -1,6 +1,43 @@
-br
-= @user.email
-| さんのページです。
-br
-- @user.questions.each do |question|
-  = link_to question.title, question_path
+.user-page
+  .user-page-header
+    .container
+      .row
+        .user-page-profile
+          .user-page-user-icon
+            = link_to image_tag('http://simpleicon.com/wp-content/uploads/user1.svg'), user_path(@user)
+          .user-page-body
+            .user-page-heading
+              span ゆいと
+            .user-page-contribution
+              .user-page-contribution-count
+                | 100
+              .user-page-contribution-unit
+                | posts
+          - if @user.id == current_user.id
+            .dropdown
+              #drop-down-icon data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                span.fa.fa-angle-double-down
+              ul.dropdown-menu.dropdown-menu-left.menu aria-labelledby="dropdownMenu1"
+                li
+                  = link_to 'Edit Profile', '#', class: "link"
+                li
+                  = link_to 'Logout', '#', class: "link"
+
+  .user-page-main
+    .container
+      .row
+        .user-posts.col-sm-7
+          .user-local-nav
+            .nav.nav-tabs
+              li.recent-posts-tab
+                h4 Recent Posts
+              li.stocked-posts-tab
+          ul.questions-menu.box-sizing
+            = render partial: "questions/question", collection: @questions
+        .user-popular-posts.col-sm-5
+          .panel.panel-default
+            .panel-heading
+              | Popular Questions
+            .list-group
+              = render partial: 'popular_question', collection: @questions
+    br
