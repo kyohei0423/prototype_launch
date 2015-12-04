@@ -1,4 +1,7 @@
 .content {
+  .panel {
+    padding: 0;
+  }
   .user-enter {
     .panel-heading {
       background-color: white;
@@ -9,8 +12,24 @@
       }
     }
     .shared {
+      background-color: #eeeeee;
+      font-size: 20px;
       a {
+        text-align: center;
+        width: 33%;
+        color: #444444;
+        padding: 20px 0;
         display: inline-block;
+        text-decoration: none;
+        border-right: 1px solid #cccccc;
+        &:hover {
+          background-color: #dddddd;
+          box-shadow: 0 0 1px 1px #c9c9c9;
+        }
+        &:last-child {
+          border: none;
+          width: 34%;
+        }
       }
     }
   }
