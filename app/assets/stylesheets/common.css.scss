@@ -14,6 +14,10 @@ h1, h2, h3, h4, h5, h6, p, body {
 .content {
   background-color: #fcfcfc;
   padding-top: 20px;
+  .container-fluid {
+    margin: 0 auto;
+    max-width: 1400px;
+  }
 }
 
 .btn-notprimary {
@@ -61,4 +65,8 @@ h1, h2, h3, h4, h5, h6, p, body {
 .fix-form {
   border: 1px solid #ddd;
   border-radius: 5px;
+}
+
+.alert {
+  margin: 0;
 }

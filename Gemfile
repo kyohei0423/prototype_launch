@@ -22,6 +22,9 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'gon'
 gem 'marked-rails'
 gem 'jquery-turbolinks'
+gem 'devise-bootstrap-views'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 group :development, :test do
   gem 'byebug'

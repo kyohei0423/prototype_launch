@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "devise_bootstrap_views";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "jquery.tagit";
@@ -7,5 +8,6 @@
 @import "common";
 @import "tags";
 @import "question";
+@import "user";
 @import "header";
 @import "home";
