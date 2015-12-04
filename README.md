@@ -11,49 +11,6 @@
   - タグ付け
 - データベース設計
 
-# コミットメッセージでよく使う動詞
-
-## Add *A to *B
-*Aを*Bに加える
-
-## Remove *A from *B
-*Bから*Aを取り除く
-
-## Move *A from *B to *C
-*Aを*Bから*Cに動かす
-
-## Replace *A with *B
-*Aを*Bに取り替える
-
-## Make *A *B
-*A を*Bにする、させる
-
-## Change *A to *B
-*Aを*Bに変更する.
-
-## Update *A to *B
-*Aを*Bに更新する
-
-## Ensure *A
-(that節と一緒に使う)*A である事を確実にする.
-
-## Use *A
-*A を使う.
-以下と一緒に使うことが多い
-### for *P
-*P のために
-### instead of *P
-*P の代わりに
-### in *P
-*Pの中で
-### at *P
-*Pで
-### as *P
-*Pとして
-
-## Fix *A
-*Aを直す
-
 # er図とクラス図の出力方法
 以下データベースがすでに存在することを前提とする。
 
@@ -63,26 +20,10 @@
 bundle exec rake erd
 ```
 
-## クラス図を作成
-
-```command
-bundle exec rake diagram:all
-```
-
-/doc下にsvgファイルが保存される
-
 # erbをslimに変換
 
-app/views/以下の.erbをslimに一括変換するRubyワンライナー
-
-```command
-for i in app/views/**/*.erb; do erb2slim $i ${i%erb}slim && rm $i; done
-```
-
-app/views/devise以下にあるファイルを変換
-
-```command
-for file in app/views/devise/**/*.erb; do erb2slim $file ${file%erb}slim && rm $file; done
+```bash
+$ bundle exec erb2slim 変更するerbファイルパス -d(変更するファイルを削除する場合はつける)
 ```
 
 # コア機能
