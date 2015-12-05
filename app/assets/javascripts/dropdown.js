@@ -1,4 +1,4 @@
-$(window).load(function () {
+$(document).on('ready page:load', function() {
   var $hiddenBlock = $('.hidden-block'),
     $menuicon = $('#menuicon'),
     $menu = $("#menu")

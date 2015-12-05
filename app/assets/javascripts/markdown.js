@@ -1,4 +1,4 @@
-$(window).on('load', function() {
+$(document).on('ready page:load', function() {
   $('#input-textarea').on('keyup', function() {
     var question = $('#input-textarea').val();
     document.getElementById('output-area').innerHTML = marked(question);
