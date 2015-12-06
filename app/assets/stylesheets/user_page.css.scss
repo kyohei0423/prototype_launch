@@ -25,8 +25,6 @@ $questionTitleLinkColor: #444;
             margin-top: 15px;
             .user-page-heading {
               font-size: 30px;
-              span {
-              }
             }
             .user-page-contribution {
               font-size: 20px;
@@ -95,16 +93,13 @@ $questionTitleLinkColor: #444;
             margin: 0;
             padding: 0;
             list-style: none;
-
             .questions-list {
               padding: 10px;
               height: 150px;
-
               &:hover {
                 cursor: pointer;
                 background-color: $questionListHoverColor;
               }
-
               .stock-count {
                 height: 100%;
                 display: -webkit-box;
@@ -117,7 +112,6 @@ $questionTitleLinkColor: #444;
                 -o-box-align: center;
                 -ms-box-align: center;
                 box-align: center;
-
                 span {
                   display: block;
                   &:hover {
@@ -127,12 +121,10 @@ $questionTitleLinkColor: #444;
                   }
                 }
               }
-
               .question-image {
                 height: 100%;
                 float: left;
                 position: relative;
-
                 img {
                   position: absolute;
                   top: 0;
@@ -143,12 +135,9 @@ $questionTitleLinkColor: #444;
                   width: 100%;
                 }
               }
-
               .question-context {
                 height: 100%;
-                padding-top: 5px;
-                padding-bottom: 5px;
-
+                padding: 5px 0;
                 .question-title {
                   height: 33%;
                   overflow: hidden;
@@ -163,12 +152,10 @@ $questionTitleLinkColor: #444;
                     }
                   }
                 }
-
                 .question-description {
                   height: 33%;
                   overflow: hidden;
                   font-size: $questionListDescription;
-
                   a {
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
@@ -182,18 +169,15 @@ $questionTitleLinkColor: #444;
                     }
                   }
                 }
-
                 .question-tags {
                   margin: 0;
                   padding: 0;
                   list-style: none;
                   height: 33%;
                   overflow: hidden;
-
                   .question-tags-list {
                     float: left;
                     margin: 5px 5px 5px 0;
-
                     a {
                       font-size: 8px;
                       font-weight: bold;
@@ -211,10 +195,8 @@ $questionTitleLinkColor: #444;
                   }
                 }
               }
-
               .question-info {
                 height: 100%;
-
                 .info-box {
                   height: 100%;
                   text-align: right;
@@ -278,8 +260,6 @@ $questionTitleLinkColor: #444;
                     }
                     ul.list-inline.user-popular-posts-notes {
                       font-size: 10px;
-                      li {
-                      }
                     }
                   }
                 }
