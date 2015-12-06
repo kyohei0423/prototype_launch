@@ -33,11 +33,11 @@
                 h4 Recent Posts
               li.stocked-posts-tab
           ul.questions-menu.box-sizing
-            = render partial: "questions/question", collection: @questions
+            = render partial: "questions/question", collection: @user.questions
         .user-popular-posts.col-sm-5
           .panel.panel-default
             .panel-heading
               | Popular Questions
-            .list-group
-              = render partial: 'popular_question', collection: @questions
+            .user-list-group
+              = render partial: 'popular_question', collection: @user.questions
     br
