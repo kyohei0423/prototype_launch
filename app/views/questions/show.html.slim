@@ -12,6 +12,17 @@
               = @question.fetch_created_date
           .article-content
             = markdown(@question.sentence).html_safe
+          .act-to-answer
+            - if @question.has_answer?
+              = link_to question_answer_path(@question) do
+                i.fa.fa-arrow-right
+                | 解答を見る
+            - elsif @question.belongs_to?(current_user)
+              = link_to new_question_answer_path(@question) do
+                i.fa.fa-pencil
+                | 解答を書く
+            - else
+              span まだ解答が作られていません
           .comments
             .comment
               .comment-header.clearfix
