@@ -25,6 +25,8 @@ gem 'jquery-turbolinks'
 gem 'devise-bootstrap-views'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'redcarpet'
+gem 'coderay'
 
 group :development, :test do
   gem 'byebug'
