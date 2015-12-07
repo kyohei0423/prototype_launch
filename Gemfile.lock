@@ -173,6 +173,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    redcarpet (3.3.3)
     ref (2.0.0)
     request_store (1.2.1)
     responders (2.1.0)
@@ -247,6 +248,7 @@ DEPENDENCIES
   bootstrap-sass
   bullet
   byebug
+  coderay
   coffee-rails (~> 4.1.0)
   config
   devise
@@ -270,6 +272,7 @@ DEPENDENCIES
   railroady
   rails (= 4.2.4)
   rails-erd
+  redcarpet
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
