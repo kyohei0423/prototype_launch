@@ -34,10 +34,14 @@
           | 名前
         ul.dropdown-menu.pull-right aria-labelledby="dropdownMenuDivider"
           li
-            = link_to 'MYPAGE', user_path(current_user), class: "mypage"
+            = link_to user_path(current_user), class: "mypage" do
+              i.fa.fa-user
+              | 　MYPAGE
           li.divider role='separator'
           li
-            = link_to 'SIGN OUT', destroy_user_session_path, method: :delete
+            = link_to destroy_user_session_path, method: :delete do
+              i.fa.fa-sign-out
+              | 　SIGN OUT
     - else
       = link_to 'LOGIN', new_user_session_path, class: "login"
     = link_to 'POST', new_question_path, class: "btn btn-danger"
