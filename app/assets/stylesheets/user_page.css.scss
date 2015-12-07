@@ -1,0 +1,259 @@
+$questionListHoverColor: #eee;
+$normalBorderColor: #ddd;
+$tagColor: #999;
+$questionTitleHoverColor: #6dc2b8;
+$questionTitleLinkColor: #444;
+
+.user-page {
+  .user-page-header {
+    height: 110px;
+    .user-page-profile {
+      .user-page-user-icon {
+        margin-top: 15px;
+        float: left;
+        width: 80px;
+        height: 80px;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .user-page-body {
+        float: left;
+        margin-top: 15px;
+        .user-page-heading {
+          font-size: 30px;
+        }
+        .user-page-contribution {
+          font-size: 20px;
+          .user-page-contribution-count {
+            float: left;
+            margin-right: 5px;
+          }
+          .user-page-contribution-unit {
+            float: left;
+          }
+        }
+      }
+      #drop-down-icon {
+        font-size: 20px;
+        margin-top: 20px;
+        float: left;
+        cursor: pointer;
+        padding: 0 15px;
+        position: relative;
+        &:hover { background-color: $menuIconHoverColor; }
+        .fa.fa-angle-double-down {
+          color: $iconColor;
+        }
+      }
+      .menu {
+        position: absolute;
+        top: 43px;
+        left: 190px;
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          li {
+            width: 100%;
+            a {
+              display: block;
+              text-decoration: none;
+              &:hover {
+                color: $subBoxHoverColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .user-page-main {
+    .user-posts.col-sm-7 {
+      .user-local-nav {
+        .nav.nav-tabs {
+          li {
+          }
+          .recent-posts-tab {
+            border: solid 1px $normalBorderColor;
+            padding: 5px;
+          }
+          .stocked-posts-tab {
+          }
+        }
+      }
+      ul.questions-menu.box-sizing {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        .questions-list {
+          padding: 10px;
+          height: 150px;
+          &:hover {
+            cursor: pointer;
+            background-color: $questionListHoverColor;
+          }
+          .stock-count {
+            height: 100%;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -o-box;
+            display: -ms-box;
+            display: box;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            -o-box-align: center;
+            -ms-box-align: center;
+            box-align: center;
+            span {
+              display: block;
+              &:hover {
+                font-size: 18px;
+                color: $accentGreenColor;
+                transition: all .1s;
+              }
+            }
+          }
+          .question-image {
+            height: 100%;
+            float: left;
+            position: relative;
+            img {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              margin: auto 0;
+              width: 100%;
+            }
+          }
+          .question-context {
+            height: 100%;
+            padding: 5px 0;
+            .question-title {
+              height: 33%;
+              overflow: hidden;
+              font-size: $questionListTitle;
+              a {
+                color: $questionTitleLinkColor;
+                height: 100%;
+                display: block;
+                text-decoration: none;
+                &:hover {
+                  color: $accentGreenColor;
+                }
+              }
+            }
+            .question-description {
+              height: 33%;
+              overflow: hidden;
+              font-size: $questionListDescription;
+              a {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                color: #444;
+                height: 100%;
+                display: block;
+                text-decoration: none;
+                &:hover {
+                  color: $accentGreenColor;
+                }
+              }
+            }
+            .question-tags {
+              margin: 0;
+              padding: 0;
+              list-style: none;
+              height: 33%;
+              overflow: hidden;
+              .question-tags-list {
+                float: left;
+                margin: 5px 5px 5px 0;
+                a {
+                  font-size: 8px;
+                  font-weight: bold;
+                  border-radius: 6px;
+                  border: 1px solid #999;
+                  padding: 3px;
+                  display: block;
+                  text-decoration: none;
+                  color: #999;
+                  &:hover {
+                    border-color: $accentGreenColor;
+                    color: $accentGreenColor;
+                  }
+                }
+              }
+            }
+          }
+          .question-info {
+            height: 100%;
+            .info-box {
+              height: 100%;
+              text-align: right;
+              span {
+                line-height: 130px;
+              }
+              img {
+                max-width: 80%;
+                max-height: 80%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .user-popular-posts.col-sm-5 {
+      .user-list-group {
+        .list-group-item.user-popular-posts {
+          .row {
+            .user-popular-posts-stock.clearfix {
+              i.fa.fa-folder-o {
+                font-size: 14px;
+                float: left;
+              }
+              .user-popular-posts-stock-count {
+                font-size: 14px;
+                float: left;
+              }
+              .user-popular-posts-stock-unit {
+                font-size: 11px;
+              }
+            }
+            .user-popular-posts-main {
+              .question-title {
+                &:hover {
+                  color: $questionTitleHoverColor;
+                }
+              }
+              ul.list-inline.user-popular-posts_tags.tag-list {
+                li.tag-list-item {
+                  a {
+                    font-size: 8px;
+                    font-weight: bold;
+                    border-radius: 6px;
+                    border: 1px solid $tagColor;
+                    padding: 3px;
+                    display: block;
+                    text-decoration: none;
+                    color: $tagColor;
+                    &:hover {
+                      border-color: $accentGreenColor;
+                      color: $accentGreenColor;
+                    }
+                  }
+                }
+              }
+              ul.list-inline.user-popular-posts-notes {
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
