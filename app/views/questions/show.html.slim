@@ -14,7 +14,7 @@
             = markdown(@question.sentence).html_safe
           .act-to-answer
             - if @question.has_answer?
-              = link_to question_answer_path(@question) do
+              = link_to question_answer_path(@question, @question.answer) do
                 i.fa.fa-arrow-right
                 | 解答を見る
             - elsif @question.belongs_to?(current_user)
