@@ -1,0 +1,2 @@
+var $questionsMenu = $(".questions-menu")
+$questionsMenu.html("<%= j(render partial: 'questions/question', collection: @questions) %>");
