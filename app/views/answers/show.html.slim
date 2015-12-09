@@ -1,4 +1,92 @@
-p
-  | 【解答】
-  = @question.title
-p= @answer.sentence
+.content
+  .container-fluid
+    .row
+      .col-md-9
+        article.main-content
+          h2.title
+            | 【解答】
+            = @question.title
+          h3.description= @question.description
+          p.user-info.clearfix
+            span.username= @question.user.email
+            span.content-date
+              i.fa.fa-clock-o
+              = @question.fetch_created_date
+          .article-content
+            = markdown(@answer.sentence).html_safe
+          .act-to-answer
+            = link_to question_path(@question) do
+                i.fa.fa-arrow-right
+                | 解答を見る
+          .comments
+            .comment
+              .comment-header.clearfix
+                .comment-header-user
+                  = image_tag 'imgres.png'
+                  ul
+                    li saino
+                    li 10000 stock
+                .comment-header-meta 2014/05/28 15:29
+              .comment-body これ作ってみたかったんですよ！ありがとうございす。あああああああああああああああああああああああああああああああああああああああああああああああああああああアアアアアア
+            .comment
+              .comment-header.clearfix
+                .comment-header-user
+                  = image_tag 'imgres.png'
+                  ul
+                    li saino
+                    li 10000 stock
+                .comment-header-meta 2014/05/28 15:29
+              .comment-body これ作ってみたかったんですよ！ありがとうございす。あああああああああああああああああああああああああああああああああああああああああああああああああああああアアアアアア
+      .col-md-3
+        .sub-content
+          .stock-and-comment.clearfix.sub-box
+            .detail
+              .numbers
+                i.fa.fa-folder-o
+                | 2000
+              span ストック
+              a.btn.btn-notprimary href='#'
+                | ストックする
+            .detail
+              .numbers
+                i.fa.fa-commenting-o
+                | 50
+              span コメント
+              a.btn.btn-notprimary href='#'
+                | コメントする
+          .answerd-users.sub-box
+            h3
+              i.fa.fa-users
+              | 回答したユーザー
+              span 1人
+            .users
+              = image_tag 'imgres.png'
+          .ranking.sub-box
+            h3
+              i.fa.fa-line-chart
+              | ランキング
+            ul.nav-tabs.clearfix
+              li#current.active role="presentation" いま話題
+              li#week role="presentation" 今週
+              li#month role="presentation" 今月
+            ul.elements.current
+              li= link_to 'サンプル１サンプル１サンプル１サンプル１', '#'
+              li= link_to 'サンプル１', '#'
+              li= link_to 'サンプル１', '#'
+              li= link_to 'サンプル１', '#'
+              li= link_to 'サンプル１', '#'
+              li= link_to 'サンプル１', '#'
+            ul.elements.week
+              li= link_to 'サンプル２サンプル２サンプル２サンプル２', '#'
+              li= link_to 'サンプル２', '#'
+              li= link_to 'サンプル２', '#'
+              li= link_to 'サンプル２', '#'
+              li= link_to 'サンプル２', '#'
+              li= link_to 'サンプル２', '#'
+            ul.elements.month
+              li= link_to 'サンプル３サンプル３サンプル３サンプル３', '#'
+              li= link_to 'サンプル３', '#'
+              li= link_to 'サンプル３', '#'
+              li= link_to 'サンプル３', '#'
+              li= link_to 'サンプル３', '#'
+              li= link_to 'サンプル３', '#'
