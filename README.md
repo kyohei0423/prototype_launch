@@ -74,5 +74,10 @@ $ bundle exec erb2slim 変更するerbファイルパス -d(変更するファ�
   - tagger_id
   - tagger_type
   - context
+- comments
+  - commentable_id
+  - commentable_type
+  - user_id
+  - text
 - groups
   - name

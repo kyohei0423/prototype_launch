@@ -5,6 +5,8 @@ class QuestionsController < ApplicationController
   before_action :set_available_tags_to_gon, only: [:edit, :new]
 
   def show
+    @comment = Comment.new
+    @comments = Comment.all
   end
 
   def new

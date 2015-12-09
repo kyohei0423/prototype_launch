@@ -11,7 +11,7 @@
             span.username= @question.user.email
             span.content-date
               i.fa.fa-clock-o
-              = @question.fetch_created_date
+              = fetch_created_date_of(@question)
           .article-content
             = markdown(@answer.sentence).html_safe
           .act-to-answer

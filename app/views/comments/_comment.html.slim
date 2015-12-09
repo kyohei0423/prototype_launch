@@ -1,0 +1,9 @@
+.comment
+  .comment-header.clearfix
+    .comment-header-user
+      = image_tag 'imgres.png'
+      ul
+        li saino
+        li 10000 stock
+    .comment-header-meta= fetch_created_date_of(comment)
+  .comment-body= comment.text

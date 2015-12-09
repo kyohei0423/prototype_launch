@@ -9,7 +9,7 @@
             span.username= @question.user.email
             span.content-date
               i.fa.fa-clock-o
-              = @question.fetch_created_date
+              = fetch_created_date_of(@question)
           .article-content
             = markdown(@question.sentence).html_safe
           .act-to-answer
@@ -23,25 +23,13 @@
                 | 解答を書く
             - else
               span まだ解答が作られていません
-          .comments
-            .comment
-              .comment-header.clearfix
-                .comment-header-user
-                  = image_tag 'imgres.png'
-                  ul
-                    li saino
-                    li 10000 stock
-                .comment-header-meta 2014/05/28 15:29
-              .comment-body これ作ってみたかったんですよ！ありがとうございす。あああああああああああああああああああああああああああああああああああああああああああああああああああああアアアアアア
-            .comment
-              .comment-header.clearfix
-                .comment-header-user
-                  = image_tag 'imgres.png'
-                  ul
-                    li saino
-                    li 10000 stock
-                .comment-header-meta 2014/05/28 15:29
-              .comment-body これ作ってみたかったんですよ！ありがとうございす。あああああああああああああああああああああああああああああああああああああああああああああああああああああアアアアアア
+          .comments#comment-field
+            = render partial: 'comments/comment', collection: @comments
+          = form_for [@question, @comment], class: 'row comment-form', remote: true do |f|
+            .form-horizontal
+              .form-group
+                = f.text_area :text, class: 'col-md-10 col-xs-12 fix-form'
+                = f.submit '投稿', class: 'btn btn-default col-md-2 col-xs-12'
       .col-md-3
         .sub-content
           .stock-and-comment.clearfix.sub-box
