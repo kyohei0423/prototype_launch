@@ -1,7 +1,7 @@
 $contentWidth: 950px;
 $categoryPanelWidth: 180px;
 $categoryPanelHeight: 160px;
-$categoryPanelColor: orange;
+$categoryPanelColor: white;
 $hoverCategoryPanelColor: black;
 
 .categories-menu {
@@ -15,11 +15,11 @@ $hoverCategoryPanelColor: black;
     height: $categoryPanelHeight;
 
     .categories-name {
-      background-color: $categoryPanelColor;
+      border: 1px solid $mainSkyBlueColor;
       font-weight: bold;
       font-size: 18px;
       text-decoration: none;
-      color: #444;
+      color: $mainSkyBlueColor;
       display: block;
       width: 100%;
       height: 100%;

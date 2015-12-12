@@ -1,4 +1,5 @@
 $accentGreenColor: rgb(109,194,184);
+$mainSkyBlueColor: #339af7;
 
 body, html {
   height: 100%;
@@ -24,18 +25,18 @@ h1, h2, h3, h4, h5, h6, p, body {
 
 .btn-notprimary {
   background-color: transparent;
-  color: #339af7;
-  border: 1px solid #339af7;
+  color: $mainSkyBlueColor;
+  border: 1px solid $mainSkyBlueColor;
   &:hover {
     color: white;
-    background-color: #339af7;
+    background-color: $mainSkyBlueColor;
   }
 }
 
 .btn-primary {
   color: white;
-  background-color: #339af7;
-  border: 1px solid #339af7;
+  background-color: $mainSkyBlueColor;
+  border: 1px solid $mainSkyBlueColor;
   &:hover {
     color: white;
     background-color: #1880f4;
