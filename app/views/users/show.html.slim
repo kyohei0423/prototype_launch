@@ -7,7 +7,7 @@
             = link_to image_tag('http://simpleicon.com/wp-content/uploads/user1.svg'), user_path(@user)
           .user-page-body
             .user-page-heading
-              span ゆいと
+              span= @user.nickname
             .user-page-contribution
               .user-page-contribution-count
                 | 100
