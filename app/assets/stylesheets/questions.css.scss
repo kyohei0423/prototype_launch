@@ -156,8 +156,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
   }
 
   .form-content {
-    background-color: $formBackgroundColor;
-    padding: 10px 5px 0;
+    padding: 0 5px 0;
     height: 100%;
 
     .form-box {
@@ -219,9 +218,6 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       .input-answer { height: 100%; }
 
       .footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
         background-color: $formBackgroundColor;
         height: $formFooterHeight;
 
@@ -458,4 +454,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       }
     }
   }
+}
+.form-panel {
+  background-color: $formBackgroundColor;
 }
