@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
 
   has_many :questions
   has_many :answers
+
+  mount_uploader :avatar, AvatarUploader
 end
