@@ -17,4 +17,5 @@
 //= require marked
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrap-filestyle
 //= require_tree .
