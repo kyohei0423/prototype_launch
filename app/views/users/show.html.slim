@@ -4,7 +4,7 @@
       .row
         .user-page-profile
           .user-page-user-icon
-            = link_to image_tag('http://simpleicon.com/wp-content/uploads/user1.svg'), user_path(@user)
+            = link_to image_tag(@user.avatar.url), user_path(@user)
           .user-page-body
             .user-page-heading
               span= @user.nickname

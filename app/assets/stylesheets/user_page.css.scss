@@ -11,11 +11,9 @@ $questionTitleLinkColor: #444;
       .user-page-user-icon {
         margin-top: 15px;
         float: left;
-        width: 80px;
         height: 80px;
         img {
-          height: 100%;
-          width: 100%;
+          max-height: 80px;
         }
       }
       .user-page-body {
