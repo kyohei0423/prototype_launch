@@ -32,6 +32,17 @@ h1, h2, h3, h4, h5, h6, p, body {
   }
 }
 
+.btn-primary {
+  color: white;
+  background-color: #339af7;
+  border: 1px solid #339af7;
+  &:hover {
+    color: white;
+    background-color: #1880f4;
+    border: 1px solid #1880f4;
+  }
+}
+
 .clearfix:after {
   content: '';
   display: block;
