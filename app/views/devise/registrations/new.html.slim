@@ -12,6 +12,9 @@
               = f.label :email
               = f.email_field :email, autofocus: true, class: "form-control"
             .form-group
+              = f.label :nickname
+              = f.text_field :nickname, autofocus: true, class: "form-control"
+            .form-group
               = f.label :password
               br
               = f.password_field :password, class: "form-control"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118010705) do
+ActiveRecord::Schema.define(version: 20151212093410) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "sentence",    limit: 65535
@@ -23,6 +23,18 @@ ActiveRecord::Schema.define(version: 20151118010705) do
 
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
   add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "commentable_id",   limit: 4
+    t.string   "commentable_type", limit: 255
+    t.text     "text",             limit: 65535
+    t.integer  "user_id",          limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -73,6 +85,7 @@ ActiveRecord::Schema.define(version: 20151118010705) do
     t.string   "unconfirmed_email",      limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "nickname",               limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -80,5 +93,6 @@ ActiveRecord::Schema.define(version: 20151118010705) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
+  add_foreign_key "comments", "users"
   add_foreign_key "questions", "users"
 end
