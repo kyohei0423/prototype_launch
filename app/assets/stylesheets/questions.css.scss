@@ -156,7 +156,6 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
   }
 
   .form-content {
-    background-color: $formBackgroundColor;
     padding: 10px 5px 0;
     height: 100%;
 
@@ -458,4 +457,8 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       }
     }
   }
+}
+
+.post-content {
+  background-color: $formBackgroundColor;
 }
