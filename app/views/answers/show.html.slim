@@ -15,9 +15,9 @@
           .article-content
             = markdown(@answer.sentence).html_safe
           .act-to-answer
-            = link_to question_path(@question) do
+            = link_to question_path(@answer.question) do
                 i.fa.fa-arrow-right
-                | 解答を見る
+                | 問題を見る
           .comments
             .comment
               .comment-header.clearfix
