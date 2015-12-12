@@ -84,3 +84,16 @@ h1, h2, h3, h4, h5, h6, p, body {
 .alert {
   margin: 0;
 }
+
+.text-align-center {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -o-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+}
