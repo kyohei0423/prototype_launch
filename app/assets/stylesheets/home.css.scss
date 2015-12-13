@@ -18,3 +18,37 @@ $accent-green-color: rgb(109,194,184);
     }
   }
 }
+
+.slider {
+  width: 80vw;
+  margin: 0 auto;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  .slide-set {
+    position: absolute;
+    .slide {
+      width: 80vw;
+      height: 300px;
+      float: left;
+      .first, .small-content {
+        height: 300px;
+        float: left;
+      }
+      .first {
+        width: 70%;
+        background-color: blue;
+      }
+      .small-content {
+        width: 30%;
+        background-color: orange;
+        .second {
+          background-color: green;
+        }
+        .third {
+          background-color: yellow;
+        }
+      }
+    }
+  }
+}

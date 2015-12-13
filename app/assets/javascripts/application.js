@@ -19,4 +19,5 @@
 //= require bootstrap-filestyle
 //= require tag-it
 //= require twitter/bootstrap/rails/confirm
+//= require slide-show
 //= require_tree .
