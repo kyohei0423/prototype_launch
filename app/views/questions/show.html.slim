@@ -12,12 +12,12 @@
           .answer_reations.clearfix.row
             .col-md-5
               .answer_reaction.col-md-5
-                = link_to '#' do
+                = link_to question_questions_users_path(@question), method: :post, remote: true do
                   i.fa.fa-arrow-right
                   | 解けた！
             .col-md-6
               .unanswer_reaction.col-md-7
-                = link_to '#' do
+                = link_to question_questions_users_path(@question) do
                   i.fa.fa-arrow-right
                   | 解けなかった！
           / .act-to-answer

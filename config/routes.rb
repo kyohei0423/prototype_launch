@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :questions, only: [:new, :create, :show, :destroy, :edit, :update] do
     resources :answers, only: [:new, :create, :show]
+    resources :questions_users, only: [:create]
   end
   resources :tags, only: [:index, :show]
   get 'search' => 'home#search'
