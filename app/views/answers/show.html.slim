@@ -8,10 +8,7 @@
             = @question.title
           h3.description= @question.description
           p.user-info.clearfix
-            span.username= @question.user.email
-            span.content-date
-              i.fa.fa-clock-o
-              = @question.fetch_created_date
+            = render partial: 'common/article_info', locals: { content: @answer }
           .article-content
             = markdown(@answer.sentence).html_safe
           .act-to-answer

@@ -1,18 +1,15 @@
 li.questions-list.box-sizing.row
-  .col-xs-2.content-meta
-    .stock-count.text-align-center
+  ul.col-md-2.content-meta.col-sm-4
+    li.stock-count.text-align-center
       | 100
-      br
       span ストック
-    .view-count.text-align-center
+    li.view-count.text-align-center
       | 100
-      br
       span 閲覧
-    .answer-count.text-align-center
+    li.answer-count.text-align-center
       | 100
-      br
       span 人解答
-  .question-context.box-sizing.col-xs-8
+  .question-context.box-sizing.col-md-10.col-sm-8
     h3.question-title
       = link_to question.title, question_path(question)
     .question-description
@@ -22,6 +19,6 @@ li.questions-list.box-sizing.row
       ul.question-tags.clearfix
         - question.tags.each do |tag|
           li.question-tags-list.box-sizing
-            = link_to tag.name, tag_path(tag), remote: true
+            = link_to tag.name, tag_path(tag)
       .content-meta
-        = question.fetch_created_date
+        = fetch_created_date_of(question)

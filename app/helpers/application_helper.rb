@@ -24,4 +24,8 @@ module ApplicationHelper
     markdown    = Redcarpet::Markdown.new(html_render, options)
     markdown.render(text)
   end
+
+  def fetch_created_date_of(content)
+    content.created_at.strftime('%Y年%m月%d日 %H時%m分')
+  end
 end

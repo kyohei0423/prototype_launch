@@ -81,31 +81,28 @@ $questionTitleLinkColor: #444;
           }
         }
       }
-      ul.questions-menu.box-sizing {
+      .questions-menu {
         margin: 0;
         padding: 0;
         list-style: none;
         .questions-list {
           padding: 10px;
-          height: 150px;
+          height: $questionListHeight;
           &:hover {
             cursor: pointer;
-            background-color: $questionListHoverColor;
+            background-color: #eee;
           }
-          .stock-count {
+          .content-meta {
             height: 100%;
-            display: -webkit-box;
-            display: -moz-box;
-            display: -o-box;
-            display: -ms-box;
-            display: box;
-            -webkit-box-align: center;
-            -moz-box-align: center;
-            -o-box-align: center;
-            -ms-box-align: center;
-            box-align: center;
-            span {
-              display: block;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            .stock-count, .view-count, .answer-count {
+              height: 33%;
+              span {
+                margin-left: 5px;
+                font-size: 12px;
+              }
               &:hover {
                 font-size: 18px;
                 color: $accentGreenColor;
@@ -113,45 +110,12 @@ $questionTitleLinkColor: #444;
               }
             }
           }
-          .question-image {
-            height: 100%;
-            float: left;
-            position: relative;
-            img {
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              margin: auto 0;
-              width: 100%;
-            }
-          }
           .question-context {
             height: 100%;
-            padding: 5px 0;
-            .question-title {
+            .question-title, .question-description {
               height: 33%;
               overflow: hidden;
-              font-size: $questionListTitle;
               a {
-                color: $questionTitleLinkColor;
-                height: 100%;
-                display: block;
-                text-decoration: none;
-                &:hover {
-                  color: $accentGreenColor;
-                }
-              }
-            }
-            .question-description {
-              height: 33%;
-              overflow: hidden;
-              font-size: $questionListDescription;
-              a {
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 2;
                 color: #444;
                 height: 100%;
                 display: block;
@@ -161,15 +125,18 @@ $questionTitleLinkColor: #444;
                 }
               }
             }
+            .question-title { font-size: $questionListTitle; }
+            .question-description { font-size: $questionListDescription; }
             .question-tags {
               margin: 0;
               padding: 0;
               list-style: none;
               height: 33%;
               overflow: hidden;
+              float:left;
               .question-tags-list {
                 float: left;
-                margin: 5px 5px 5px 0;
+                margin: 0 5px 0 0;
                 a {
                   font-size: 8px;
                   font-weight: bold;
@@ -186,19 +153,8 @@ $questionTitleLinkColor: #444;
                 }
               }
             }
-          }
-          .question-info {
-            height: 100%;
-            .info-box {
-              height: 100%;
-              text-align: right;
-              span {
-                line-height: 130px;
-              }
-              img {
-                max-width: 80%;
-                max-height: 80%;
-              }
+            .content-meta {
+              float: right;
             }
           }
         }
