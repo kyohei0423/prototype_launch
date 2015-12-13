@@ -19,4 +19,8 @@ class Question < ActiveRecord::Base
   def belongs_to?(viewer)
     self.user == viewer
   end
+
+  def has_user_reaction?(user_id)
+    questions_users.find_by(user_id: user_id)
+  end
 end
