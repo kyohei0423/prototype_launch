@@ -26,7 +26,7 @@ module ApplicationHelper
   end
 
   def fetch_created_date_of(content)
-    content.created_at.strftime('%Y年%m月%d日 %H時%m分')
+    content.created_at.strftime('%Y年%m月%d日 %H時%M分')
   end
 
   def sign_in_user_access_user_is_same(sign_in_user, access_usesr)
