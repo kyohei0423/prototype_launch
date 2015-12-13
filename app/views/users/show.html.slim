@@ -13,13 +13,13 @@
                 | 100
               .user-page-contribution-unit
                 | posts
-          - if @user.id == current_user.id
+          - if sign_in_user_access_user_is_same(current_user, @user)
             .dropdown
               #drop-down-icon data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
                 span.fa.fa-angle-double-down
               ul.dropdown-menu.dropdown-menu-left.menu aria-labelledby="dropdownMenu1"
                 li
-                  = link_to 'Edit Profile', '#', class: "link"
+                  = link_to 'Edit Profile', edit_user_registration_path, class: "link"
                 li
                   = link_to 'Logout', '#', class: "link"
 
