@@ -101,3 +101,12 @@ h1, h2, h3, h4, h5, h6, p, body {
 .list-btn {
   margin-right: 5px;
 }
+
+.panel-info {
+  border-color: $mainSkyBlueColor;
+  & > .panel-heading {
+    border-color: $mainSkyBlueColor;
+    background-color: $mainSkyBlueColor;
+    color: white;
+  }
+}
