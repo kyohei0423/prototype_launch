@@ -21,6 +21,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       .questions-list {
         padding: 10px;
         height: $questionListHeight;
+        position: relative;
         &:hover {
           cursor: pointer;
           background-color: #eee;
@@ -89,6 +90,27 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
           }
           .content-meta {
             float: right;
+          }
+        }
+        .item-actions {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li {
+            font-size: 18px;
+            float: right;
+            margin-right: 5px;
+            a {
+              text-decoration: none;
+              &:hover {
+                font-size: 18px;
+                color: $accentGreenColor;
+                transition: all .1s;
+              }
+            }
           }
         }
       }

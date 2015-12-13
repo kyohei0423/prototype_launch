@@ -22,3 +22,8 @@ li.questions-list.box-sizing.row
             = link_to tag.name, tag_path(tag)
       .content-meta
         = fetch_created_date_of(question)
+  ul.item-actions
+    li= link_to "/questions/#{question.id}" do
+      i.fa.fa-trash
+    li= link_to edit_question_path(question) do
+      i.fa.fa-pencil
