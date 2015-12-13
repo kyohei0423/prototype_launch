@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!, only: :new
-  before_action :set_question, only: [:show, :edit, :destroy]
+  before_action :set_question, only: [:show, :edit, :destroy, :edit, :update]
   before_action :set_question_tags_to_gon, only: [:edit]
   before_action :set_available_tags_to_gon, only: [:edit, :new]
 
@@ -21,10 +21,12 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    render :new
   end
 
   def update
-    
+    @question.update(question_params)
+    redirect_to question_path(@question)
   end
 
   def destroy
