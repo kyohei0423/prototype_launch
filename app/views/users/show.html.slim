@@ -1,27 +1,17 @@
 .user-page
   .user-page-header
     .container
-      .row
-        .user-page-profile
-          .user-page-user-icon
-            = link_to image_tag(@user.avatar.url), user_path(@user)
-          .user-page-body
-            .user-page-heading
-              span= @user.nickname
-            .user-page-contribution
-              .user-page-contribution-count
-                | 100
-              .user-page-contribution-unit
-                | posts
-          - if sign_in_user_access_user_is_same(current_user, @user)
-            .dropdown
-              #drop-down-icon data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-                span.fa.fa-angle-double-down
-              ul.dropdown-menu.dropdown-menu-left.menu aria-labelledby="dropdownMenu1"
-                li
-                  = link_to 'Edit Profile', edit_user_registration_path, class: "link"
-                li
-                  = link_to 'Logout', '#', class: "link"
+      .row.user-page-profile
+        .user-page-user-icon.col-md-2.col-xs-2
+          = link_to image_tag(@user.avatar.url), user_path(@user)
+        .user-page-body.col-md-8.col-xs-10
+          .user-page-heading= @user.nickname
+          .user-page-contribution
+            | 100
+            span posts
+        - if sign_in_user_access_user_is_same(current_user, @user)
+          .edit-user-btn.col-md-2.col-xs-12
+            = link_to 'プロフィールを編集', edit_user_registration_path
 
   .user-page-main
     .container

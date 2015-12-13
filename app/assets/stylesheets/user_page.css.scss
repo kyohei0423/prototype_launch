@@ -6,63 +6,25 @@ $questionTitleLinkColor: #444;
 
 .user-page {
   .user-page-header {
-    height: 110px;
     .user-page-profile {
+      margin: 15px 0;
+      .user-page-user-icon, .user-page-body {
+        height: 110px;
+      }
       .user-page-user-icon {
-        margin-top: 15px;
-        float: left;
-        height: 80px;
-        img {
-          max-height: 80px;
-        }
+        min-width: 150px;
+        img { max-height: 110px; }
       }
       .user-page-body {
-        float: left;
-        margin-top: 15px;
         .user-page-heading {
+          margin-top: 40px;
           font-size: 30px;
+          line-height: 40px;
+          font-weight: bold;
         }
         .user-page-contribution {
           font-size: 20px;
-          .user-page-contribution-count {
-            float: left;
-            margin-right: 5px;
-          }
-          .user-page-contribution-unit {
-            float: left;
-          }
-        }
-      }
-      #drop-down-icon {
-        font-size: 20px;
-        margin-top: 20px;
-        float: left;
-        cursor: pointer;
-        padding: 0 15px;
-        position: relative;
-        &:hover { background-color: $menuIconHoverColor; }
-        .fa.fa-angle-double-down {
-          color: $iconColor;
-        }
-      }
-      .menu {
-        position: absolute;
-        top: 43px;
-        left: 190px;
-        ul {
-          margin: 0;
-          padding: 0;
-          list-style: none;
-          li {
-            width: 100%;
-            a {
-              display: block;
-              text-decoration: none;
-              &:hover {
-                color: $subBoxHoverColor;
-              }
-            }
-          }
+          line-height: 20px;
         }
       }
     }
