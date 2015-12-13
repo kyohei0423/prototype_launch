@@ -24,7 +24,7 @@ li.questions-list.box-sizing.row
         = fetch_created_date_of(question)
   - if user_signed_in? && sign_in_user_access_user_is_same(current_user, question.user)
     ul.item-actions
-      li= link_to "/questions/#{question.id}", method: :delete do
+      li= link_to "/questions/#{question.id}", data: { confirm: '削除してもよろしいですか?' }, method: :delete do
         i.fa.fa-trash
       li= link_to edit_question_path(question) do
         i.fa.fa-pencil
