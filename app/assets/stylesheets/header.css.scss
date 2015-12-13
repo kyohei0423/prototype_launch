@@ -48,6 +48,9 @@ $subBoxHoverColor: black;
         }
         .to-home {
           &:hover { color: #FF4500; }
+          img {
+            max-height: 40px;
+          }
         }
         .easier-sort {
           &:hover { color: #7FFF00; }
