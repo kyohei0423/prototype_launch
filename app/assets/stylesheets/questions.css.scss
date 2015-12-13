@@ -11,39 +11,33 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
 
 .content {
   height: 100%;
-
   .categories {
     padding: 30px 10px;
-
     .questions-menu {
-      margin: 0;
+      margin: 0 auto;
       padding: 0;
       list-style: none;
-
+      width: 90%;
       .questions-list {
         padding: 10px;
-        height: 150px;
-
+        height: $questionListHeight;
+        position: relative;
         &:hover {
           cursor: pointer;
           background-color: #eee;
         }
-
-        .stock-count {
+        .content-meta {
           height: 100%;
-          display: -webkit-box;
-          display: -moz-box;
-          display: -o-box;
-          display: -ms-box;
-          display: box;
-          -webkit-box-align: center;
-          -moz-box-align: center;
-          -o-box-align: center;
-          -ms-box-align: center;
-          box-align: center;
-
-          span {
-            display: block;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          .stock-count, .view-count, .answer-count {
+            display: inline-block;
+            width: 33%;
+            span {
+              font-size: 14px;
+              display: block;
+            }
             &:hover {
               font-size: 18px;
               color: $accentGreenColor;
@@ -51,32 +45,11 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
             }
           }
         }
-
-        .question-image {
-          height: 100%;
-          float: left;
-          position: relative;
-
-          img {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto 0;
-            width: 100%;
-          }
-        }
-
         .question-context {
           height: 100%;
-          padding-top: 5px;
-          padding-bottom: 5px;
-
-          .question-title {
+          .question-title, .question-description {
             height: 33%;
             overflow: hidden;
-            font-size: $questionListTitle;
             a {
               color: #444;
               height: 100%;
@@ -87,37 +60,18 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
               }
             }
           }
-
-          .question-description {
-            height: 33%;
-            overflow: hidden;
-            font-size: $questionListDescription;
-
-            a {
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 2;
-              color: #444;
-              height: 100%;
-              display: block;
-              text-decoration: none;
-              &:hover {
-                color: $accentGreenColor;
-              }
-            }
-          }
-
+          .question-title { font-size: $questionListTitle; }
+          .question-description { font-size: $questionListDescription; }
           .question-tags {
             margin: 0;
             padding: 0;
             list-style: none;
             height: 33%;
             overflow: hidden;
-
+            float:left;
             .question-tags-list {
               float: left;
-              margin: 5px 5px 5px 0;
-
+              margin: 0 5px 0 0;
               a {
                 font-size: 8px;
                 font-weight: bold;
@@ -134,20 +88,28 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
               }
             }
           }
+          .content-meta {
+            float: right;
+          }
         }
-
-        .question-info {
-          height: 100%;
-
-          .info-box {
-            height: 100%;
-            text-align: right;
-            span {
-              line-height: 130px;
-            }
-            img {
-              max-width: 80%;
-              max-height: 80%;
+        .item-actions {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li {
+            font-size: 18px;
+            float: right;
+            margin-right: 5px;
+            a {
+              text-decoration: none;
+              &:hover {
+                font-size: 18px;
+                color: $accentGreenColor;
+                transition: all .1s;
+              }
             }
           }
         }
@@ -156,8 +118,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
   }
 
   .form-content {
-    background-color: $formBackgroundColor;
-    padding: 10px 5px 0;
+    padding: 0 5px 0;
     height: 100%;
 
     .form-box {
@@ -219,9 +180,6 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       .input-answer { height: 100%; }
 
       .footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
         background-color: $formBackgroundColor;
         height: $formFooterHeight;
 
@@ -270,7 +228,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       }
       .content-date {
         float: right;
-        color: #339af7;
+        color: $mainSkyBlueColor;
         i {
           margin-right: 5px;
         }
@@ -286,7 +244,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
         text-align: center;
         font-size: 20px;
         display: block;
-        background-color: #339af7;
+        background-color: $mainSkyBlueColor;
         color: white;
         text-decoration: none;
         &:hover {
@@ -322,7 +280,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
                 font-size: 14px;
                 line-height: 25px;
                 &:first-child {
-                  color: #339af7;
+                  color: $mainSkyBlueColor;
                   font-weight: bold;
                 }
               }
@@ -446,7 +404,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
           line-height: 1.5;
           &:before {
             content: counter(chapter);
-            background-color: #339af7;
+            background-color: $mainSkyBlueColor;
             border: 1px solid #2289e6;
             color: white;
             padding: 2px 4px;
@@ -458,4 +416,7 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       }
     }
   }
+}
+.form-panel {
+  background-color: $formBackgroundColor;
 }

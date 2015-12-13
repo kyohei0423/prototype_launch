@@ -1,4 +1,5 @@
 $accentGreenColor: rgb(109,194,184);
+$mainSkyBlueColor: #339af7;
 
 body, html {
   height: 100%;
@@ -24,11 +25,22 @@ h1, h2, h3, h4, h5, h6, p, body {
 
 .btn-notprimary {
   background-color: transparent;
-  color: #337ab7;
-  border: 1px solid #2e6da4;
+  color: $mainSkyBlueColor;
+  border: 1px solid $mainSkyBlueColor;
   &:hover {
     color: white;
-    background-color: #337ab7;
+    background-color: $mainSkyBlueColor;
+  }
+}
+
+.btn-primary {
+  color: white;
+  background-color: $mainSkyBlueColor;
+  border: 1px solid $mainSkyBlueColor;
+  &:hover {
+    color: white;
+    background-color: #1880f4;
+    border: 1px solid #1880f4;
   }
 }
 
@@ -71,4 +83,30 @@ h1, h2, h3, h4, h5, h6, p, body {
 
 .alert {
   margin: 0;
+}
+
+.text-align-center {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -o-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+}
+
+.list-btn {
+  margin-right: 5px;
+}
+
+.panel-info {
+  border-color: $mainSkyBlueColor;
+  & > .panel-heading {
+    border-color: $mainSkyBlueColor;
+    background-color: $mainSkyBlueColor;
+    color: white;
+  }
 }

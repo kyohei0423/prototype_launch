@@ -6,10 +6,7 @@
           h2.title= @question.title
           h3.description= @question.description
           p.user-info.clearfix
-            span.username= @question.user.email
-            span.content-date
-              i.fa.fa-clock-o
-              = @question.fetch_created_date
+            = render partial: 'common/article_info', locals: { content: @question }
           .article-content
             = markdown(@question.sentence).html_safe
           .act-to-answer
@@ -23,25 +20,6 @@
                 | 解答を書く
             - else
               span まだ解答が作られていません
-          .comments
-            .comment
-              .comment-header.clearfix
-                .comment-header-user
-                  = image_tag 'imgres.png'
-                  ul
-                    li saino
-                    li 10000 stock
-                .comment-header-meta 2014/05/28 15:29
-              .comment-body これ作ってみたかったんですよ！ありがとうございす。あああああああああああああああああああああああああああああああああああああああああああああああああああああアアアアアア
-            .comment
-              .comment-header.clearfix
-                .comment-header-user
-                  = image_tag 'imgres.png'
-                  ul
-                    li saino
-                    li 10000 stock
-                .comment-header-meta 2014/05/28 15:29
-              .comment-body これ作ってみたかったんですよ！ありがとうございす。あああああああああああああああああああああああああああああああああああああああああああああああああああああアアアアアア
       .col-md-3
         .sub-content
           .stock-and-comment.clearfix.sub-box

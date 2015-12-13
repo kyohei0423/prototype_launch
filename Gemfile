@@ -27,6 +27,8 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'redcarpet'
 gem 'coderay'
+gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   gem 'byebug'

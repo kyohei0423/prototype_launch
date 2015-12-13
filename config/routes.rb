@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :questions do
     resources :newest, only: :index
   end
-  resources :questions, only: [:new, :create, :show] do
+  resources :questions, only: [:new, :create, :show, :destroy, :edit, :update] do
     resources :answers, only: [:new, :create, :show]
   end
   resources :tags, only: [:index, :show]

@@ -1,27 +1,20 @@
 .user-page
   .user-page-header
     .container
-      .row
-        .user-page-profile
-          .user-page-user-icon
-            = link_to image_tag('http://simpleicon.com/wp-content/uploads/user1.svg'), user_path(@user)
-          .user-page-body
-            .user-page-heading
-              span ゆいと
-            .user-page-contribution
-              .user-page-contribution-count
-                | 100
-              .user-page-contribution-unit
-                | posts
-          - if @user.id == current_user.id
-            .dropdown
-              #drop-down-icon data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-                span.fa.fa-angle-double-down
-              ul.dropdown-menu.dropdown-menu-left.menu aria-labelledby="dropdownMenu1"
-                li
-                  = link_to 'Edit Profile', '#', class: "link"
-                li
-                  = link_to 'Logout', '#', class: "link"
+      .row.user-page-profile
+        .user-page-user-icon.col-md-2.col-xs-2
+          - if @user.avatar.present?
+            = link_to image_tag(@user.avatar.url), user_path(@user)
+          - else
+            = image_tag('images.jpg')
+        .user-page-body.col-md-8.col-xs-10
+          .user-page-heading= @user.nickname
+          .user-page-contribution
+            | 100
+            span posts
+        - if sign_in_user_access_user_is_same(current_user, @user)
+          .user-action-btn.col-md-2.col-xs-12
+            = link_to 'プロフィールを編集', edit_user_registration_path
 
   .user-page-main
     .container
@@ -33,11 +26,10 @@
                 h4 Recent Posts
               li.stocked-posts-tab
           ul.questions-menu.box-sizing
-            = render partial: "questions/question", collection: @user.questions
+            = render partial: 'questions/question', collection: @user.questions
         .user-popular-posts.col-sm-5
-          .panel.panel-default
+          .panel.panel-info
             .panel-heading
               | Popular Questions
             .user-list-group
               = render partial: 'popular_question', collection: @user.questions
-    br

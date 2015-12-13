@@ -1,25 +1,30 @@
 li.questions-list.box-sizing.row
-  .stock-count.col-md-1.col-sm-1.col-xs-2
-      span.fa.fa-thumbs-o-up
-        | 100
-  .question-image.col-md-1.col-sm-2.hidden-xs
-    = image_tag 'http://kinocode.jp/new/wp-content/uploads/2015/10/950805bc8a944944bdef670a2b591238.png'
-  .question-context.box-sizing.col-md-6.col-sm-5.col-xs-8
+  ul.col-md-2.content-meta.col-sm-4
+    li.stock-count.text-align-center
+      | 100
+      span ストック
+    li.view-count.text-align-center
+      | 100
+      span 閲覧
+    li.answer-count.text-align-center
+      | 100
+      span 人解答
+  .question-context.box-sizing.col-md-10.col-sm-8
     h3.question-title
       = link_to question.title, question_path(question)
     .question-description
       span
         = link_to question.description, question_path(question)
-    ul.question-tags.clearfix
-      - question.tags.each do |tag|
-        li.question-tags-list.box-sizing
-          = link_to tag.name, tag_path(tag), remote: true
-  .question-info.col-md-4.col-sm-4.hidden-xs.row
-    .col-xs-4.info-box.info-contents
-      span.fa.fa-archive
-    .col-xs-3.info-box.info-img
-      span
-        = image_tag 'http://simpleicon.com/wp-content/uploads/user1.svg'
-    .col-xs-5.info-box
-      | 100
-      span.fa.fa-comment-o.info-comment
+    .bottom-info.clearfix
+      ul.question-tags.clearfix
+        - question.tags.each do |tag|
+          li.question-tags-list.box-sizing
+            = link_to tag.name, tag_path(tag)
+      .content-meta
+        = fetch_created_date_of(question)
+  - if user_signed_in? && sign_in_user_access_user_is_same(current_user, question.user)
+    ul.item-actions
+      li= link_to "/questions/#{question.id}", data: { confirm: '削除してもよろしいですか?' }, method: :delete do
+        i.fa.fa-trash
+      li= link_to edit_question_path(question) do
+        i.fa.fa-pencil

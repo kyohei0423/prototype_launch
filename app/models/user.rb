@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
   has_many :reacted_questions, through: :questions_users, source: :questions
   has_many :answers
   has_many :questions_users
+
+  mount_uploader :avatar, AvatarUploader
 end

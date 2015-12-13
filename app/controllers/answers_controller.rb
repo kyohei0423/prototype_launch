@@ -1,6 +1,7 @@
 class AnswersController < ApplicationController
   before_action :set_question, only: [:new, :create, :show]
   before_action :set_answer, only: :show
+  before_action :authenticate_user!, only: :new
 
   def show
   end
@@ -10,7 +11,7 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answer = current_user.answer.new(answer_params)
+    @answer = @question.build_answer(answer_params)
     if @answer.save
       redirect_to question_answer_path(@question, @answer), notice: '解答の投稿が完了しました。'
     else
@@ -28,6 +29,6 @@ class AnswersController < ApplicationController
     end
 
     def answer_params
-      params.require(:answer).permit(:sentence).merge(question_id: params[:question_id])
+      params.require(:answer).permit(:sentence).merge(user_id: current_user.id)
     end
 end
