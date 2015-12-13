@@ -29,7 +29,7 @@ module ApplicationHelper
     content.created_at.strftime('%Y年%m月%d日 %H時%M分')
   end
 
-  def sign_in_user_access_user_is_same(sign_in_user, access_usesr)
-    sign_in_user.id == access_usesr.id
+  def sign_in_user_access_user_is_same(sign_in_user, access_user)
+    sign_in_user.id == access_user.id
   end
 end
