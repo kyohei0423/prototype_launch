@@ -7,7 +7,8 @@
  * Version 1.2.1
  * Licensed under the MIT license.
  */
-(function($) {"use strict";
+$(document).on('ready page:load', function() {"use strict";
+
 
     var nextId = 0;
 
@@ -348,4 +349,4 @@
 			$this.filestyle(options);
 		});
 	});
-})(window.jQuery);
+});
