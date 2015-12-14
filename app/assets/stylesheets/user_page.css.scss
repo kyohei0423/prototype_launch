@@ -6,6 +6,7 @@ $questionTitleLinkColor: #444;
 
 .user-page {
   .user-page-header {
+    margin: 80px 0;
     .user-page-profile {
       margin: 15px 0;
       .user-page-user-icon, .user-page-body, .user-action-btn {
@@ -38,16 +39,14 @@ $questionTitleLinkColor: #444;
   }
   .user-page-main {
     .user-posts.col-sm-7 {
-      .user-local-nav {
-        .nav.nav-tabs {
-          li {
-          }
-          .recent-posts-tab {
-            border: solid 1px $normalBorderColor;
-            padding: 5px;
-          }
-          .stocked-posts-tab {
-          }
+      .nav.nav-tabs {
+        li {
+        }
+        .recent-posts-tab {
+          border: solid 1px $normalBorderColor;
+          padding: 5px;
+        }
+        .stocked-posts-tab {
         }
       }
       .questions-menu {

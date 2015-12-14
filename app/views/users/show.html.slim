@@ -20,11 +20,11 @@
       .row
         .user-posts.col-sm-7
           .user-local-nav
-            .nav.nav-tabs
-              li.recent-posts-tab
-                h4 Recent Posts
-              li.stocked-posts-tab
-          ul.questions-menu.box-sizing
+            ul.nav.nav-tabs.nav-justified
+              li#keeped.active role="presentation"= link_to 'キープした問題', user_keeps_path(@user), remote: true
+              li#posted role="presentation"= link_to '最近の投稿', user_recents_path(@user), remote: true
+              li#answered role="presentation"= link_to '回答した問題', user_answered_questions_path(@user), remote: true
+          ul.questions-menu.box-sizing#user-page-questions
             = render partial: 'questions/question', collection: @user.questions
         .user-popular-posts.col-sm-5
           .panel.panel-info
