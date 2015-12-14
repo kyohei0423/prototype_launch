@@ -16,15 +16,19 @@ $questionTitleLinkColor: #444;
         img { max-height: 110px; }
       }
       .user-page-body {
+        .user-page-heading, .user-page-contribution {
+          float: left;
+        }
         .user-page-heading {
-          margin-top: 40px;
+          margin: 80px 30px 0 0;
           font-size: 30px;
-          line-height: 40px;
+          line-height: 30px;
           font-weight: bold;
         }
         .user-page-contribution {
-          font-size: 20px;
-          line-height: 20px;
+          margin-top: 70px;
+          font-size: 40px;
+          line-height: 40px;
         }
       }
       .user-action-btn {

@@ -7,11 +7,11 @@
             = link_to image_tag(@user.avatar.url), user_path(@user)
           - else
             = image_tag('images.jpg')
-        .user-page-body.col-md-8.col-xs-10
+        .user-page-body.col-md-8.col-xs-10.clearfix
           .user-page-heading= @user.nickname
           .user-page-contribution
+            span Lv.
             | 100
-            span posts
         - if sign_in_user_access_user_is_same(current_user, @user)
           .user-action-btn.col-md-2.col-xs-12
             = link_to 'プロフィールを編集', edit_user_registration_path
