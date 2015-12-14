@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    scope module: :users do
+      resources :keeps, only: :index
+    end
+  end
 
   namespace :questions do
     resources :newest, only: :index
