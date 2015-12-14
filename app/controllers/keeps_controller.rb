@@ -5,7 +5,7 @@ class KeepsController < ApplicationController
   end
 
   def destroy
-    keep = Keep.find_by(user_id: current_user.id, question_id: params[:question_id])
+    keep = Keep.find(params[:id])
     keep.destroy
     @question = Question.find(params[:question_id])
   end
