@@ -1,4 +1,4 @@
-- if question.has_reaction?(current_user)
+- if question.reacted_by?(current_user)
   .act-to-answer
     - if question.has_answer?
       = link_to question_answer_path(question, question.answer) do
@@ -11,14 +11,12 @@
     - else
       span まだ解答が作られていません
 - else
-  .answer_reations.clearfix.row
-    .col-md-6.col-sm-6
-      .answer_reaction
-        = button_to question_questions_users_path(question, status: 'answered'), remote: true do
-            i.fa.fa-arrow-right
-            | 解けた！
-    .col-md-6.col-sm-6
-      .unanswer_reaction
-        = button_to question_questions_users_path(question, status: 'unanswered'), remote: true do
-            i.fa.fa-arrow-right
-            | 解けなかった！
+  .answer_reations.clearfix
+    .answer_reaction
+      = button_to question_questions_users_path(question, status: 'answered'), remote: true do
+          i.fa.fa-arrow-right
+          | 解けた！
+    .unanswer_reaction
+      = button_to question_questions_users_path(question, status: 'unanswered'), remote: true do
+          i.fa.fa-arrow-right
+          | 解けなかった！
