@@ -1,0 +1,4 @@
+var $answerOrReactions = $("#answer-or-reactions");
+
+$answerOrReactions.html(
+  "<%= j(render partial: 'answer_or_reaction_btn', locals: { question: @question } ) %>");

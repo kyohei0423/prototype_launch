@@ -1,6 +1,9 @@
 class Question < ActiveRecord::Base
   belongs_to :user
   has_one :answer, dependent: :destroy
+  has_many :questions_users
+  has_many :reacting_users, through: :questions_users, source: :users
+  has_many :keeps
 
   validates :title, :sentence, presence: true
 
@@ -15,6 +18,19 @@ class Question < ActiveRecord::Base
   end
 
   def belongs_to?(viewer)
-    self.user == viewer
+    user == viewer
+  end
+
+  def reacted_by?(user)
+    questions_users.exists?(user_id: user.id)
+  end
+
+  def kept_by?(user)
+    keeps.exists?(user_id: user.id)
+  end
+
+  def user_keep(user)
+    keeps.find_by(user_id: user.id)
   end
 end
+
