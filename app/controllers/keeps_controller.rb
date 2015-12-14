@@ -1,12 +1,16 @@
 class KeepsController < ApplicationController
   def create
-    Keep.create(user_id: current_user.id, question_id: params[:question_id])
+    current_user.keeps.create(keeps_params)
     @question = Question.find(params[:question_id])
   end
 
   def destroy
-    keep = Keep.find(params[:id])
-    keep.destroy
+    Keep.find(params[:id]).destroy
     @question = Question.find(params[:question_id])
+  end
+
+  private
+  def keeps_params
+    params.permit(:question_id)
   end
 end

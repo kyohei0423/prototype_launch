@@ -1,6 +1,11 @@
 class QuestionsUsersController < ApplicationController
   def create
-    QuestionsUser.create(user_id: current_user.id, question_id: params[:question_id], status: params[:status])
+    current_user.questions_users.create(questions_user_params)
     @question = Question.find(params[:question_id])
+  end
+
+  private
+  def questions_user_params
+    params.permit(:question_id, :status)
   end
 end
