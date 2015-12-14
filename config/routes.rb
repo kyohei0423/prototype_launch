@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     scope module: :users do
       resources :keeps, only: :index
       resources :recents, only: :index
+      resources :answered_questions, only: :index
     end
   end
 

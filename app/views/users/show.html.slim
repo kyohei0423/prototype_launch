@@ -23,7 +23,7 @@
             ul.nav.nav-tabs.nav-justified
               li#keeped.active role="presentation"= link_to 'キープした問題', user_keeps_path(@user), remote: true
               li#posted role="presentation"= link_to '最近の投稿', user_recents_path(@user), remote: true
-              li#answered role="presentation"= link_to '回答した問題', remote: true
+              li#answered role="presentation"= link_to '回答した問題', user_answered_questions_path(@user), remote: true
           ul.questions-menu.box-sizing#user-page-questions
             = render partial: 'questions/question', collection: @user.questions
         .user-popular-posts.col-sm-5
