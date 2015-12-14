@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  belongs_to :user, dependent: destroy
+  belongs_to :user
   has_one :answer, dependent: :destroy
 
   validates :title, :sentence, presence: true
