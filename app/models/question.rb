@@ -21,11 +21,16 @@ class Question < ActiveRecord::Base
     user == viewer
   end
 
-  def has_reaction?(user)
-    questions_users.find_by(user_id: user.id)
+  def reacted_by?(user)
+    questions_users.exists?(user_id: user.id)
   end
 
-  def has_keep?(user)
+  def kept_by?(user)
+    keeps.exists?(user_id: user.id)
+  end
+
+  def user_keep(user)
     keeps.find_by(user_id: user.id)
   end
 end
+
