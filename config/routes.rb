@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     scope module: :users do
       resources :keeps, only: :index
+      resources :recents, only: :index
     end
   end
 
