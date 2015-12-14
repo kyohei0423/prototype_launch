@@ -53,7 +53,9 @@
             h3
               i.fa.fa-users
               | 回答したユーザー
-              span 1人
+              span
+                = @answerd_users
+                | 人
             .users
               = image_tag 'imgres.png'
           .ranking.sub-box

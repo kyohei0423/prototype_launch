@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :confirmable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :reacted_questions, through: :questions_users, source: :questions
+  has_many :reacted_questions, through: :questions_users, source: :question
   has_many :questions_users
   has_many :keeps
   has_many :questions, dependent: :destroy

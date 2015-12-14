@@ -2,7 +2,7 @@ class Question < ActiveRecord::Base
   belongs_to :user
   has_one :answer, dependent: :destroy
   has_many :questions_users
-  has_many :reacting_users, through: :questions_users, source: :users
+  has_many :reacting_users, through: :questions_users, source: :user
   has_many :keeps
 
   validates :title, :sentence, presence: true
