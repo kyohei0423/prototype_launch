@@ -216,10 +216,11 @@ $actionAndReactionButtonHeight: 50px;
       }
     }
     .answer_reations {
-      width: 60%;
+      width: 50%;
       margin: 0 auto;
       .answer_reaction, .unanswer_reaction {
-        width: 100%;
+        float: left;
+        margin-left: 20px;
         height: $actionAndReactionButtonHeight;
         form {
           button {
