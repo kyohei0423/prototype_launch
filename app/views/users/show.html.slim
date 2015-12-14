@@ -20,10 +20,10 @@
       .row
         .user-posts.col-sm-7
           .user-local-nav
-            .nav.nav-tabs
-              li.recent-posts-tab
-                h4 Recent Posts
-              li.stocked-posts-tab
+            ul.nav.nav-tabs.nav-justified
+              li.active role="presentation"= link_to 'キープした問題'
+              li role="presentation"= link_to '最近の投稿'
+              li role="presentation"= link_to '回答した問題'
           ul.questions-menu.box-sizing
             = render partial: 'questions/question', collection: @user.questions
         .user-popular-posts.col-sm-5
