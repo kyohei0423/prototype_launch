@@ -3,6 +3,7 @@ class Question < ActiveRecord::Base
   has_one :answer, dependent: :destroy
   has_many :questions_users
   has_many :reacting_users, through: :questions_users, source: :users
+  has_many :keeps
 
   validates :title, :sentence, presence: true
 
