@@ -116,29 +116,23 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       }
     }
   }
-
   .form-content {
     padding: 0 5px 0;
     height: 100%;
-
     .form-box {
       margin: 0;
       padding: 0;
-
       .field {
         margin-bottom: 10px;
-
         .title, .description {
           padding: 5px;
           font-size: 25px;
           resize: none;
         }
       }
-
       .title-field {
         height: $formTitleHeight;
       }
-
       #question-tags {
         background-color: white;
         margin: 0 0 10px 0;
@@ -147,47 +141,36 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
         border-radius: 5px;
         height: $formTagHeight;
       }
-
       .description-field {
         height: $formDescriptionHeight;
       }
-
-
       .input-text-field {
         height: calc(100% - #{$formExceptTextareaHeight});
-
         .input-textarea, .output-field {
           float: left;
           width: 50%;
           padding: 5px;
           height: 100%;
         }
-
         .input-textarea { resize: none; }
-
         .output-field {
           // height: 100%;
           background-color: white;
           border: 1px solid #ddd;
           border-left: none;
-
           #output-area {
             height: 100%;
           }
         }
       }
-
       .input-answer { height: 100%; }
-
       .footer {
         background-color: $formBackgroundColor;
         height: $formFooterHeight;
-
         .time-limit-field, .base-time-limit {
           height: 35px;
           padding: 10px 0;
         }
-
         .base-time-limit {
           text-align: right;
           span { line-height: 34px; }
@@ -197,17 +180,14 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
             border: none;
           }
         }
-
         .submit-btn { margin: 10px 0; }
       }
     }
   }
-
   .main-content, .sub-content {
     background-color: white;
     border: 1px solid #ddd;
   }
-
   .main-content {
     padding: 25px 20px;
     .title {
@@ -318,7 +298,6 @@ $formExceptTextareaHeight: ($formTitleHeight+$formTagHeight+$formDescriptionHeig
       }
     }
   }
-
   .sub-content {
     padding: 25px 10px;
     border-radius: 5px;
