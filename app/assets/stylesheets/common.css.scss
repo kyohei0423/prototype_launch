@@ -1,5 +1,7 @@
 $accentGreenColor: rgb(109,194,184);
-$mainSkyBlueColor: #339af7;
+$hoverGreenColor: rgb(83,174,164);
+$mainSkyBlueColor: rgb(51, 140, 235);
+$hoverSkyBlueColor: rgb(25, 120, 235);
 
 body, html {
   height: 100%;
@@ -39,8 +41,8 @@ h1, h2, h3, h4, h5, h6, p, body {
   border: 1px solid $mainSkyBlueColor;
   &:hover {
     color: white;
-    background-color: #1880f4;
-    border: 1px solid #1880f4;
+    background-color: $hoverSkyBlueColor;
+    border: 1px solid $hoverSkyBlueColor;
   }
 }
 

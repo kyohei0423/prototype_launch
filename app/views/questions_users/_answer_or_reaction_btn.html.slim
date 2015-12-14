@@ -11,12 +11,12 @@
     - else
       span まだ解答が作られていません
 - else
-  .answer-reations.clearfix
+  .answer-reactions.clearfix
     .reaction-btn
-      = button_to question_questions_users_path(question, status: 'answered'), remote: true do
+      = button_to question_questions_users_path(question, status: 'answered'), class: 'complete', remote: true do
         i.fa.fa-arrow-right
         | 解けた！
     .reaction-btn
-      = button_to question_questions_users_path(question, status: 'unanswered'), remote: true do
+      = button_to question_questions_users_path(question, status: 'unanswered'), class: 'not-complete', remote: true do
         i.fa.fa-arrow-right
         | 解けなかった！

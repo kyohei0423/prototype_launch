@@ -215,18 +215,17 @@ $actionAndReactionButtonHeight: 50px;
         }
       }
     }
-    .answer-reations {
+    .answer-reactions {
       width: 50%;
       margin: 0 auto;
       .reaction-btn {
+        width: 50%;
         float: left;
-        margin-left: 20px;
         height: $actionAndReactionButtonHeight;
         form {
           button {
-            margin: 0 auto;
             border-style: none;
-            padding-top: 1px;
+            width: 100%;
             height: $actionAndReactionButtonHeight;
             line-height: $actionAndReactionButtonHeight;
             text-align: center;
@@ -235,13 +234,12 @@ $actionAndReactionButtonHeight: 50px;
             background-color: $mainSkyBlueColor;
             color: white;
             text-decoration: none;
-            i {
-              margin-top: 2px;
-            }
-            &:hover {
-              background-color: #2289e6;
-              box-shadow: 0 0 1px 1px #dddddd;
-            }
+            i { margin-top: 2px; }
+            &:hover { background-color: $hoverSkyBlueColor; }
+          }
+          .not-complete {
+            background-color: $accentGreenColor;
+            &:hover { background-color: $hoverGreenColor }
           }
         }
       }
