@@ -7,108 +7,34 @@ $subBoxHoverColor: black;
   padding: 20px 20px 10px;
   border-bottom: 1px solid #ddd;
   width: 100%;
-
   .header-left {
-
     .search_form {
-
       .search__query {
         float: left;
         height: 34px;
       }
-
       .search_icon {
         float: left;
       }
     }
   }
-
   .header-center {
-    font-size: $basicHeaderFontSize;
-
-    ul {
-      margin: 0;
-      padding: 0;
-      li {
-        height: 40px;
-        line-height: 40px;
-        font-size: 18px;
-        float: left;
-        list-style: none;
-        margin: 0 5px;
-        position: relative;
-
-        a { text-decoration: none; }
-
-        .newest-sort {
-          &:hover { color: #5898f1; }
-        }
-        .ranking-sort {
-          &:hover { color: #EE82EE; }
-        }
-        .to-home {
-          &:hover { color: #FF4500; }
-          img {
-            max-height: 40px;
-          }
-        }
-        .easier-sort {
-          &:hover { color: #7FFF00; }
-        }
-        .to-category {
-          &:hover { color: #FFA500; }
-        }
-
-        #drop-down-icon {
-          cursor: pointer;
-          padding: 0 15px;
-
-          &:hover { background-color: $menuIconHoverColor; }
-
-          .fa.fa-angle-double-down {
-            color: $iconColor;
-          }
-        }
-
-        .menu {
-
-          ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-
-            li {
-              width: 100%;
-
-              a {
-                display: block;
-                text-decoration: none;
-
-                &:hover {
-                  color: $subBoxHoverColor;
-                }
-              }
-            }
-          }
-        }
-      }
+    text-align: center;
+    .to-home {
+      img { height: 40px; }
     }
   }
-
   .header-right {
     font-size: 18px;
     height: 40px;
     line-height: 40px;
     text-align: right;
-
     a {
       text-decoration: none;
     }
-
     .mypage {
       margin-right: 10px;
     }
-
     .login {
       margin-right: 10px;
       padding: 10px 0;

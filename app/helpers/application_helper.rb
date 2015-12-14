@@ -32,4 +32,16 @@ module ApplicationHelper
   def sign_in_user_access_user_is_same(sign_in_user, access_user)
     sign_in_user.id == access_user.id
   end
+
+  def destroy_link_to(path, object)
+    link_to path,
+      data: {
+        confirm: "本当に<strong>#{object.title}</strong>を削除してもよろしいですか?",
+        commit: '削除',
+        cancel: 'やめる',
+        title: '削除の確認' },
+      method: :delete do
+      content_tag(:i, "", class: 'fa fa-trash')
+    end
+  end
 end

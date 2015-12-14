@@ -1,50 +1,32 @@
-.header-main.row.clearfix
-  .header-left.col-md-4.col-xs-12
-    .input-group
-      = form_tag("/search", remote: true, method: :get, class: "search_form") do
-        = text_field_tag :search, "", id: "question_search_box", class: "search__query", name: "keyword", placeholder: "Search for..."
-        span class='input-group-btn search_icon'
-          button class='btn btn-default searchsubmit' title="検索" type='submit'
-            span.fa.fa-search
-
-  .header-center.col-md-5.col-xs-6
-    ul.clearfix
-      li
-        = link_to "NEWEST", questions_newest_index_path, class: "newest-sort"
-      li
-        = link_to "POPULAR", '#', class: "ranking-sort"
-      li
-        = link_to image_tag('logo.png'), root_path, class: "to-home"
-      li
-        = link_to 'EASIER', '#', class: "easier-sort"
-      li
-        = link_to 'CATEGORY', tags_path, class: "to-category"
-      li.dropdown
-        #drop-down-icon data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-          span.fa.fa-angle-double-down
-        ul.dropdown-menu.dropdown-menu-left.menu aria-labelledby="dropdownMenu1"
-          li
-            = link_to 'ABOUT', '#', class: "link"
-          li
-            = link_to 'FAQ', '#', class: "link"
-  .header-right.col-md-3.col-xs-6
-    - if user_signed_in?
-      .dropdown style='display: inline-block; margin-right: 10px;'
-        p#dropdownMenu1 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-          - if current_user.avatar.present?
-            = image_tag current_user.avatar.url, class: 'header-avatar'
-          - else
-            i.fa.fa-user.header-avatar{ style='font-size: 28px; vertical-align: middle;'}
-        ul.dropdown-menu.pull-right aria-labelledby="dropdownMenuDivider"
-          li
-            = link_to user_path(current_user), class: "mypage" do
-              i.fa.fa-user
-              | 　MYPAGE
-          li.divider role='separator'
-          li
-            = link_to destroy_user_session_path, method: :delete do
-              i.fa.fa-sign-out
-              | 　SIGN OUT
-    - else
-      = link_to 'LOGIN', new_user_session_path, class: "login"
-    = link_to 'POST', new_question_path, class: "btn btn-primary"
+.nav
+  .header-main.row.clearfix
+    .header-left.col-md-4.hidden-xs
+      .input-group
+        = form_tag("/search", remote: true, method: :get, class: "search_form") do
+          = text_field_tag :search, "", id: "question_search_box", class: "search__query", name: "keyword", placeholder: "Search for..."
+          span class='input-group-btn search_icon'
+            button class='btn btn-default searchsubmit' title="検索" type='submit'
+              span.fa.fa-search
+    .header-center.col-md-4.col-xs-12
+      = link_to image_tag('logo.png'), root_path, class: "to-home"
+    .header-right.col-md-4.col-xs-12
+      - if user_signed_in?
+        .dropdown style='display: inline-block; margin-right: 10px;'
+          p#dropdownMenu1 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+            - if current_user.avatar.present?
+              = image_tag current_user.avatar.url, class: 'header-avatar'
+            - else
+              i.fa.fa-user.header-avatar{ style='font-size: 28px; vertical-align: middle;'}
+          ul.dropdown-menu.pull-right aria-labelledby="dropdownMenuDivider"
+            li
+              = link_to user_path(current_user), class: "mypage" do
+                i.fa.fa-user
+                | 　MYPAGE
+            li.divider role='separator'
+            li
+              = link_to destroy_user_session_path, method: :delete do
+                i.fa.fa-sign-out
+                | 　SIGN OUT
+      - else
+        = link_to 'LOGIN', new_user_session_path, class: "login"
+      = link_to 'POST', new_question_path, class: "btn btn-primary"

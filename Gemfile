@@ -29,6 +29,7 @@ gem 'redcarpet'
 gem 'coderay'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'twitter-bootstrap-rails-confirm'
 
 group :development, :test do
   gem 'byebug'
