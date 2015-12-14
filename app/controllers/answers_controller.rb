@@ -4,6 +4,7 @@ class AnswersController < ApplicationController
   before_action :authenticate_user!, only: :new
 
   def show
+    @answered_users = @question.reacting_users.where(questions_users:{status: QuestionsUser::ANSWERED})
   end
 
   def new

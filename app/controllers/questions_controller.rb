@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   before_action :set_available_tags_to_gon, only: [:edit, :new]
 
   def show
-    @answerd_users = @question.reacting_users.where(questions_user:{status: 0})
+    @answered_users = @question.reacting_users.where(questions_users:{status: QuestionsUser::ANSWERED})
   end
 
   def new

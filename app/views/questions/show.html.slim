@@ -22,12 +22,7 @@
                 | 50
               span コメント
           .answerd-users.sub-box
-            h3
-              i.fa.fa-users
-              | 回答したユーザー
-              span 1人
-            .users
-              = image_tag 'imgres.png'
+            = render partial: 'questions/answered_users', locals: { users: @answered_users }
           .ranking.sub-box
             h3
               i.fa.fa-line-chart

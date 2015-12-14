@@ -50,14 +50,7 @@
               a.btn.btn-notprimary href='#'
                 | コメントする
           .answerd-users.sub-box
-            h3
-              i.fa.fa-users
-              | 回答したユーザー
-              span
-                = @answerd_users
-                | 人
-            .users
-              = image_tag 'imgres.png'
+            = render partial: 'questions/answered_users', locals: { users: @answered_users }
           .ranking.sub-box
             h3
               i.fa.fa-line-chart
