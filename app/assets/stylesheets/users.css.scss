@@ -4,8 +4,12 @@
   }
   .user-enter {
     .panel-heading {
+      text-align: center;
       background-color: white;
       margin-top: 30px;
+      img {
+        width: 50%;
+      }
       h4 {
         text-align: center;
         font-size: 25px;
