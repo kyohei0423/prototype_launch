@@ -25,7 +25,7 @@
               li#posted role="presentation"= link_to '最近の投稿', user_recents_path(@user), remote: true
               li#answered role="presentation"= link_to '回答した問題', user_answered_questions_path(@user), remote: true
           ul.questions-menu.box-sizing#user-page-questions
-            = render partial: 'questions/question', collection: @user.questions
+            = render partial: 'questions/question', collection: @questions
         .user-popular-posts.col-sm-5
           .panel.panel-info
             .panel-heading

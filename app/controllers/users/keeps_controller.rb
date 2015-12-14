@@ -2,7 +2,7 @@ class Users::KeepsController < ApplicationController
   before_action :set_user, only: :index
 
   def index
-    @questions = @user.questions
+    @questions = @user.kept_questions
   end
 
   private

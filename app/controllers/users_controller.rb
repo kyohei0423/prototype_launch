@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: :show
   def show
-    @questions = @user.questions
+    @questions = @user.kept_questions
   end
 
   private
