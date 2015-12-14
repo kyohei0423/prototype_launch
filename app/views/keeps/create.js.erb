@@ -1,0 +1,3 @@
+var $likeDetail = $("#like-detail");
+
+$likeDetail.html("<%= j(render partial: 'keeps', locals: { question: @question } ) %>");

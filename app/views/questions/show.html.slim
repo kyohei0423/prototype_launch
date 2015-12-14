@@ -14,13 +14,8 @@
       .col-md-3
         .sub-content
           .stock-and-comment.clearfix.sub-box
-            .detail
-              .numbers
-                i.fa.fa-folder-o
-                | 2000
-              span ストック
-              a.btn.btn-notprimary href='#'
-                | ストックする
+            .detail#like-detail
+              = render partial: "keeps/keeps", locals: { question: @question }
             .detail
               .numbers
                 i.fa.fa-commenting-o
