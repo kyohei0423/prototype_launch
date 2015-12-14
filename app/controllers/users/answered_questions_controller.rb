@@ -2,7 +2,7 @@ class Users::AnsweredQuestionsController < ApplicationController
   before_action :set_user, only: :index
 
   def index
-    @questions = @user.questions
+    @questions = @user.answered_questions
   end
 
   private
