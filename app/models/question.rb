@@ -24,4 +24,8 @@ class Question < ActiveRecord::Base
   def has_user_reaction?(user_id)
     questions_users.find_by(user_id: user_id)
   end
+
+  def has_keep?(user)
+    keeps.find_by(user_id: user.id)
+  end
 end
