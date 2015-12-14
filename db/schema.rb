@@ -24,18 +24,6 @@ ActiveRecord::Schema.define(version: 20151212095019) do
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
   add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
 
-  create_table "comments", force: :cascade do |t|
-    t.integer  "commentable_id",   limit: 4
-    t.string   "commentable_type", limit: 255
-    t.text     "text",             limit: 65535
-    t.integer  "user_id",          limit: 4
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-  end
-
-  add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id", using: :btree
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
-
   create_table "questions", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.text     "sentence",    limit: 65535
@@ -69,7 +57,6 @@ ActiveRecord::Schema.define(version: 20151212095019) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "nickname",               limit: 255
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
     t.string   "reset_password_token",   limit: 255
@@ -86,6 +73,7 @@ ActiveRecord::Schema.define(version: 20151212095019) do
     t.string   "unconfirmed_email",      limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "nickname",               limit: 255
     t.string   "avatar",                 limit: 255
   end
 
@@ -94,6 +82,5 @@ ActiveRecord::Schema.define(version: 20151212095019) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
-  add_foreign_key "comments", "users"
   add_foreign_key "questions", "users"
 end
