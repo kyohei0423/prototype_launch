@@ -18,11 +18,11 @@ class Question < ActiveRecord::Base
   end
 
   def belongs_to?(viewer)
-    self.user == viewer
+    user == viewer
   end
 
-  def has_user_reaction?(user_id)
-    questions_users.find_by(user_id: user_id)
+  def has_reaction?(user)
+    questions_users.find_by(user_id: user.id)
   end
 
   def has_keep?(user)
