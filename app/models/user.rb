@@ -14,5 +14,4 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :nickname
   validates_presence_of :nickname, :avatar
 
-  scope :answered_questions, -> {@user.reacted_questions.where(questions_users:{status: QuestionsUser::ANSWERED})}
 end
