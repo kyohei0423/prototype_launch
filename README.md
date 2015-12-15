@@ -41,10 +41,6 @@ $ bundle exec erb2slim 変更するerbファイルパス -d(変更するファ�
 
 ## ユーザー概念
 
-### 使用するgem
-
-- devise
-
 ## タグ
 
 
