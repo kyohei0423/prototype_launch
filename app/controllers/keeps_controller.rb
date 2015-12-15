@@ -1,4 +1,6 @@
 class KeepsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :destroy]
+
   def create
     current_user.keeps.create(keeps_params)
     @question = Question.find(params[:question_id])

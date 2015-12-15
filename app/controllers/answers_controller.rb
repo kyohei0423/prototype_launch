@@ -1,7 +1,7 @@
 class AnswersController < ApplicationController
   before_action :set_question, only: [:new, :create, :show]
   before_action :set_answer, only: :show
-  before_action :authenticate_user!, only: :new
+  before_action :authenticate_user!, only: [:new, :show, :create]
 
   def show
     @answered_users = @question.reacting_users.where(questions_users:{status: QuestionsUser::ANSWERED})
