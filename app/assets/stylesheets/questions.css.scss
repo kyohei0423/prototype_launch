@@ -161,6 +161,7 @@ $actionAndReactionButtonHeight: 50px;
           border-left: none;
           #output-area {
             height: 100%;
+            overflow: auto;
           }
         }
       }

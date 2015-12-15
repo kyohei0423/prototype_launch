@@ -10,7 +10,13 @@
           .article-content
             = markdown(@question.sentence).html_safe
           #answer-or-reactions
-            = render partial: "questions_users/answer_or_reaction_btn", locals: { question: @question }
+            - if @question.belongs_to?(current_user)
+              .act-to-answer
+                = link_to new_question_answer_path(@question) do
+                  i.fa.fa-pencil
+                  | 解答を書く
+            - else
+              = render partial: "questions_users/answer_or_reaction_btn", locals: { question: @question }
       .col-md-3
         .sub-content
           .stock-and-comment.clearfix.sub-box
