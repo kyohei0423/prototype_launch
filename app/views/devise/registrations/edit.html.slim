@@ -4,6 +4,7 @@
     .row
       .panel.panel-default.col-md-6.col-md-offset-3
         .panel-heading
+          = image_tag 'logo-emoji.png', class: 'entry-logo'
           h4
             = t('.title', :resource => resource_class.model_name.human , :default => "Edit #{resource_name.to_s.humanize}")
         .panel-body
