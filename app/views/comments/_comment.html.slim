@@ -1,0 +1,16 @@
+.comment
+  .comment-header.clearfix
+    .comment-header-user
+      = image_tag 'imgres.png'
+      ul
+        li
+          = comment.user.nickname
+        li
+          = comment.user.keeps.count
+        -if comment.user.id == current_user.id
+          li
+            = link_to "Delete", question_comment_path(@question, comment), method: :delete, remote: true
+    .comment-header-meta
+      = comment.created_at.strftime('%Y/%m/%d %H:%M')
+  .comment-body
+    = comment.text

@@ -15,15 +15,7 @@
             i.fa.fa-arrow-right
             | Go to Question
       .comments
-        .comment
-          .comment-header.clearfix
-            .comment-header-user
-              = image_tag 'imgres.png'
-              ul
-                li saino
-                li 10000 stock
-            .comment-header-meta 2014/05/28 15:29
-          .comment-body これ作ってみたかったんですよ！ありがとうございす。あああああああああああああああああああああああああああああああああああああああああああああああああああああアアアアアア
+        = render partial: 'comments/comment', collection: @question.comments
   .mdl-cell.mdl-cell--3-col.sub-article
     .mdl-shadow--2dp.mdl-card
       .detail
@@ -34,9 +26,10 @@
       .detail
         .numbers
           i.fa.fa-commenting-o
-          | 50
+            = @question.comments.count
         span コメント
-        a.btn.btn-notprimary href='#'
-          | コメントする
+        = form_for [@question, @comment], remote: true do |f|
+          = f.text_field :text, placeholder: "Your comments", rows: "3", id: "comment_text", class: "textform-control"
+          = f.submit "コメントする", class: "btn btn-notprimary"
     .mdl-shadow--2dp.mdl-card
       = render partial: 'questions/answered_users', locals: { users: @answered_users }
