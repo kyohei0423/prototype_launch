@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214134835) do
+ActiveRecord::Schema.define(version: 20151219055550) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "sentence",    limit: 65535
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20151214134835) do
     t.integer  "user_id",     limit: 4
     t.string   "description", limit: 255
     t.integer  "keeps_count", limit: 4,     default: 0
+    t.integer  "level",       limit: 4,     default: 5
   end
 
   add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
