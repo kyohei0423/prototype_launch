@@ -1,60 +1,34 @@
-.content
-  .container-fluid
-    .row
-      .col-md-9
-        article.main-content
-          h2.title= @question.title
-          h3.description= @question.description
-          p.user-info.clearfix
-            = render partial: 'common/article_info', locals: { content: @question }
-          .article-content
-            = markdown(@question.sentence).html_safe
-          #answer-or-reactions
-            - if @question.belongs_to?(current_user)
-              .act-to-answer
-                = link_to new_question_answer_path(@question) do
-                  i.fa.fa-pencil
-                  | 解答を書く
+.mdl-grid.article-group
+  .mdl-cell.mdl-cell--9-col.main-article
+    .mdl-shadow--2dp.mdl-card
+      .mdl-card__title
+        h2.mdl-card__title-text= @question.title
+      .mdl-card__supporting-text= @question.description
+      .mdl-card__menu
+        = render partial: 'common/article_info', locals: { content: @question }
+      .mdl-card__supporting-text#markdown-text
+        = markdown(@question.sentence).html_safe
+      #answer-or-reactions
+        - if @question.belongs_to?(current_user)
+          .act-to-answer
+            - if @question.has_answer?
+              = link_to question_answer_path(@question, @question.answer) do
+                i.fa.fa-arrow-right
+                | Go to Answer
             - else
-              = render partial: "questions_users/answer_or_reaction_btn", locals: { question: @question }
-      .col-md-3
-        .sub-content
-          .stock-and-comment.clearfix.sub-box
-            .detail#like-detail
-              = render partial: "keeps/keep_btn", locals: { question: @question }
-            .detail
-              .numbers
-                i.fa.fa-commenting-o
-                | 50
-              span コメント
-          .answerd-users.sub-box
-            = render partial: 'questions/answered_users', locals: { users: @answered_users }
-          .ranking.sub-box
-            h3
-              i.fa.fa-line-chart
-              | ランキング
-            ul.nav-tabs.clearfix
-              li#current.active role="presentation" いま話題
-              li#week role="presentation" 今週
-              li#month role="presentation" 今月
-            ul.elements.current
-              li= link_to 'サンプル１サンプル１サンプル１サンプル１', '#'
-              li= link_to 'サンプル１', '#'
-              li= link_to 'サンプル１', '#'
-              li= link_to 'サンプル１', '#'
-              li= link_to 'サンプル１', '#'
-              li= link_to 'サンプル１', '#'
-            ul.elements.week
-              li= link_to 'サンプル２サンプル２サンプル２サンプル２', '#'
-              li= link_to 'サンプル２', '#'
-              li= link_to 'サンプル２', '#'
-              li= link_to 'サンプル２', '#'
-              li= link_to 'サンプル２', '#'
-              li= link_to 'サンプル２', '#'
-            ul.elements.month
-              li= link_to 'サンプル３サンプル３サンプル３サンプル３', '#'
-              li= link_to 'サンプル３', '#'
-              li= link_to 'サンプル３', '#'
-              li= link_to 'サンプル３', '#'
-              li= link_to 'サンプル３', '#'
-              li= link_to 'サンプル３', '#'
+              = link_to new_question_answer_path(@question) do
+                i.fa.fa-pencil
+                | Write Answer
+        - else
+          = render partial: "questions_users/answer_or_reaction_btn", locals: { question: @question }
+  .mdl-cell.mdl-cell--3-col.sub-article
+    .mdl-shadow--2dp.mdl-card
+      .detail#like-detail
+        = render partial: "keeps/keep_btn", locals: { question: @question }
+      .detail
+        .numbers
+          i.fa.fa-commenting-o
+          | 50
+        span コメント
+    .mdl-shadow--2dp.mdl-card
+      = render partial: 'questions/answered_users', locals: { users: @answered_users }

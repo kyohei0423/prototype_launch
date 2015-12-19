@@ -27,9 +27,12 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'redcarpet'
 gem 'coderay'
+gem 'coderay_bash'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'twitter-bootstrap-rails-confirm'
+gem 'material_design_lite-rails'
+gem 'material_icons'
 
 group :development, :test do
   gem 'byebug'

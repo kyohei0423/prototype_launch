@@ -1,4 +1,5 @@
-span.username= content.user.nickname
-span.content-date
+.content-date
   i.fa.fa-clock-o
   = fetch_created_date_of(content)
+.username style='text-align: right;'
+  = content.user.nickname

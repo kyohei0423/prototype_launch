@@ -3,16 +3,16 @@
     - if question.has_answer?
       = link_to question_answer_path(question, question.answer) do
         i.fa.fa-arrow-right
-        | 解答を見る
+        | Go to Answer
     - else
-      span まだ解答が作られていません
+      span Don't write yet
 - else
   .answer-reactions.clearfix
     .reaction-btn
       = button_to question_questions_users_path(question, status: 'answered'), class: 'complete', remote: true do
         i.fa.fa-arrow-right
-        | 解けた！
+        | Complete!
     .reaction-btn
       = button_to question_questions_users_path(question, status: 'unanswered'), class: 'not-complete', remote: true do
         i.fa.fa-arrow-right
-        | 解けなかった！
+        | Not Compete...

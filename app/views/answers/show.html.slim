@@ -1,82 +1,42 @@
-.content
-  .container-fluid
-    .row
-      .col-md-9
-        article.main-content
-          h2.title
-            | 【解答】
-            = @question.title
-          h3.description= @question.description
-          p.user-info.clearfix
-            = render partial: 'common/article_info', locals: { content: @answer }
-          .article-content
-            = markdown(@answer.sentence).html_safe
-          .act-to-answer
-            = link_to question_path(@answer.question) do
-                i.fa.fa-arrow-right
-                | 問題を見る
-          .comments
-            .comment
-              .comment-header.clearfix
-                .comment-header-user
-                  = image_tag 'imgres.png'
-                  ul
-                    li saino
-                    li 10000 stock
-                .comment-header-meta 2014/05/28 15:29
-              .comment-body これ作ってみたかったんですよ！ありがとうございす。あああああああああああああああああああああああああああああああああああああああああああああああああああああアアアアアア
-            .comment
-              .comment-header.clearfix
-                .comment-header-user
-                  = image_tag 'imgres.png'
-                  ul
-                    li saino
-                    li 10000 stock
-                .comment-header-meta 2014/05/28 15:29
-              .comment-body これ作ってみたかったんですよ！ありがとうございす。あああああああああああああああああああああああああああああああああああああああああああああああああああああアアアアアア
-      .col-md-3
-        .sub-content
-          .stock-and-comment.clearfix.sub-box
-            .detail
-              .numbers
-                i.fa.fa-folder-o
-                = @question.keeps_count
-              span キープ
-            .detail
-              .numbers
-                i.fa.fa-commenting-o
-                | 50
-              span コメント
-              a.btn.btn-notprimary href='#'
-                | コメントする
-          .answerd-users.sub-box
-            = render partial: 'questions/answered_users', locals: { users: @answered_users }
-          .ranking.sub-box
-            h3
-              i.fa.fa-line-chart
-              | ランキング
-            ul.nav-tabs.clearfix
-              li#current.active role="presentation" いま話題
-              li#week role="presentation" 今週
-              li#month role="presentation" 今月
-            ul.elements.current
-              li= link_to 'サンプル１サンプル１サンプル１サンプル１', '#'
-              li= link_to 'サンプル１', '#'
-              li= link_to 'サンプル１', '#'
-              li= link_to 'サンプル１', '#'
-              li= link_to 'サンプル１', '#'
-              li= link_to 'サンプル１', '#'
-            ul.elements.week
-              li= link_to 'サンプル２サンプル２サンプル２サンプル２', '#'
-              li= link_to 'サンプル２', '#'
-              li= link_to 'サンプル２', '#'
-              li= link_to 'サンプル２', '#'
-              li= link_to 'サンプル２', '#'
-              li= link_to 'サンプル２', '#'
-            ul.elements.month
-              li= link_to 'サンプル３サンプル３サンプル３サンプル３', '#'
-              li= link_to 'サンプル３', '#'
-              li= link_to 'サンプル３', '#'
-              li= link_to 'サンプル３', '#'
-              li= link_to 'サンプル３', '#'
-              li= link_to 'サンプル３', '#'
+.mdl-grid.article-group
+  .mdl-cell.mdl-cell--9-col.main-article
+    .mdl-shadow--2dp.mdl-card
+      .mdl-card__title
+        h2.mdl-card__title-text
+          | 【解答】
+          = @question.title
+      .mdl-card__supporting-text= @question.description
+      .mdl-card__menu
+        = render partial: 'common/article_info', locals: { content: @answer }
+      .mdl-card__supporting-text#markdown-text
+        = markdown(@answer.sentence).html_safe
+      .act-to-answer
+        = link_to question_path(@answer.question) do
+            i.fa.fa-arrow-right
+            | Go to Question
+      .comments
+        .comment
+          .comment-header.clearfix
+            .comment-header-user
+              = image_tag 'imgres.png'
+              ul
+                li saino
+                li 10000 stock
+            .comment-header-meta 2014/05/28 15:29
+          .comment-body これ作ってみたかったんですよ！ありがとうございす。あああああああああああああああああああああああああああああああああああああああああああああああああああああアアアアアア
+  .mdl-cell.mdl-cell--3-col.sub-article
+    .mdl-shadow--2dp.mdl-card
+      .detail
+        .numbers
+          i.fa.fa-folder-o
+          = @question.keeps_count
+        span キープ
+      .detail
+        .numbers
+          i.fa.fa-commenting-o
+          | 50
+        span コメント
+        a.btn.btn-notprimary href='#'
+          | コメントする
+    .mdl-shadow--2dp.mdl-card
+      = render partial: 'questions/answered_users', locals: { users: @answered_users }

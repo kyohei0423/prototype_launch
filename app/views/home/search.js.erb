@@ -1,2 +1,3 @@
-var $questionsMenu = $(".questions-menu")
-$questionsMenu.html("<%= j(render partial: 'questions/question', collection: @questions) %>");
+var $questionsGroup = $("#newest-panel")
+$questionsGroup.html("<%= j(render partial: 'questions/question', collection: @questions) %>");
+console.log('fa')

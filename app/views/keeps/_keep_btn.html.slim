@@ -1,8 +1,8 @@
 .numbers
   i.fa.fa-folder-o
   = question.keeps_count
-span キープ
+span keeps
 - if question.kept_by?(current_user)
-  = button_to "キープしてます", question_keep_path(question, question.user_keep(current_user)), method: :delete, class: "btn btn-primary", remote: true
+  = button_to "Already kept", question_keep_path(question, question.user_keep(current_user)), method: :delete, class: "btn btn-primary", remote: true
 - else
-  = button_to "キープする", question_keeps_path(question), class: "btn btn-notprimary", remote: true
+  = button_to "Keep", question_keeps_path(question), class: "btn btn-notprimary", remote: true

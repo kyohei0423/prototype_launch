@@ -7,7 +7,7 @@ $(document).on('ready page:load', function() {
     });
   };
 
-  $('#question_search_box').on('keyup', function() {
+  $('#fixed-header-drawer-exp').on('keyup', function() {
     var input = $.trim($(this).val()),
         timer = null;
     clearTimeout(timer);

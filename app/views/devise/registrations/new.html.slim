@@ -2,28 +2,27 @@
   .container.user-enter
     = bootstrap_devise_error_messages!
     .row
-      .panel.panel-default.col-md-6.col-md-offset-3
+      .panel.panel-default.col-md-6.col-md-offset-3.mdl-shadow--2dp
         .panel-heading
           = image_tag 'logo-emoji.png', class: 'entry-logo'
           h4
             = t('.sign_up', :default => "Sign up")
         .panel-body
-          = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { role: "form" }) do |f|
+          = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { class: "post-form" }) do |f|
+            .mdl-textfield.mdl-js-textfield.input-field
+              = f.email_field :email, autofocus: true, class: "mdl-textfield__input", id: 'email'
+              = f.label 'E-Mail...', class: 'mdl-textfield__label', for: 'email'
+            .mdl-textfield.mdl-js-textfield.input-field
+              = f.email_field :nickname, autofocus: true, class: "mdl-textfield__input", id: 'nickname'
+              = f.label 'Nickname...', class: 'mdl-textfield__label', for: 'nickname'
+            .mdl-textfield.mdl-js-textfield.input-field
+              = f.password_field :password, autofocus: true, class: "mdl-textfield__input", id: 'password'
+              = f.label 'Password...', class: 'mdl-textfield__label', for: 'password'
+            .mdl-textfield.mdl-js-textfield.input-field
+              = f.password_field :password_confirmation, autofocus: true, class: "mdl-textfield__input", id: 'password_confirmation'
+              = f.label 'Password Confirmation...', class: 'mdl-textfield__label', for: 'password_confirmation'
             .form-group
-              = f.label :email
-              = f.email_field :email, autofocus: true, class: "form-control"
-            .form-group
-              = f.label :nickname
-              = f.text_field :nickname, autofocus: true, class: "form-control"
-            .form-group
-              = f.label :password
-              br
-              = f.password_field :password, class: "form-control"
-            .form-group
-              = f.label :password_confirmation
-              = f.password_field :password_confirmation, class: "form-control"
-            .form-group
-              = f.label :avatar
-              = f.file_field :avatar, autofocus: true, class: "form-control filestyle", "data-buttonText": "ファイル選択"
-            = f.submit t('.sign_up_btn', :default => "Sign up"), class: "btn btn-primary"
-        = render "devise/shared/links"
+              = f.file_field :avatar, autofocus: true, class: "form-control filestyle", "data-buttonText": "File Upload"
+            = f.submit t('.sign_up_btn', :default => "Sign up"), class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+            = link_to 'To Sign In', new_user_session_path, class: 'mdl-button mdl-js-button mdl-button--primary'
+        / = render "devise/shared/links"

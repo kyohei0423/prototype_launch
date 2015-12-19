@@ -8,11 +8,14 @@ html
     = include_gon
     = csrf_meta_tags
   body
-    = render partial: 'common/header'
-    - if notice
-      p.alert.alert-success
-        = notice
-    - if alert
-      p.alert.alert-danger
-        = alert
-    = yield
+    .demo-layout-waterfall.mdl-layout.mdl-js-layout
+      = render partial: 'common/header'
+      - if notice
+        p.alert.alert-success
+          = notice
+      - if alert
+        p.alert.alert-danger
+          = alert
+      main.mdl-layout__content
+        .page-content
+          = yield

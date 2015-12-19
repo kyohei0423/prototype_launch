@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require marked
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-filestyle
-//= require tag-it
 //= require twitter/bootstrap/rails/confirm
+//= require material
+//= require tag-it
+//= require marked
 //= require_tree .

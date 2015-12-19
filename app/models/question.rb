@@ -32,5 +32,13 @@ class Question < ActiveRecord::Base
   def user_keep(user)
     keeps.find_by(user_id: user.id)
   end
+
+  def count_answered_users
+    questions_users.count(status: 'answered')
+  end
+
+  def count_unanswered_users
+    questions_users.count(status: 'unanswered')
+  end
 end
 
