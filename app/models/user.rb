@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :kept_questions, through: :keeps, source: :question
   has_many :keeps
   has_many :answers, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
 
