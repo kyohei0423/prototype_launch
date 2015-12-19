@@ -5,6 +5,7 @@ class AnswersController < ApplicationController
 
   def show
     @answered_users = @question.reacting_users.where(questions_users:{status: QuestionsUser::ANSWERED})
+    @comment = Comment.new
   end
 
   def new
