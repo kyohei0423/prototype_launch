@@ -2,7 +2,17 @@
   .mdl-cell.mdl-cell--9-col.main-article
     .mdl-shadow--2dp.mdl-card
       .mdl-card__title
-        h2.mdl-card__title-text= @question.title
+        .mdl-tooltip for='tlevel'
+          = measure_of_difficulty(@question.level)
+        button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--accent#tlevel style='margin-right: 16px;'
+          - if @question.level == 0
+            | Lack of data
+          - else
+            | Level.
+            = @question.level
+        h2.mdl-card__title-text
+          = @question.title
+          | 　
       .mdl-card__supporting-text= @question.description
       .mdl-card__menu
         = render partial: 'common/article_info', locals: { content: @question }
