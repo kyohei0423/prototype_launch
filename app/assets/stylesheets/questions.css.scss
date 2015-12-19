@@ -427,6 +427,89 @@ $actionAndReactionButtonHeight: 50px;
     }
   }
 }
-.form-panel {
-  background-color: $formBackgroundColor;
+
+.post-page {
+  .post-form {
+    height: calc(100vh - 96px);
+    .mdl-textfield {
+      display: block;
+      width: 100%;
+      .input-post-text-area {
+        height: calc(100vh - 370px);
+      }
+      .input-answer-text-area {
+        height: calc(100vh - 172px);
+      }
+    }
+  }
+  .output-field {
+    background-color: white;
+    #output-area {
+      height: calc(100vh - 96px);
+      overflow: auto;
+      padding: 8px;
+    }
+  }
+}
+
+.questions-group {
+  .mdl-tabs__tab-bar {
+    margin-bottom: 30px;
+  }
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 30px;
+  .card-wide {
+    width: 100%;
+    margin-bottom: 30px;
+    .mdl-card__title {
+    }
+  }
+}
+
+.article-group {
+  .main-article, .sub-article {
+    padding: 16px;
+  }
+  .main-article .mdl-card, .sub-article .mdl-card {
+    width: 100%;
+  }
+  .main-article {
+    .mdl-card__title {
+      padding-top: 100px;
+      color: white;
+      background-color: $mainSkyBlueColor;
+    }
+    .mdl-card__menu {
+      color: white;
+    }
+    .mdl-card__supporting-text {
+      border-bottom: 1px solid rgba(0,0,0,.54);
+    }
+  }
+  .act-to-answer {
+    width: 30%;
+    height: $actionAndReactionButtonHeight;
+    margin: 30px auto;
+    a, span {
+      height: $actionAndReactionButtonHeight;
+      line-height: $actionAndReactionButtonHeight;
+      text-align: center;
+      font-size: 20px;
+      display: block;
+      background-color: $mainSkyBlueColor;
+      color: white;
+      text-decoration: none;
+      &:hover {
+        background-color: #2289e6;
+        box-shadow: 0 0 1px 1px #dddddd;
+      }
+    }
+  }
+  .main-article, .article-content {
+    padding: 16px;
+  }
+  .sub-article .mdl-card {
+    margin-bottom: 16px;
+  }
 }

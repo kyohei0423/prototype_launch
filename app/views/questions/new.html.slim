@@ -1,22 +1,19 @@
 = render partial: 'common/error_msg', locals: { object: @question }
-.content.box-sizing.form-panel
-  .form-content.fix-height
-    = form_for @question, html: { class: 'form-group form-box fix-height' } do |f|
-      .field.title-field
-        = f.text_field :title, autofocus: true, placeholder: "タイトル", class: 'title fix-width fix-form'
+.mdl-grid.post-page
+  .mdl-cell.mdl-cell--6-col.mdl-cell--12-col-phone
+    = form_for @question, html: { class: 'post-form' } do |f|
+      .mdl-textfield.mdl-js-textfield.input-title-field
+        = f.text_field :title, autofocus: true, id: 'title', class: 'mdl-textfield__input'
+        = f.label 'Title...', class: 'mdl-textfield__label', for: 'title'
       ul#question-tags{ autofocus: true }
-      .field.description-field
-        = f.text_area :description, autofocus: true, placeholder: "まえがき", col: 2, class: 'description fix-width fix-form'
-      .input-text-field.clearfix
-        = f.text_area :sentence, placeholder: "本文", placeholder: 'MarkDownで入力', class: 'input-textarea box-sizing fix-height fix-form', id: 'input-textarea'
-        .output-field.box-sizing
-          #output-area.box-sizing
-      .footer.row
-        .col-xs-8
-        .col-xs-2.base-time-limit
-          span
-            | 解答目安時間：
-        .col-xs-1.time-limit-field
-          = f.number_field :time_limit, class: 'form-control'
-        .col-xs-1.submit-field
-          = f.submit "投稿", class: 'btn btn-primary submit-btn'
+      .mdl-textfield.mdl-js-textfield.input-description-field
+        = f.text_area :description, autofocus: true, col: 2, class: 'mdl-textfield__input', id: 'description'
+        = f.label 'Description', class: 'mdl-textfield__label', for: 'description'
+      .mdl-textfield.mdl-js-textfield.input-text-field
+        = f.text_area :sentence, class: 'mdl-textfield__input input-post-text-area', id: 'text'
+        = f.label 'Text... with Markdown', class: 'mdl-textfield__label', for: 'text'
+      = f.submit 'SUBMIT', class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored submit-btn'
+  .mdl-cell.mdl-cell--6-col.mdl-cell--12-col-phone.output-field
+    #output-area.mdl-shadow--2dp
+      - if confirm_exists?(@question)
+        = markdown(@question.sentence).html_safe

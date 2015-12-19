@@ -1,32 +1,32 @@
-.nav
-  .header-main.row.clearfix
-    .header-left.col-md-4.hidden-xs
-      .input-group
-        = form_tag("/search", remote: true, method: :get, class: "search_form") do
-          = text_field_tag :search, "", id: "question_search_box", class: "search__query", name: "keyword", placeholder: "Search for..."
-          span class='input-group-btn search_icon'
-            button class='btn btn-default searchsubmit' title="検索" type='submit'
-              span.fa.fa-search
-    .header-center.col-md-4.col-xs-12
-      = link_to image_tag('logo.png'), root_path, class: "to-home"
-    .header-right.col-md-4.col-xs-12
+header.mdl-layout__header
+  .mdl-layout__header-row
+    span.mdl-layout-title CodeUp
+    .mdl-layout-spacer
+    .mdl-textfield.mdl-js-textfield.mdl-textfield--expandable.mdl-textfield--floating-label.mdl-textfield--align-right
+      label.mdl-button.mdl-js-button.mdl-button--icon for="fixed-header-drawer-exp"
+        i.material-icons search
+      .mdl-textfield__expandable-holder
+        input#fixed-header-drawer-exp.mdl-textfield__input type="text" /
+    nav.mdl-navigation.mdl-layout--large-screen-only
       - if user_signed_in?
-        .dropdown style='display: inline-block; margin-right: 10px;'
-          p#dropdownMenu1 data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-            - if current_user.avatar.present?
-              = image_tag current_user.avatar.url, class: 'header-avatar'
-            - else
-              i.fa.fa-user.header-avatar{ style='font-size: 28px; vertical-align: middle;'}
-          ul.dropdown-menu.pull-right aria-labelledby="dropdownMenuDivider"
-            li
-              = link_to user_path(current_user), class: "mypage" do
-                i.fa.fa-user
-                | 　MYPAGE
-            li.divider role='separator'
-            li
-              = link_to destroy_user_session_path, method: :delete do
-                i.fa.fa-sign-out
-                | 　SIGN OUT
+        button#demo-menu-lower-right.mdl-button.mdl-js-button.mdl-button--icon
+          = image_tag current_user.avatar.url, class: 'header-avatar'
+        ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect for="demo-menu-lower-right"
+          li.mdl-menu__item= link_to 'MY PAGE', user_path(current_user)
+          li.mdl-menu__item= link_to 'SIGN OUT', destroy_user_session_path, method: :delete
+        a.mdl-navigation__link href="/questions/new" POST
       - else
-        = link_to 'LOGIN', new_user_session_path, class: "login"
-      = link_to 'POST', new_question_path, class: "btn btn-primary"
+        a.mdl-navigation__link href="/users/sign_in" LOG IN
+      a.mdl-navigation__link href="/" HOME
+.mdl-layout__drawer
+  span.mdl-layout-title CodeUp
+  nav.mdl-navigation
+    - if user_signed_in?
+      button#demo-menu-lower-right.mdl-button.mdl-js-button.mdl-button--icon
+        = image_tag current_user.avatar.url, class: 'header-avatar'
+      a.mdl-navigation__link href="/" HOME
+      a.mdl-navigation__link href="/questions/new" POST
+      = link_to 'MY PAGE', user_path(current_user), class: 'mdl-navigation__link'
+      = link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: 'mdl-navigation__link'
+    - else
+      a.mdl-navigation__link href="/users/sign_in" LOG IN

@@ -1,8 +1,12 @@
-.content
-  article.categories.container
-    .top-bar.clearfix
-      h2
-        | Yesterday
-        span November 15th
-    ul.questions-menu.box-sizing
-      = render @questions
+.questions-group
+  .mdl-tabs.mdl-js-tabs.mdl-js-ripple-effect
+    .mdl-tabs__tab-bar
+      a.mdl-tabs__tab.is-active href="#newest-panel"  Newest
+      a.mdl-tabs__tab href="#popular-panel"  Popular
+      a.mdl-tabs__tab href="#tags-panel"  Tags
+    #newest-panel.mdl-tabs__panel.is-active
+      = render partial: 'questions/question', collection: @questions
+    #popular-panel.mdl-tabs__panel
+      = render partial: 'questions/question', collection: @questions
+    #tags-panel.mdl-tabs__panel.tags-group.row
+      = render partial: 'tags/tag', collection: @tags

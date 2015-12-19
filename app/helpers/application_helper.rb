@@ -6,6 +6,40 @@ module ApplicationHelper
         lang = 'ruby'
       when 'yml'
         lang = 'yaml'
+      when 'c'
+        lang = 'c'
+      when 'c++' 'cpp'
+        lang = 'cpp'
+      when 'css'
+        lang = 'css'
+      when 'diff'
+        lang = 'diff'
+      when 'erb' 'rhtml' 'eruby'
+        lang = 'erb'
+      when 'haml'
+        lang = 'haml'
+      when 'java'
+        lang = 'java'
+      when 'js' 'javascript'
+        lang = 'js'
+      when '  json'
+        lang = '  json'
+      when 'php'
+        lang = 'php'
+      when 'python'
+        lang = 'python'
+      when 'sql'
+        lang = 'sql'
+      when 'sql'
+        lang = 'sql'
+      when 'sql'
+        lang = 'sql'
+      when 'sql'
+        lang = 'sql'
+      when 'bash'
+        lang = 'bash'
+      when ''
+          lang = 'plain'
       else
         lang = language
       end
@@ -43,5 +77,9 @@ module ApplicationHelper
       method: :delete do
       content_tag(:i, "", class: 'fa fa-trash')
     end
+  end
+
+  def confirm_exists?(object)
+    object.class.exists?(id: object.id)
   end
 end

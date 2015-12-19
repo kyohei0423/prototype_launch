@@ -42,3 +42,13 @@
 .header-avatar {
   max-height: 40px;
 }
+
+.panel {
+  margin-top: 30px;
+  .panel-body .post-form {
+    .mdl-textfield {
+      display: block;
+      width: 100%;
+    }
+  }
+}

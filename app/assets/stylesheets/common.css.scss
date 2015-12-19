@@ -1,6 +1,6 @@
 $accentGreenColor: rgb(109,194,184);
 $hoverGreenColor: rgb(83,174,164);
-$mainSkyBlueColor: rgb(51, 140, 235);
+$mainSkyBlueColor: #3f51b5;
 $hoverSkyBlueColor: rgb(25, 120, 235);
 
 body, html {
@@ -14,15 +14,6 @@ h1, h2, h3, h4, h5, h6, p, body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-}
-
-.content {
-  background-color: #fcfcfc;
-  padding-top: 20px;
-  .container-fluid {
-    margin: 0 auto;
-    max-width: 1400px;
-  }
 }
 
 .btn-notprimary {
@@ -111,4 +102,8 @@ h1, h2, h3, h4, h5, h6, p, body {
     background-color: $mainSkyBlueColor;
     color: white;
   }
+}
+
+.mdl-layout__content {
+  background-color: #eee;
 }

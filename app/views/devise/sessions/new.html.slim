@@ -1,23 +1,23 @@
 .content
   .container.user-enter
     .row
-      .panel.panel-default.col-md-6.col-md-offset-3
+      .panel.panel-default.col-md-6.col-md-offset-3.mdl-shadow--2dp
         .panel-heading
           = image_tag 'logo-emoji.png', class: 'entry-logo'
           h4
             = t('.sign_in', :default => "Sign in")
         .panel-body
-          = form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f|
-            .form-group
-              = f.label :email
-              = f.email_field :email, autofocus: true, class: "form-control"
-            .form-group
-              = f.label :password
-              = f.password_field :password, autocomplete: "off", class: "form-control"
+          = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "post-form" }) do |f|
+            .mdl-textfield.mdl-js-textfield.input-field
+              = f.email_field :email, autofocus: true, class: "mdl-textfield__input", id: 'email'
+              = f.label 'E-Mail...', class: 'mdl-textfield__label', for: 'email'
+            .mdl-textfield.mdl-js-textfield.input-field
+              = f.password_field :password, autofocus: true, class: "mdl-textfield__input", id: 'password'
+              = f.label 'Password...', class: 'mdl-textfield__label', for: 'password'
             - if devise_mapping.rememberable?
-              .checkbox
-                label
-                  = f.check_box :remember_me
-                  = f.label :remember_me
-            = f.submit  t('.sign_in_btn', :default => "Sign in"), class: "btn btn-primary"
-        = render "devise/shared/links"
+              label.mdl-checkbox.mdl-js-checkbox.mdl-js-ripple-effect for="checkbox-2"
+                = f.check_box :remember_me, class: 'mdl-checkbox__input', id: 'checkbox-2'
+                = f.label :remember_me, class: 'mdl-checkbox__label'
+            = f.submit  t('.sign_in_btn', :default => "Sign in"), class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+            = link_to 'To SIGN UP', new_user_registration_path, class: 'mdl-button mdl-js-button mdl-button--primary'
+        / = render "devise/shared/links"
