@@ -14,4 +14,10 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :nickname
   validates_presence_of :nickname, :avatar
 
+  def update_level(question)
+    question_ex_point = question.level
+    self.ex_point += question_ex_point
+    self.level = ((10 * (self.ex_point - 3))**(1/2.0)).floor
+    self.update(level: self.level)
+  end
 end
