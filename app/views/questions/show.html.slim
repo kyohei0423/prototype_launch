@@ -38,7 +38,7 @@
       .detail
         .numbers
           i.fa.fa-commenting-o
-          | 50
+          | @question.comments.count
         span コメント
     .mdl-shadow--2dp.mdl-card
       = render partial: 'questions/answered_users', locals: { users: @answered_users }
