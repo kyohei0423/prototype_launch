@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151219055550) do
+ActiveRecord::Schema.define(version: 20151219072614) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "sentence",    limit: 65535
@@ -92,6 +92,8 @@ ActiveRecord::Schema.define(version: 20151219055550) do
     t.datetime "updated_at",                                      null: false
     t.string   "nickname",               limit: 255
     t.string   "avatar",                 limit: 255
+    t.integer  "ex_point",               limit: 4,   default: 0
+    t.integer  "level",                  limit: 4,   default: 1
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
