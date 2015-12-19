@@ -1,4 +1,6 @@
 class Question < ActiveRecord::Base
+  include Math
+
   belongs_to :user
   has_one :answer, dependent: :destroy
   has_many :questions_users
@@ -34,11 +36,20 @@ class Question < ActiveRecord::Base
   end
 
   def count_answered_users
-    questions_users.count(status: 'answered')
+    questions_users.answered.count
   end
 
   def count_unanswered_users
-    questions_users.count(status: 'unanswered')
+    questions_users.unanswered.count
+  end
+
+  def update_level
+    total_users = reacting_users.count
+    unanswered_users = questions_users.unanswered.count*10
+    result = unanswered_users.divmod(total_users)
+    base = result[1] == 0 ? result[0] : result[0] + 1
+    level = (10 / (exp(-(base - 5)/1.5) + 1)).round
+    update(level: level)
   end
 end
 

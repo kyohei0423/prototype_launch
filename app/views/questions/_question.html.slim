@@ -28,6 +28,14 @@
 /       li= link_to edit_question_path(question) do
 /         i.fa.fa-pencil
 .mdl-card.mdl-shadow--2dp.card-wide
+  .mdl-tooltip for="tlevel#{question_counter}"
+    = measure_of_difficulty(question.level)
+  button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--accent style='text-align: left; margin-right: 230px;' id="tlevel#{question_counter}"
+    - if question.level == 0
+      | Lack of data
+    - else
+      | Level.
+      = question.level
   .mdl-card__title
     .mdl-card__title-text= question.title
   .mdl-card__supporting-text= question.description

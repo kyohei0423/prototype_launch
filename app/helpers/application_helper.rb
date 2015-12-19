@@ -82,4 +82,19 @@ module ApplicationHelper
   def confirm_exists?(object)
     object.class.exists?(id: object.id)
   end
+
+  def measure_of_difficulty(target)
+    if target >= 9
+      "Advanced !!"
+    elsif target >= 7
+      "Intermediate !"
+    elsif target == 0
+      "Measurement impossible..."
+    elsif target <= 2
+      "Basic !"
+    elsif target <= 4
+      "Fundamental !"
+      "Error"
+    end
+  end
 end
