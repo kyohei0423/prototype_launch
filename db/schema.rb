@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151219072614) do
+ActiveRecord::Schema.define(version: 20151219114549) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "sentence",    limit: 65535
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20151219072614) do
 
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
   add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
+    t.integer  "question_id", limit: 4
+    t.text     "text",        limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "keeps", force: :cascade do |t|
     t.integer  "user_id",     limit: 4

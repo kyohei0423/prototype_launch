@@ -5,6 +5,7 @@ class AnswersController < ApplicationController
 
   def show
     @answered_users = @question.reacting_users.where(questions_users:{status: QuestionsUser::ANSWERED})
+    @comment = Comment.new
   end
 
   def new
@@ -22,7 +23,7 @@ class AnswersController < ApplicationController
 
   private
     def set_question
-      @question = Question.find params[:question_id]
+      @question = Question.includes(:questions_users, :keeps, :comments).find params[:question_id]
     end
 
     def set_answer
