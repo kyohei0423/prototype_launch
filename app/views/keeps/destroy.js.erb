@@ -1,3 +1,7 @@
-var $likeDetail = $("#like-detail");
+var $keepsCount = $("#keeps_count"),
+    $actBtn     = $('.action_menu ul');
 
-$likeDetail.html("<%= j(render partial: 'keep_btn', locals: { question: @question } ) %>");
+$keepsCount.attr('data-badge', "<%= @question.keeps_count %>");
+$actBtn.html(
+  '<%= j(render partial: 'keeps/act_btn') %>'
+);

@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
-  before_action :set_question, only: [:new, :create, :show]
-  before_action :set_answer, only: :show
+  before_action :set_question, only: [:new, :create, :show, :edit, :update]
+  before_action :set_answer, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :show, :create]
 
   def show
@@ -19,6 +19,23 @@ class AnswersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    render :new
+  end
+
+  def update
+    if @answer.update(answer_params)
+      redirect_to question_answer_path(@question, @answer)
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @answer.destroy
+    redirect_to root_path
   end
 
   private

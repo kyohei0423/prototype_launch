@@ -468,6 +468,12 @@ $actionAndReactionButtonHeight: 50px;
 }
 
 .article-group {
+ .action_menu {
+    position: fixed;
+    bottom: 50px;
+    right: 80px;
+    z-index: 3;
+  }
   .main-article, .sub-article {
     padding: 16px;
   }
@@ -475,6 +481,8 @@ $actionAndReactionButtonHeight: 50px;
     width: 100%;
   }
   .main-article {
+    margin: 0 auto;
+    width: 80%;
     .mdl-card__title {
       padding-top: 100px;
       color: white;

@@ -1,6 +1,14 @@
 .mdl-grid.article-group
+  .action_menu
+    ul.mdl-menu.mdl-menu--top-right.mdl-js-menu.mdl-js-ripple-effect for="action-menu"
+      = render partial: 'keeps/act_btn'
+    button#action-menu.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--colored
+      i.material-icons settings
   .mdl-cell.mdl-cell--9-col.main-article
     .mdl-shadow--2dp.mdl-card
+      .mdl-card__menu
+        span#keeps_count.mdl-badge data-badge="#{@question.keeps_count}" Keeps
+        span#answered_user_count.mdl-badge data-badge="#{@question.count_answered_users}" answered users
       .mdl-card__title
         .mdl-tooltip for='tlevel'
           = measure_of_difficulty(@question.level)
@@ -13,9 +21,9 @@
         h2.mdl-card__title-text
           = @question.title
           | 　
-      .mdl-card__supporting-text= @question.description
-      .mdl-card__menu
+      .mdl-card__supporting-text
         = render partial: 'common/article_info', locals: { content: @question }
+        = @question.description
       .mdl-card__supporting-text#markdown-text
         = markdown(@question.sentence).html_safe
       #answer-or-reactions
@@ -31,14 +39,6 @@
                 | Write Answer
         - else
           = render partial: "questions_users/answer_or_reaction_btn", locals: { question: @question }
-  .mdl-cell.mdl-cell--3-col.sub-article
-    .mdl-shadow--2dp.mdl-card
-      .detail#like-detail
-        = render partial: "keeps/keep_btn", locals: { question: @question }
-      .detail
-        .numbers
-          i.fa.fa-commenting-o
-          = @question.comments.count
-        span コメント
-    .mdl-shadow--2dp.mdl-card
-      = render partial: 'questions/answered_users', locals: { users: @answered_users }
+  / .mdl-cell.mdl-cell--2-col.sub-article
+  /   .mdl-shadow--2dp.mdl-card
+  /   .mdl-shadow--2dp.mdl-card

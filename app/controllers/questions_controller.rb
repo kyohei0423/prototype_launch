@@ -26,13 +26,16 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question.update(question_params)
-    redirect_to question_path(@question)
+    if @question.update(question_params)
+      redirect_to question_path(@question)
+    else
+      render action: :new
+    end
   end
 
   def destroy
     @question.destroy
-    redirect_to :back
+    redirect_to root_path
   end
 
   private

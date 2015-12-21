@@ -12,8 +12,8 @@ header.mdl-layout__header
         button#demo-menu-lower-right.mdl-button.mdl-js-button.mdl-button--icon
           = image_tag current_user.avatar.url, class: 'header-avatar'
         ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect for="demo-menu-lower-right"
-          li.mdl-menu__item= link_to 'MY PAGE', user_path(current_user)
-          li.mdl-menu__item= link_to 'SIGN OUT', destroy_user_session_path, method: :delete
+          li.mdl-menu__item= link_to 'MY PAGE', user_path(current_user), class: 'block'
+          li.mdl-menu__item= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: 'block'
         a.mdl-navigation__link href="/questions/new" POST
       - else
         a.mdl-navigation__link href="/users/sign_in" LOG IN

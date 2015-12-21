@@ -1,0 +1,8 @@
+- if @question.belongs_to?(current_user)
+  li.mdl-menu__item= link_to 'Edit', edit_question_path(@question)
+  li.mdl-menu__item= destroy_link_to("/questions/#{@question.id}", @question)
+- else
+  - if @question.kept_by?(current_user)
+    li.mdl-menu__item= link_to 'Remove this keep', question_keep_path(@question, @question.user_keep(current_user)), method: :delete, remote: :true
+  - else
+    li.mdl-menu__item= link_to 'Keep This', question_keeps_path(@question), method: :post, remote: true

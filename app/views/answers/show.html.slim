@@ -1,5 +1,14 @@
-.mdl-grid.article-group
-  .mdl-cell.mdl-cell--9-col.main-article
+.article-group
+  .action_menu
+    ul.mdl-menu.mdl-menu--top-right.mdl-js-menu.mdl-js-ripple-effect for="action-menu"
+      - if @answer.user.id == current_user.id
+        li.mdl-menu__item= link_to 'Edit', edit_question_answer_path(@question, @answer)
+        li.mdl-menu__item= destroy_link_to("/questions/:question_id/answers/#{@answer.id}", @question)
+      - else
+        li.mdl-menu__item= link_to 'Keep This', question_keeps_path(@question), method: :post
+    button#action-menu.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--colored
+      i.material-icons settings
+  .mdl-cell.main-article
     .mdl-shadow--2dp.mdl-card
       .mdl-card__title
         h2.mdl-card__title-text
@@ -16,20 +25,24 @@
             | Go to Question
       .comments
         = render partial: 'comments/comment', collection: @question.comments
-  .mdl-cell.mdl-cell--3-col.sub-article
-    .mdl-shadow--2dp.mdl-card
-      .detail
-        .numbers
-          i.fa.fa-folder-o
-          = @question.keeps_count
-        span キープ
-      .detail
-        .numbers
-          i.fa.fa-commenting-o
-            = @question.comments.count
-        span コメント
-        = form_for [@question, @comment], remote: true do |f|
-          = f.text_field :text, placeholder: "Your comments", rows: "3", id: "comment_text", class: "textform-control"
-          = f.submit "コメントする", class: "btn btn-notprimary"
-    .mdl-shadow--2dp.mdl-card
-      = render partial: 'questions/answered_users', locals: { users: @answered_users }
+      = form_for [@question, @comment], remote: true do |f|
+        = f.text_field :text, placeholder: "Your comments", rows: "3", id: "comment_text", class: "textform-control"
+        = f.submit "コメントする", class: "btn btn-notprimary"
+
+  / .mdl-cell.mdl-cell--3-col.sub-article
+  /   .mdl-shadow--2dp.mdl-card
+  /     .detail
+  /       .numbers
+  /         i.fa.fa-folder-o
+  /         = @question.keeps_count
+  /       span キープ
+  /     .detail
+  /       .numbers
+  /         i.fa.fa-commenting-o
+  /         = @question.comments.count
+  /       span コメント
+  /       = form_for [@question, @comment], remote: true do |f|
+  /         = f.text_field :text, placeholder: "Your comments", rows: "3", id: "comment_text", class: "textform-control"
+  /         = f.submit "コメントする", class: "btn btn-notprimary"
+    / .mdl-shadow--2dp.mdl-card
+    /   = render partial: 'questions/answered_users', locals: { users: @answered_users }

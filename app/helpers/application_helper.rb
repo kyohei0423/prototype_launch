@@ -68,15 +68,13 @@ module ApplicationHelper
   end
 
   def destroy_link_to(path, object)
-    link_to path,
+    link_to 'Remove this', path,
       data: {
         confirm: "本当に<strong>#{object.title}</strong>を削除してもよろしいですか?",
         commit: '削除',
         cancel: 'やめる',
         title: '削除の確認' },
-      method: :delete do
-      content_tag(:i, "", class: 'fa fa-trash')
-    end
+      method: :delete
   end
 
   def confirm_exists?(object)
