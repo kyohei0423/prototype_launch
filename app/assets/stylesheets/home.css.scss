@@ -3,3 +3,8 @@ $question-list-description: 14px;
 $question-list-height: 130px;
 $accent-green-color: rgb(109,194,184);
 
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}

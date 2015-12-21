@@ -10,7 +10,7 @@ class QuestionsUsersController < ApplicationController
   end
 
   private
-  def questions_user_params
-    params.permit(:question_id, :status)
-  end
+    def questions_user_params
+      params.permit(:question_id, :status)
+    end
 end

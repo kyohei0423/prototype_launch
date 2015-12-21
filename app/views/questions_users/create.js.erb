@@ -1,4 +1,6 @@
-var $answerOrReactions = $("#answer-or-reactions");
+var $answerOrReactions = $("#answer-or-reactions"),
+    $answeredUserCount = $('#answered_user_count');
 
 $answerOrReactions.html(
   "<%= j(render partial: 'answer_or_reaction_btn', locals: { question: @question } ) %>");
+$answeredUserCount.attr('data-badge', "<%= @question.count_answered_users %>");
