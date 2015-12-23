@@ -3,8 +3,8 @@ class QuestionsUsersController < ApplicationController
 
   def create
     current_user.questions_users.create(questions_user_params)
-    @question = Question.find(params[:question_id])
     if params[:status] == "answered"
+      @question = Question.find(params[:question_id])
       current_user.update_level(@question)
     end
   end

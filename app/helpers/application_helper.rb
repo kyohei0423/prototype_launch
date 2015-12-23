@@ -68,7 +68,7 @@ module ApplicationHelper
   end
 
   def destroy_link_to(path, object)
-    link_to 'Remove this', path,
+    link_to 'Delete', path,
       data: {
         confirm: "本当に<strong>#{object.title}</strong>を削除してもよろしいですか?",
         commit: '削除',
@@ -92,7 +92,8 @@ module ApplicationHelper
       "Basic !"
     elsif target <= 4
       "Fundamental !"
-      "Error"
+    else
+      "Normal"
     end
   end
 end

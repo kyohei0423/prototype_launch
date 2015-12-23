@@ -1,7 +1,7 @@
 .mdl-card.mdl-shadow--2dp.card-wide
   .mdl-tooltip for="tlevel#{question_counter}"
     = measure_of_difficulty(question.level)
-  button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--accent style='text-align: left; margin-right: 230px;' id="tlevel#{question_counter}"
+  button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored style='text-align: left; margin-right: 230px;' id="tlevel#{question_counter}"
     - if question.level == 0
       | Lack of data
     - else
@@ -14,6 +14,9 @@
     | tags:　
     - question.tags.each do |tag|
       = link_to tag.name, tag_path(tag), class: 'mdl-button mdl-js-button', style: 'text-decoration: none;'
+    - if question.belongs_to?(current_user)
+      = link_to 'Delete', "/questions/#{question.id}",data: {confirm: "<strong>#{question.title}</strong>を削除してもよろしいですか?"}, method: :delete, class: 'delete-btn mdl-button mdl-js-button'
+      = link_to 'Edit', edit_question_path(question), class: 'delete-btn mdl-button mdl-js-button'
   .mdl-card__menu
     span.mdl-badge data-badge="#{question.keeps_count}" Keeps
     span.mdl-badge data-badge="#{question.count_answered_users}" answered users
