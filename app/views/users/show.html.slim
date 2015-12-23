@@ -1,7 +1,11 @@
 .mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.user-page
   .mdl-layout__drawer
     span.mdl-layout-title{ style="background-image: url(#{@user.avatar});" }
-    .name= @user.nickname
+    .name
+      | Lv.
+      = @user.level
+      | 　
+      = @user.nickname
     nav.mdl-navigation
       = link_to 'Kept questions', user_keeps_path(@user), class: 'mdl-navigation__link', remote: true
       = link_to 'Answered questions', user_answered_questions_path(@user), class: 'mdl-navigation__link', remote: true

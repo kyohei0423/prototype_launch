@@ -3,6 +3,6 @@
     .mdl-card__title.mdl-card--expand
       h4= tag.name
     .mdl-card__actions.mdl-card--border
-      a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect "" Check questions
+      = link_to 'Check questions', tag_path(tag), class: 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect'
       .mdl-layout-spacer
         i.material-icons local_offer
