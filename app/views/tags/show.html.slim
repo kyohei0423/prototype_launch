@@ -1,9 +1,15 @@
-.content
-  article.categories.container
-    .top-bar.clearfix
-      h2
-        = @tag.name
-        | に関する投稿一覧
-    ul#home-timeline.questions-menu.box-sizing
+.questions-group
+  .mdl-tabs.mdl-js-tabs.mdl-js-ripple-effect
+    .mdl-tabs__tab-bar
+      a.mdl-tabs__tab.is-active href="#tag-panel" =@tag.name
+      a.mdl-tabs__tab href="#newest-panel"  Newest
+      a.mdl-tabs__tab href="#popular-panel"  Popular
+      a.mdl-tabs__tab href="#tags-panel"  Tags
+    #newest-panel.mdl-tabs__panel.is-active
       = render partial: 'questions/question', collection: @questions
-
+    #popular-panel.mdl-tabs__panel
+      = render partial: 'questions/question', collection: @questions
+    #tags-panel.mdl-tabs__panel.tags-group.row
+      = render partial: 'tags/tag', collection: @tags
+    #tag-panel.mdl-tabs__panel
+      = render partial: 'questions/question', collection: @questions
