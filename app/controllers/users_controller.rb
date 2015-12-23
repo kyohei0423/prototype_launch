@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: :show
   before_action :set_user, only: :show
+
   def show
-    @questions = @user.kept_questions
-    @popular_questions = []
+    @kept_questions = @user.kept_questions
+    @answered_questions = @user.answered_questions
+    @unanswered_questions = @user.unanswered_questions
   end
 
   private

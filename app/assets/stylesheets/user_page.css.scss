@@ -201,3 +201,24 @@ $questionTitleLinkColor: #444;
     }
   }
 }
+
+
+.user-page {
+  .mdl-layout__drawer {
+    span {
+      margin: 0;
+      padding: 150px 0 0;
+      background-position: center center;
+      background-size: cover;
+      background-color: #888;
+      color: #eee;
+    }
+    .name {
+      margin-top: 20px;
+      text-align: center;
+      height: 30px;
+      line-height: 30px;
+      font-size: 28px;
+    }
+  }
+}

@@ -1,34 +1,53 @@
-.user-page
-  .user-page-header
-    .container
-      .row.user-page-profile
-        .user-page-user-icon.col-md-2.col-xs-2
-          - if @user.avatar.present?
-            = link_to image_tag(@user.avatar.url), user_path(@user)
-          - else
-            = image_tag('images.jpg')
-        .user-page-body.col-md-8.col-xs-10.clearfix
-          .user-page-heading= @user.nickname
-          .user-page-contribution
-            span Lv.
-            | 100
-        - if sign_in_user_access_user_is_same(current_user, @user)
-          .user-action-btn.col-md-2.col-xs-12
-            = link_to 'プロフィールを編集', edit_user_registration_path
-  .user-page-main
-    .container
-      .row
-        .user-posts.col-sm-7
-          .user-local-nav
-            ul.nav.nav-tabs.nav-justified
-              li#keeped.active role="presentation"= link_to 'キープした問題', user_keeps_path(@user), remote: true
-              li#posted role="presentation"= link_to '最近の投稿', user_recents_path(@user), remote: true
-              li#answered role="presentation"= link_to '回答した問題', user_answered_questions_path(@user), remote: true
-          ul.questions-menu.box-sizing#user-page-questions
-            = render partial: 'questions/question', collection: @questions
-        .user-popular-posts.col-sm-5
-          .panel.panel-info
-            .panel-heading
-              | Popular Questions
-            .user-list-group
-              = render partial: 'popular_question', collection: @popular_questions
+.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.user-page
+  .mdl-layout__drawer
+    span.mdl-layout-title{ style="background-image: url(#{@user.avatar});" }
+    .name= @user.nickname
+    nav.mdl-navigation
+      a.mdl-navigation__link href="#kept-questionos"
+        | Kept questions
+      a.mdl-navigation__link href="#answered-questions"
+        | Answered questions
+      a.mdl-navigation__link href="#unanswered-questions"
+        | Unanswered questions
+      a.mdl-navigation__link href=""  Link
+  main.mdl-layout__content
+    .page-content
+      .questions-group
+        #questions-panel.mdl-tabs__panel
+          = render partial: 'questions/question', collection: @kept_questions
+
+
+/ .user-page
+/   .user-page-header
+/     .container
+/       .row.user-page-profile
+/         .user-page-user-icon.col-md-2.col-xs-2
+/           - if @user.avatar.present?
+/             = link_to image_tag(@user.avatar.url), user_path(@user)
+/           - else
+/             = image_tag('images.jpg')
+/         .user-page-body.col-md-8.col-xs-10.clearfix
+/           .user-page-heading= @user.nickname
+/           .user-page-contribution
+/             span Lv.
+/             | 100
+/         - if sign_in_user_access_user_is_same(current_user, @user)
+/           .user-action-btn.col-md-2.col-xs-12
+/             = link_to 'プロフィールを編集', edit_user_registration_path
+/   .user-page-main
+/     .container
+/       .row
+/         .user-posts.col-sm-7
+/           .user-local-nav
+/             ul.nav.nav-tabs.nav-justified
+/               li#keeped.active role="presentation"= link_to 'キープした問題', user_keeps_path(@user), remote: true
+/               li#posted role="presentation"= link_to '最近の投稿', user_recents_path(@user), remote: true
+/               li#answered role="presentation"= link_to '回答した問題', user_answered_questions_path(@user), remote: true
+/           ul.questions-menu.box-sizing#user-page-questions
+/             = render partial: 'questions/question', collection: @questions
+/         .user-popular-posts.col-sm-5
+/           .panel.panel-info
+/             .panel-heading
+/               | Popular Questions
+/             .user-list-group
+/               = render partial: 'popular_question', collection: @popular_questions

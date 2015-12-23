@@ -21,4 +21,12 @@ class User < ActiveRecord::Base
     self.level = ((10 * (self.ex_point - 3))**(1/2.0)).floor
     self.update(level: self.level)
   end
+
+  def answered_questions
+    reacted_questions.where(questions_users:{status: 0})
+  end
+
+  def unanswered_questions
+    reacted_questions.where(questions_users:{status: 1})
+  end
 end
