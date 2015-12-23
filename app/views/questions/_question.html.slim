@@ -13,7 +13,7 @@
   .mdl-card__actions.mdl-card--border
     | tags:　
     - question.tags.each do |tag|
-      = link_to tag.name, '', class: 'mdl-button mdl-js-button', style: 'text-decoration: none;'
+      = link_to tag.name, tag_path(tag), class: 'mdl-button mdl-js-button', style: 'text-decoration: none;'
   .mdl-card__menu
     span.mdl-badge data-badge="#{question.keeps_count}" Keeps
     span.mdl-badge data-badge="#{question.count_answered_users}" answered users
