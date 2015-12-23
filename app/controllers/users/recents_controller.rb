@@ -3,6 +3,7 @@ class Users::RecentsController < ApplicationController
 
   def index
     @questions = @user.questions.order(updated_at: :desc)
+    render layout: 'user_page', file: '/users/show'
   end
 
   private

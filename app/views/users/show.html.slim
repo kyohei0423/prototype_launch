@@ -1,20 +1,3 @@
-.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.user-page
-  .mdl-layout__drawer
-    span.mdl-layout-title{ style="background-image: url(#{@user.avatar});" }
-    .name
-      | Lv.
-      = @user.level
-      | 　
-      = @user.nickname
-    nav.mdl-navigation#user-page-sidebar
-      - if @user == current_user
-        = link_to 'Edit Profile', edit_user_registration_path(@user), class: 'mdl-navigation__link'
-      = link_to 'Kept questions', user_keeps_path(@user), class: 'mdl-navigation__link', remote: true
-      = link_to 'Answered questions', user_answered_questions_path(@user), class: 'mdl-navigation__link', remote: true
-      = link_to 'Unanswered questions', user_unanswered_questions_path(@user), class: 'mdl-navigation__link', remote: true
-      = link_to 'Recent posts', user_recents_path(@user), class: 'mdl-navigation__link', remote: true
-  main.mdl-layout__content
-    .page-content
-      .questions-group
-        #user-questions-panel.mdl-tabs__panel
-          = render partial: 'questions/question', collection: @kept_questions
+.questions-group
+  #user-questions-panel.mdl-tabs__panel
+    = render partial: 'questions/question', collection: @questions

@@ -3,6 +3,7 @@ class Users::UnansweredQuestionsController < ApplicationController
 
   def index
     @questions = @user.unanswered_questions
+    render layout: 'user_page', file: '/users/show'
   end
 
   private

@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :keeps
   has_many :answers, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :groups, through: :groups_users
 
   mount_uploader :avatar, AvatarUploader
 

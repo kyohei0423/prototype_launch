@@ -3,6 +3,7 @@ class Users::KeepsController < ApplicationController
 
   def index
     @questions = @user.kept_questions
+    render layout: 'user_page', file: '/users/show'
   end
 
   private

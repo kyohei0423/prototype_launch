@@ -9,8 +9,12 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :questions do
-    resources :newest, only: :index
+  resources :groups, only: [:index, :show]
+
+  resources :users do
+    scope module: :users do
+      resources :groups, only: [:show, :new, :create, :edit, :update, :destroy]
+    end
   end
 
   resources :questions, only: [:new, :create, :show, :destroy, :edit, :update] do
@@ -18,6 +22,10 @@ Rails.application.routes.draw do
     resources :questions_users, only: :create
     resources :keeps, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
+  end
+
+  namespace :questions do
+    resources :newest, only: :index
   end
 
   resources :tags, only: [:index, :show]
