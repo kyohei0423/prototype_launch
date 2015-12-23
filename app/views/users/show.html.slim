@@ -3,17 +3,14 @@
     span.mdl-layout-title{ style="background-image: url(#{@user.avatar});" }
     .name= @user.nickname
     nav.mdl-navigation
-      a.mdl-navigation__link href="#kept-questionos"
-        | Kept questions
-      a.mdl-navigation__link href="#answered-questions"
-        | Answered questions
-      a.mdl-navigation__link href="#unanswered-questions"
-        | Unanswered questions
-      a.mdl-navigation__link href=""  Link
+      = link_to 'Kept questions', user_keeps_path(@user), class: 'mdl-navigation__link', remote: true
+      = link_to 'Answered questions', user_answered_questions_path(@user), class: 'mdl-navigation__link', remote: true
+      = link_to 'Unanswered questions', user_unanswered_questions_path(@user), class: 'mdl-navigation__link', remote: true
+      = link_to 'Recent posts', user_recents_path(@user), class: 'mdl-navigation__link', remote: true
   main.mdl-layout__content
     .page-content
       .questions-group
-        #questions-panel.mdl-tabs__panel
+        #user-questions-panel.mdl-tabs__panel
           = render partial: 'questions/question', collection: @kept_questions
 
 

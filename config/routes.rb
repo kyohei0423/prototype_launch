@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :keeps, only: :index
       resources :recents, only: :index
       resources :answered_questions, only: :index
+      resources :unanswered_questions, only: :index
     end
   end
 

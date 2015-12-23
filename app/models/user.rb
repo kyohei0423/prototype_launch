@@ -23,10 +23,10 @@ class User < ActiveRecord::Base
   end
 
   def answered_questions
-    reacted_questions.where(questions_users:{status: 0})
+    reacted_questions.where(questions_users:{status: QuestionsUser::ANSWERED})
   end
 
   def unanswered_questions
-    reacted_questions.where(questions_users:{status: 1})
+    reacted_questions.where(questions_users:{status: QuestionsUser::UNANSWERED})
   end
 end
