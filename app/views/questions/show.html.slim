@@ -1,10 +1,10 @@
-.mdl-grid.article-group
+.article-group
   .action_menu
     ul.mdl-menu.mdl-menu--top-right.mdl-js-menu.mdl-js-ripple-effect for="action-menu"
       = render partial: 'keeps/act_btn'
     button#action-menu.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--colored
       i.material-icons settings
-  .mdl-cell.mdl-cell--9-col.main-article
+  .mdl-cell.main-article
     .mdl-shadow--2dp.mdl-card
       .mdl-card__menu
         span#keeps_count.mdl-badge data-badge="#{@question.keeps_count}" Keeps
