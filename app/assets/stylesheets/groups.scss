@@ -31,3 +31,21 @@
     }
   }
 }
+
+.group-users {
+  .mdl-card {
+    background-size: cover;
+    background-position: center center;
+    .mdl-card__actions {
+      height: 52px;
+      padding: 16px;
+      color: white;
+      background: rgba(0, 0, 0, 0.7);
+      .card-image__filename {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+}

@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :groups, only: [:index, :show, :edit, :update]
+  resources :groups, only: [:index, :show, :edit, :update] do
+    scope module: :groups do
+      resources :users, only: :index
+    end
+  end
 
   resources :users do
     scope module: :users do
