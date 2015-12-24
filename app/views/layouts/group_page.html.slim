@@ -20,10 +20,14 @@ html
         .page-contentol
           .mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.user-page
             .mdl-layout__drawer
-              span.mdl-layout-title{ style="background-image: url(#{});" }
+              span.mdl-layout-title{ style="background-image: url(#{@group.thumbnail});" }
               .name
+                i.fa.fa-users
+                | 　
+                = @group.name
               nav.mdl-navigation#user-page-sidebar
-                = link_to 'Kept questions', '', class: 'mdl-navigation__link'
+                - if @group.owner_is?(current_user)
+                  = link_to 'Edit Group', edit_group_path(@group), class: 'mdl-navigation__link'
             .main.mdl-layout__content
               .page-content
                 = yield

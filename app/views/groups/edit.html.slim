@@ -1,8 +1,8 @@
 = render partial: 'common/error_msg', locals: { object: @group }
 .group-contents
   .groups-group
-    h2 Create Group
-    = form_for [current_user, @group] do |f|
+    h2 Edit Group
+    = form_for @group do |f|
       .mdl-textfield.mdl-js-textfield
         = f.text_field :name, class: 'mdl-textfield__input', id: 'groupname', autofocus: true
         = f.label :name, class: 'mdl-textfield__label', for: 'groupname', value: 'Groupname...'

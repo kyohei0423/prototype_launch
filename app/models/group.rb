@@ -6,4 +6,8 @@ class Group < ActiveRecord::Base
   validates_presence_of :name
 
   mount_uploader :thumbnail, ThumbnailUploader
+
+  def owner_is?(user)
+    groups_users.owner.exists?(user_id: user.id)
+  end
 end
