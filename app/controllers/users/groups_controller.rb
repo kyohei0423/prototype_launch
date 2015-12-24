@@ -1,7 +1,12 @@
 class Users::GroupsController < UsersController
   layout 'user_page'
 
-  before_action :set_group, only: :destory
+  before_action :set_group, only: [:show, :destory]
+  before_action :set_user, only: :index
+
+  def index
+    @groups = @user.groups
+  end
 
   def new
     @group = Group.new
@@ -26,6 +31,10 @@ class Users::GroupsController < UsersController
 
     def set_group
       @group = Group.find params[:id]
+    end
+
+    def set_user
+      @user = User.find params[:user_id]
     end
 
     def group_params

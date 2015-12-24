@@ -23,7 +23,6 @@ html
               span.mdl-layout-title{ style="background-image: url(#{@group.thumbnail});" }
               .name
                 i.fa.fa-users
-                | 　
                 = @group.name
               nav.mdl-navigation#user-page-sidebar
                 - if @group.owner_is?(current_user)

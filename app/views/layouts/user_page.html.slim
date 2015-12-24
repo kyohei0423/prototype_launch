@@ -21,11 +21,14 @@ html
           .mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.user-page
             .mdl-layout__drawer
               span.mdl-layout-title{ style="background-image: url(#{@user.avatar});" }
-              .name Lv.#{@user.level} #{@user.nickname}
+              .name
+                i.fa.fa-user
+                | Lv.#{@user.level} #{@user.nickname}
               nav.mdl-navigation#user-page-sidebar
                 - if @user == current_user
                   = link_to 'Edit Profile', edit_user_registration_path(@user), class: 'mdl-navigation__link'
                   = link_to 'Create group', new_user_group_path(@user), class: 'mdl-navigation__link'
+                = link_to 'Groups', user_groups_path(@user), class: 'mdl-navigation__link'
                 = link_to 'Kept questions', user_keeps_path(@user), class: 'mdl-navigation__link'
                 = link_to 'Answered questions', user_answered_questions_path(@user), class: 'mdl-navigation__link'
                 = link_to 'Recent posts', user_recents_path(@user), class: 'mdl-navigation__link'
