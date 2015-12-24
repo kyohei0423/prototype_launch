@@ -1,8 +1,8 @@
 class Users::GroupsController < UsersController
   layout 'user_page'
 
-  before_action :set_group, only: [:show, :destroy]
-  before_action :set_user, only: [:index, :destroy]
+  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:index, :edit, :udpate,:destroy]
 
   def index
     @groups = @user.groups
@@ -20,6 +20,14 @@ class Users::GroupsController < UsersController
     else
       render :new
     end
+  end
+
+  def edit
+    render :new
+  end
+
+  def update
+    @group.update(group_params)
   end
 
   def destroy

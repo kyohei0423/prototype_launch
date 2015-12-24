@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :users do
     scope module: :users do
-      resources :groups, only: [:index, :show, :new, :create, :destroy]
+      resources :groups
     end
   end
 
