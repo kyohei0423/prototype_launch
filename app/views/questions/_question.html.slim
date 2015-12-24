@@ -1,7 +1,7 @@
 .mdl-card.mdl-shadow--2dp.card-wide
   .mdl-tooltip for="tlevel#{question_counter}"
     = measure_of_difficulty(question.level)
-  button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored style='text-align: left; margin-right: 230px;' id="tlevel#{question_counter}"
+  button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored style='text-align: left; margin-right: 300px;' id="tlevel#{question_counter}"
     - if question.level == 0
       | Lack of data
     - else
