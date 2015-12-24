@@ -12,7 +12,8 @@ class KeepsController < ApplicationController
   end
 
   private
-  def keeps_params
-    params.permit(:question_id)
-  end
+
+    def keeps_params
+      params.permit(:question_id)
+    end
 end

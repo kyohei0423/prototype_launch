@@ -13,6 +13,6 @@ class HomeController < ApplicationController
 
   private
     def set_questions
-      @questions = Question.order(created_at: :DESC).includes(:tags)
+      @questions = Question.order(created_at: :DESC).includes(:tags).where(private: false)
     end
 end
