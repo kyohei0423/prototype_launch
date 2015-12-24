@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   layout 'user_page'
 
-  before_action :authenticate_user!, only: :show
+  before_action :authenticate_user!
   before_action :set_user, only: :show
   before_action :set_group_user, except: :show
 

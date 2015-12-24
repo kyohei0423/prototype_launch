@@ -5,7 +5,7 @@ class QuestionsUser < ActiveRecord::Base
   enum status: %i(answered unanswered)
 
   STATUS = [
-    ANSWERED     = 0,
+    ANSWERED    = 0,
     UNANSWERED  = 1
   ]
 end

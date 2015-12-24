@@ -1,15 +1,16 @@
 class Users::GroupsController < UsersController
   layout 'user_page'
 
-  before_action :set_group, only: :show
+  before_action :set_group, only: [:show, :update, :destory]
 
   def new
     @group = Group.new
   end
 
   def create
-    @group = Group.new(group_params)
+    @group = current_user.groups.new(group_params)
     if @group.save
+      GroupsUser.create(user_id: params[:user_id], group_id: @group.id, status: GroupsUser::OWNER)
       redirect_to group_path(@group)
     else
       render :new
@@ -28,11 +29,12 @@ class Users::GroupsController < UsersController
   end
 
   def destroy
-    Group.find(params[:id]).destroy
+    @group.destroy
     redirect_to user_path(current_user)
   end
 
   private
+
     def set_group
       @group = Group.find params[:id]
     end

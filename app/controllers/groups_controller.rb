@@ -4,7 +4,11 @@ class GroupsController < ApplicationController
   def index
   end
 
+  def show
+  end
+
   private
+
     def set_group
       @group = Group.find params[:id]
     end

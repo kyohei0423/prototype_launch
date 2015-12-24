@@ -17,3 +17,13 @@
     }
   }
 }
+
+.user-page-group.mdl-layout {
+  align-items: center;
+  justify-content: center;
+  .mdl-layout__content {
+    background-color: whitesmoke;
+    padding: 24px;
+    flex: none;
+  }
+}
