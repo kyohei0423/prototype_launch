@@ -1,0 +1,13 @@
+.mdl-card.mdl-cell.mdl-cell--3-col.mdl-cell--4-col-tablet.mdl-shadow--2dp
+  figure.mdl-card__media
+    = image_tag group.thumbnail
+  .mdl-card__title
+    h1.mdl-card__title-text= link_to group.name, group_path(group)
+  .mdl-card__supporting-text
+    / p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam accusamus, consectetur.
+  .mdl-card__actions.mdl-card--border
+    - if group.owner_is?(current_user)
+      = link_to 'Delete', "/users/#{current_user.id}/groups/#{group.id}", class: 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect', method: :delete
+    .mdl-layout-spacer
+    span.material-icons.mdl-badge{ data-badge="1" } accessibility
+    span.material-icons.mdl-badge{ data-badge="1" } content_copy

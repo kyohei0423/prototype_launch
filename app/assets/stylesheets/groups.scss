@@ -10,3 +10,24 @@
     }
   }
 }
+
+.mdl-grid {
+  .mdl-card__media {
+      margin: 0;
+    img {
+        max-width: 100%;
+    }
+  }
+  .mdl-card__title h1 a {
+    text-decoration: none;
+  }
+  .mdl-card__actions {
+      display: flex;
+      box-sizing:border-box;
+      align-items: center;
+    .mdl-button--icon {
+        margin-right: 3px;
+        margin-left: 3px;
+    }
+  }
+}

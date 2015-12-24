@@ -1,8 +1,8 @@
 class Users::GroupsController < UsersController
   layout 'user_page'
 
-  before_action :set_group, only: [:show, :destory]
-  before_action :set_user, only: :index
+  before_action :set_group, only: [:show, :destroy]
+  before_action :set_user, only: [:index, :destroy]
 
   def index
     @groups = @user.groups
@@ -24,7 +24,7 @@ class Users::GroupsController < UsersController
 
   def destroy
     @group.destroy
-    redirect_to user_path(current_user)
+    redirect_to user_groups_path(@user)
   end
 
   private
