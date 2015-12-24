@@ -2,4 +2,4 @@
   i.fa.fa-clock-o
   = fetch_created_date_of(content)
   | 　
-  = content.user.nickname
+  = link_to content.user.nickname, user_path(content.user)

@@ -14,9 +14,10 @@
         h2.mdl-card__title-text
           | 【解答】
           = @question.title
-      .mdl-card__supporting-text= @question.description
+      .mdl-card__supporting-text
+        = render partial: 'common/article_info', locals: { content: @question }
+        = @question.description
       .mdl-card__menu
-        = render partial: 'common/article_info', locals: { content: @answer }
       .mdl-card__supporting-text#markdown-text
         = markdown(@answer.sentence).html_safe
       .act-to-answer
