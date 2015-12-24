@@ -1,6 +1,10 @@
-= form_for [@user, @group] do |f|
-  .mdl-textfield.mdl-js-textfield
-    = f.text_field :name, class: 'mdl-textfield__input', id: 'groupname', autofocus: true
-    = f.label :name, class: 'mdl-textfield__label', for: 'groupname', value: 'Groupname...'
-  .mdl-card__actions.mdl-card--border{ style='border: none;' }
-    = f.submit 'Create', class: 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect'
+= render partial: 'common/error_msg', locals: { object: @group }
+.group-contents
+  .groups-group
+    h2 Create Group
+    = form_for [@user, @group] do |f|
+      .mdl-textfield.mdl-js-textfield
+        = f.text_field :name, class: 'mdl-textfield__input', id: 'groupname', autofocus: true
+        = f.label :name, class: 'mdl-textfield__label', for: 'groupname', value: 'Groupname...'
+      .mdl-card__actions.mdl-card--border{ style='border: none;' }
+        = f.submit 'Create', class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'
