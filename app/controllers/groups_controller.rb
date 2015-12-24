@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update]
+  before_action :set_group, only: [:show, :edit, :update  ]
   before_action :authenticate_user!, only: [:index, :show]
 
   layout 'group_page', only: [:show, :edit]
@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @questions = @group.questions
   end
 
   def edit

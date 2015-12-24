@@ -1,12 +1,13 @@
 class Question < ActiveRecord::Base
   include Math
 
-  belongs_to :user
   has_one :answer, dependent: :destroy
   has_many :questions_users
   has_many :reacting_users, through: :questions_users, source: :user
   has_many :keeps
   has_many :comments, dependent: :destroy
+  belongs_to :user
+  belongs_to :group
 
   validates :title, :sentence, presence: true
 
