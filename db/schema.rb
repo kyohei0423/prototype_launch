@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151224061356) do
+ActiveRecord::Schema.define(version: 20151224105424) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "sentence",    limit: 65535
@@ -67,8 +67,10 @@ ActiveRecord::Schema.define(version: 20151224061356) do
     t.string   "description", limit: 255
     t.integer  "keeps_count", limit: 4,     default: 0
     t.integer  "level",       limit: 4,     default: 5
+    t.integer  "group_id",    limit: 4
   end
 
+  add_index "questions", ["group_id"], name: "index_questions_on_group_id", using: :btree
   add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
 
   create_table "questions_users", force: :cascade do |t|
@@ -129,5 +131,6 @@ ActiveRecord::Schema.define(version: 20151224061356) do
   add_foreign_key "answers", "users"
   add_foreign_key "groups_users", "groups"
   add_foreign_key "groups_users", "users"
+  add_foreign_key "questions", "groups"
   add_foreign_key "questions", "users"
 end
