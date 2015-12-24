@@ -10,10 +10,13 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    @groups = current_user.groups.present? ? current_user.groups.map{ |group| [group.name, group.id] } : []
   end
 
   def create
     @question = current_user.questions.new(question_params)
+    @question.private = true if question_params[:group_id] != nil
+    binding.pry
     if @question.save
       redirect_to question_path(@question), notice: '問題の投稿が完了しました。'
     else
@@ -22,10 +25,12 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    @groups = current_user.groups.present? ? current_user.groups.map{ |group| [group.name, group.id] } : []
     render :new
   end
 
   def update
+    @question.private = true if question_params[:group_id] != nil
     if @question.update(question_params)
       redirect_to question_path(@question)
     else
@@ -44,7 +49,7 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-      params.require(:question).permit(:title, :sentence, :time_limit, :tag_list, :description)
+      params.require(:question).permit(:title, :sentence, :time_limit, :tag_list, :description, :group_id)
     end
 
     def set_question_tags_to_gon
