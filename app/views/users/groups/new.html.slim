@@ -6,5 +6,7 @@
       .mdl-textfield.mdl-js-textfield
         = f.text_field :name, class: 'mdl-textfield__input', id: 'groupname', autofocus: true
         = f.label :name, class: 'mdl-textfield__label', for: 'groupname', value: 'Groupname...'
+      .form-group{ style='width: 300px' }
+        = f.file_field :avatar, autofocus: true, class: "form-control filestyle", "data-buttonText" => "File Upload"
       .mdl-card__actions.mdl-card--border{ style='border: none;' }
         = f.submit 'Create', class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'
