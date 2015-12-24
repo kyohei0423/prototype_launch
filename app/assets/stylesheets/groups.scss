@@ -1,3 +1,14 @@
+
+.sidebar-layout {
+  position: relative;
+  .sidebar_bottom_link {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    border-top: 1px solid #aaa;
+  }
+}
+
 .group-contents {
   background-color: white;
   .groups-group {

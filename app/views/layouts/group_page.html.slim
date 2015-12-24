@@ -19,7 +19,7 @@ html
       main.mdl-layout__content
         .page-contentol
           .mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.user-page
-            .mdl-layout__drawer
+            .mdl-layout__drawer.sidebar-layout
               span.mdl-layout-title{ style="background-image: url(#{@group.thumbnail});" }
               .name
                 i.fa.fa-users
@@ -27,6 +27,7 @@ html
               nav.mdl-navigation#user-page-sidebar
                 - if @group.owner_is?(current_user)
                   = link_to 'Edit Group', edit_group_path(@group), class: 'mdl-navigation__link'
+                = link_to 'MyPage', user_path(current_user), class: 'sidebar_bottom_link mdl-navigation__link'
             .main.mdl-layout__content
               .page-content
                 = yield
