@@ -5,16 +5,12 @@ class GroupsController < ApplicationController
   end
 
   def show
-    render layout: 'user_page'
+    render layout: 'group_page'
   end
 
   private
 
     def set_group
       @group = Group.find params[:id]
-    end
-
-    def group_params
-      params.require(:group).permit(:name)
     end
 end

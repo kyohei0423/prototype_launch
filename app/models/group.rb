@@ -4,4 +4,6 @@ class Group < ActiveRecord::Base
 
   validates_uniqueness_of :name, message: 'already saved with the name', case_sensitive: true
   validates_presence_of :name
+
+  mount_uploader :thumbnail, ThumbnailUploader
 end
