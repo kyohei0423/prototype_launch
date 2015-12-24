@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title
+      | CodeUp
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = include_gon
+    = csrf_meta_tags
+  body
+    .demo-layout-waterfall.mdl-layout.mdl-js-layout
+      = render partial: 'common/header'
+      - if notice
+        p.alert.alert-success
+          = notice
+      - if alert
+        p.alert.alert-danger
+          = alert
+      main.mdl-layout__content
+        .page-contentol
+          .mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.user-page
+            .mdl-layout__drawer
+              span.mdl-layout-title{ style="background-image: url(#{});" }
+              .name
+              nav.mdl-navigation#user-page-sidebar
+                = link_to 'Kept questions', '', class: 'mdl-navigation__link'
+            .main.mdl-layout__content
+              .page-content
+                = yield
