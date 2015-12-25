@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @tags = ActsAsTaggableOn::Tag.includes(:taggings).most_used
+    @users = User.order(level: :desc).limit(10)
   end
 
   def search
