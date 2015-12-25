@@ -16,7 +16,6 @@ class QuestionsController < ApplicationController
   def create
     @question = current_user.questions.new(question_params)
     @question.private = true if question_params[:group_id] != nil
-    binding.pry
     if @question.save
       redirect_to question_path(@question), notice: '問題の投稿が完了しました。'
     else
