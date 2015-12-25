@@ -25,12 +25,12 @@ html
                 i.fa.fa-users
                 = @group.name
               nav.mdl-navigation#user-page-sidebar
-                = link_to 'Questions', group_path(@group), class: 'mdl-navigation__link'
+                = link_to '投稿された問題一覧', group_path(@group), class: 'mdl-navigation__link'
                 - if @group.owner_is?(current_user)
-                  = link_to 'Edit Group', edit_group_path(@group), class: 'mdl-navigation__link'
-                  = link_to 'Invite Member', new_group_user_path(@group), class: 'mdl-navigation__link'
-                = link_to 'Members', group_users_path(@group), class: 'mdl-navigation__link'
-                = link_to 'MyPage', user_path(current_user), class: 'mdl-navigation__link'
+                  = link_to 'グループ編集', edit_group_path(@group), class: 'mdl-navigation__link'
+                  = link_to 'メンバー招待', new_group_user_path(@group), class: 'mdl-navigation__link'
+                = link_to 'メンバー一覧', group_users_path(@group), class: 'mdl-navigation__link'
+                = link_to 'マイページ', user_path(current_user), class: 'mdl-navigation__link'
             .main.mdl-layout__content
               .page-content
                 = yield

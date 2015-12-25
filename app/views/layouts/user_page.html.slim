@@ -25,13 +25,13 @@ html
                 i.fa.fa-user
                 | Lv.#{@user.level} #{@user.nickname}
               nav.mdl-navigation#user-page-sidebar
-                = link_to 'Kept questions', user_keeps_path(@user), class: 'mdl-navigation__link'
-                = link_to 'Answered questions', user_answered_questions_path(@user), class: 'mdl-navigation__link'
-                = link_to 'Recent posts', user_recents_path(@user), class: 'mdl-navigation__link'
-                = link_to 'Groups', user_groups_path(@user), class: 'mdl-navigation__link'
+                = link_to 'キープした問題一覧', user_keeps_path(@user), class: 'mdl-navigation__link'
+                = link_to '解答できた問題一覧', user_answered_questions_path(@user), class: 'mdl-navigation__link'
+                = link_to '最近の投稿一覧', user_recents_path(@user), class: 'mdl-navigation__link'
+                = link_to '参加中のグループ一覧', user_groups_path(@user), class: 'mdl-navigation__link'
                 - if @user == current_user
-                  = link_to 'Edit Profile', edit_user_registration_path(@user), class: 'mdl-navigation__link'
-                  = link_to 'Create group', new_user_group_path(@user), class: 'mdl-navigation__link'
+                  = link_to 'Edit プロフィール編集', edit_user_registration_path(@user), class: 'mdl-navigation__link'
+                  = link_to 'グループを作成', new_user_group_path(@user), class: 'mdl-navigation__link'
             .main.mdl-layout__content
               .page-content
                 = yield
