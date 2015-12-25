@@ -13,6 +13,6 @@ class Group < ActiveRecord::Base
   end
 
   def has_the_user?(user_id)
-    groups_users.where(user_id: user_id, status: GroupsUser::MEMBER).exists?
+    users.exists?(id: user_id)
   end
 end
