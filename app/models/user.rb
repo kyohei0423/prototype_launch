@@ -31,8 +31,4 @@ class User < ActiveRecord::Base
   def unanswered_questions
     reacted_questions.where(questions_users:{status: QuestionsUser::UNANSWERED})
   end
-
-  def act_to_question?
-    reacted_questions.blank? || kept_questions.blank?
-  end
 end
