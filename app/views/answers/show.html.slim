@@ -25,26 +25,3 @@
         = link_to question_path(@answer.question) do
             i.fa.fa-arrow-right
             | Go to Question
-      .comments
-        = render partial: 'comments/comment', collection: @question.comments
-      = form_for [@question, @comment], remote: true do |f|
-        = f.text_field :text, placeholder: "Your comments", rows: "3", id: "comment_text", class: "textform-control"
-        = f.submit "コメントする", class: "btn btn-notprimary"
-
-  / .mdl-cell.mdl-cell--3-col.sub-article
-  /   .mdl-shadow--2dp.mdl-card
-  /     .detail
-  /       .numbers
-  /         i.fa.fa-folder-o
-  /         = @question.keeps_count
-  /       span キープ
-  /     .detail
-  /       .numbers
-  /         i.fa.fa-commenting-o
-  /         = @question.comments.count
-  /       span コメント
-  /       = form_for [@question, @comment], remote: true do |f|
-  /         = f.text_field :text, placeholder: "Your comments", rows: "3", id: "comment_text", class: "textform-control"
-  /         = f.submit "コメントする", class: "btn btn-notprimary"
-    / .mdl-shadow--2dp.mdl-card
-    /   = render partial: 'questions/answered_users', locals: { users: @answered_users }
