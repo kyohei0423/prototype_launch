@@ -1,0 +1,10 @@
+.group-contents
+  .groups-group
+    h2 Invite member to this group
+    = form_tag "/groups/#{@group.id}/users/new", method: :get
+      .mdl-textfield.mdl-js-textfield
+        = text_field_tag :user_email, '', id: 'search-user', data: { group_id: "#{@group.id}" }
+      .mdl-card__actions.mdl-card--border{ style='border: none;' }
+        = submit_tag 'Search', class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored'
+.mdl-grid.group-users
+  = render partial: 'groups/users/user', collection: @users

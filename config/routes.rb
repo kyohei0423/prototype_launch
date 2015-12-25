@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :groups, only: [:index, :show, :edit, :update] do
     scope module: :groups do
-      resources :users, only: :index
+      resources :users, only: [:index, :new, :create]
     end
   end
 
