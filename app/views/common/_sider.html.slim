@@ -1,0 +1,8 @@
+.sider
+  .mdl-card.mdl-shadow--2dp
+    .mdl-card__title Answered Users
+    .mdl-card__supporting-text
+      - @question.answered_users.each do |user|
+        .icon.material-icons#user-icon= image_tag user.avatar
+        .mdl-tooltip{ for='user-icon' }= user.nickname
+    .mdl-card__actions
