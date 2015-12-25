@@ -11,4 +11,8 @@ class Group < ActiveRecord::Base
   def owner_is?(user)
     groups_users.owner.exists?(user_id: user.id)
   end
+
+  def has_the_user?(user_id)
+    groups_users.where(user_id: user_id, status: GroupsUser::MEMBER).exists?
+  end
 end

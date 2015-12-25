@@ -12,8 +12,8 @@ class Groups::UsersController < GroupsController
   end
 
   def create
-    if @group.groups_users.where(user_id: params[:user_id], status: GroupsUser::MEMBER).exists?
-      flash[:alert] = "このユーザーは既にグループに入っています"
+    if @group.has_the_user?(params[:user_id])
+      flash[:alert] = "このユーザーは既にグループに入っています。"
       redirect_to new_group_user_path
     else
       @group.groups_users.create(user_id: params[:user_id], status: GroupsUser::MEMBER)
