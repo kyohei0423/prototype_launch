@@ -28,6 +28,7 @@ html
                 = link_to 'Questions', group_path(@group), class: 'mdl-navigation__link'
                 - if @group.owner_is?(current_user)
                   = link_to 'Edit Group', edit_group_path(@group), class: 'mdl-navigation__link'
+                  = link_to 'Invite Member', new_group_user_path(@group), class: 'mdl-navigation__link'
                 = link_to 'Members', group_users_path(@group), class: 'mdl-navigation__link'
                 = link_to 'MyPage', user_path(current_user), class: 'mdl-navigation__link'
             .main.mdl-layout__content
