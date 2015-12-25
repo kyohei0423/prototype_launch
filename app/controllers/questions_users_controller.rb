@@ -5,7 +5,9 @@ class QuestionsUsersController < ApplicationController
   def create
     current_user.questions_users.create(questions_user_params)
     if params[:status] == "answered"
+      @pre_user_level = current_user.level
       current_user.update_level(@question)
+      @new_user_level = current_user.level
     end
   end
 
