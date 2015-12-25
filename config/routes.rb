@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show] do
+    member do
+      patch 'thanks'
+    end
     scope module: :users do
       resources :keeps, only: :index
       resources :recents, only: :index

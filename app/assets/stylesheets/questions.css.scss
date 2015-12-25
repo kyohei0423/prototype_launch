@@ -167,6 +167,11 @@ $actionAndReactionButtonHeight: 50px;
     }
   }
 }
-#tutorial_second {
+
+#tutorial_second, #tutorial_fourth {
   top: 300px;
+}
+
+#tutorial_eight .mdl-card .mdl-card__supporting-text {
+  overflow: overlay;
 }

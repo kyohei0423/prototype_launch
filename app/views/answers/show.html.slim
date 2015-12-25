@@ -7,7 +7,7 @@
         li.mdl-menu__item= link_to 'Edit', edit_question_answer_path(@question, @answer)
         li.mdl-menu__item= destroy_link_to("/questions/:question_id/answers/#{@answer.id}", @question)
       - else
-        li.mdl-menu__item= link_to 'Thank you !', question_keeps_path(@question), method: :post
+        li.mdl-menu__item#thanks_btn= link_to 'THANK YOU !', thanks_user_path(@question.user), method: :patch, remote: true
     button#action-menu.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--colored
       i.material-icons settings
   .mdl-cell.main-article
@@ -24,5 +24,5 @@
         = markdown(@answer.sentence).html_safe
       .act-to-answer
         = link_to question_path(@answer.question) do
-            i.fa.fa-arrow-right
-            | Check the question
+          i.fa.fa-arrow-right
+          | Check the question
