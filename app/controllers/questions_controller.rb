@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = current_user.questions.new(question_params)
-    @question.private = true if question_params[:group_id] != nil
+    @question.private = question_params[:group_id] != '' ? true : false
     if @question.save
       redirect_to question_path(@question), notice: '問題の投稿が完了しました。'
     else
@@ -29,7 +29,7 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question.private = true if question_params[:group_id] != nil
+    @question.private = question_params[:group_id] != '' ? true : false
     if @question.update(question_params)
       redirect_to question_path(@question)
     else
