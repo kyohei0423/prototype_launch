@@ -1,6 +1,6 @@
 .group-contents
   .groups-group
-    h2 Invite member to this group
+    h2 Invite member to this group with Email
     = form_tag "/groups/#{@group.id}/users/new", method: :get
       .mdl-textfield.mdl-js-textfield
         = text_field_tag :user_email, '', id: 'search-user', data: { group_id: "#{@group.id}" }

@@ -8,6 +8,9 @@ $answeredUserCount.attr('data-badge', "<%= @question.count_answered_users %>");
 $answeredUserLists.html(
   "<%= j(render partial: 'questions/user', collection: @question.answered_users) %>"
 );
+$('.tutorial-area').html(
+  "<%= j(render partial: 'common/tutorial_third') %>"
+);
 $('#notice-levelup').html(
   "<%= j(render partial: 'questions/notice_levelup') %>"
 );
