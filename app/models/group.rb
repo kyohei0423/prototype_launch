@@ -4,7 +4,7 @@ class Group < ActiveRecord::Base
   has_many :questions
 
   validates_uniqueness_of :name, message: 'already saved with the name', case_sensitive: true
-  validates_presence_of :name
+  validates_presence_of :name, :thumbnail
 
   mount_uploader :thumbnail, ThumbnailUploader
 
