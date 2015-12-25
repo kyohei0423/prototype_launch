@@ -22,6 +22,7 @@
               = f.password_field :password_confirmation, autofocus: true, class: "mdl-textfield__input", id: 'password_confirmation'
               = f.label 'Password Confirmation...', class: 'mdl-textfield__label', for: 'password_confirmation'
             .form-group
+              = f.label 'upload avatar'
               = f.file_field :avatar, autofocus: true, class: "form-control filestyle", "data-buttonText" => "File Upload"
             = f.submit t('.sign_up_btn', :default => "Sign up"), class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
             = link_to 'To Sign In', new_user_session_path, class: 'mdl-button mdl-js-button mdl-button--primary'

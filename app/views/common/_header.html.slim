@@ -24,9 +24,10 @@ header.mdl-layout__header
     - if user_signed_in?
       button#demo-menu-lower-right.mdl-button.mdl-js-button.mdl-button--icon
         = image_tag current_user.avatar.url, class: 'header-avatar'
-      a.mdl-navigation__link href="/" HOME
-      a.mdl-navigation__link href="/questions/new" POST
-      = link_to 'MY PAGE', user_path(current_user), class: 'mdl-navigation__link'
-      = link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: 'mdl-navigation__link'
+      a.mdl-navigation__link href="/" ホーム
+      a.mdl-navigation__link href="/questions/new" 投稿する
+      = link_to 'マイページ', user_path(current_user), class: 'mdl-navigation__link'
+      = link_to 'グループ一覧', user_path(current_user), class: 'mdl-navigation__link'
+      = link_to 'サインアウト', destroy_user_session_path, method: :delete, class: 'mdl-navigation__link'
     - else
       a.mdl-navigation__link href="/users/sign_in" LOG IN

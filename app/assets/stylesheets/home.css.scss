@@ -1,10 +1,16 @@
 $question-list-title: 18px;
 $question-list-description: 14px;
 $question-list-height: 130px;
-$accent-green-color: rgb(109,194,184);
 
 nav ul li a {
   display: block;
   text-decoration: none;
   color: inherit;
+}
+
+.group-users {
+  .mdl-card {
+    float: left;
+    min-width: 200px;
+  }
 }

@@ -2,6 +2,7 @@ class AnswersController < ApplicationController
   before_action :set_question, only: [:new, :create, :show, :edit, :update]
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :show, :create]
+  before_action :check_reacted_user, only: :show
 
   def show
     @answered_users = @question.reacting_users.where(questions_users:{status: QuestionsUser::ANSWERED})
@@ -39,6 +40,11 @@ class AnswersController < ApplicationController
   end
 
   private
+
+    def check_reacted_user
+      redirect_to question_path(@question) unless @question.reacted_by?(current_user)
+    end
+
     def set_question
       @question = Question.includes(:questions_users, :keeps, :comments).find params[:question_id]
     end

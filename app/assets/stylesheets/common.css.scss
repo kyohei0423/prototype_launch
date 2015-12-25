@@ -109,3 +109,15 @@ h1, h2, h3, h4, h5, h6, p, body {
 }
 
 .block { display: block; }
+
+#tutorial .mdl-card, #tutorial_second .mdl-card, #tutorial_fourth .mdl-card, #tutorial_eight {
+  .mdl-card__title {
+    background-color: #ff4081;
+    color: white;
+  }
+  .mdl-card__supporting-text {
+    font-size: 20px;
+    line-height: 25px;
+    overflow: visible;
+  }
+}

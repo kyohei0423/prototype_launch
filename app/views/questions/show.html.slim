@@ -1,3 +1,10 @@
+- if @question.user.id == current_user.id
+- else
+  - if current_user.reacted_questions.blank?
+    #tutorial-area
+      = render partial: 'common/tutorial_second'
+  - elsif current_user.kept_questions.blank?
+    = render partial: 'common/tutorial_sixth'
 = render partial: 'common/sider'
 #notice-levelup
   =render partial: 'questions/notice_levelup'
@@ -35,11 +42,10 @@
             - if @question.has_answer?
               = link_to question_answer_path(@question, @question.answer) do
                 i.fa.fa-arrow-right
-                | Go to Answer
+                | Check the answer
             - else
               = link_to new_question_answer_path(@question) do
                 i.fa.fa-pencil
-                | Write Answer
+                | Write the answer
         - else
           = render partial: "questions_users/answer_or_reaction_btn", locals: { question: @question }
-
