@@ -9,4 +9,4 @@
       = link_to 'Delete', "/users/#{current_user.id}/groups/#{group.id}", class: 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect', method: :delete
     .mdl-layout-spacer
     span.material-icons.mdl-badge{ data-badge="#{group.users.count}" } accessibility
-    span.material-icons.mdl-badge{ data-badge="0" } content_copy
+    span.material-icons.mdl-badge{ data-badge="#{group.questions.count}" } content_copy
