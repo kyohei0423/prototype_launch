@@ -1,7 +1,4 @@
 - if question.reacted_by?(current_user)
-  - if @pew_user_level != @new_user_level
-    #notice-levelup
-      =render partial: 'questions/notice_levelup'
   .act-to-answer
     - if question.has_answer?
       = link_to question_answer_path(question, question.answer) do
