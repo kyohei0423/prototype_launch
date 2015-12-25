@@ -33,7 +33,7 @@
             - if @question.has_answer?
               = link_to question_answer_path(@question, @question.answer) do
                 i.fa.fa-arrow-right
-                | See the answer
+                | Check the answer
             - else
               = link_to new_question_answer_path(@question) do
                 i.fa.fa-pencil
