@@ -14,7 +14,7 @@ header.mdl-layout__header
         ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect for="demo-menu-lower-right"
           li.mdl-menu__item= link_to 'MY PAGE', user_path(current_user), class: 'block'
           li.mdl-menu__item= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: 'block'
-        a.mdl-navigation__link href="/questions/new" POST
+        = link_to 'POST', new_question_path, class: 'mdl-navigation__link'
       - else
         a.mdl-navigation__link href="/users/sign_in" LOG IN
       a.mdl-navigation__link href="/" HOME

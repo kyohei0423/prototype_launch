@@ -2,6 +2,7 @@ require 'rails_helper'
 describe User do
   describe '#create' do
     it 'is valid with a email, password, password_confirmation' do
+      binding.pry
       user = build(:user)
       expect(user).to be_valid
     end

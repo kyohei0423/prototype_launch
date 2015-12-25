@@ -12,7 +12,11 @@
       .mdl-textfield.mdl-js-textfield.input-text-field
         = f.text_area :sentence, class: 'mdl-textfield__input input-post-text-area', id: 'text'
         = f.label 'Text... with Markdown', class: 'mdl-textfield__label', for: 'text'
-      = f.submit 'SUBMIT', class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored submit-btn'
+      = f.submit 'SUBMIT', class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored submit-btn', style: 'margin-right: 20px'
+      .mdl-textfield.mdl-js-textfield.group-select-box{ style='display: inline' }
+        | You can select the group to post
+        | 　
+        = f.select :group_id, @groups, include_blank: true
   .mdl-cell.mdl-cell--6-col.mdl-cell--12-col-phone.output-field
     #output-area.mdl-shadow--2dp
       - if confirm_exists?(@question)

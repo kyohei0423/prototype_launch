@@ -13,7 +13,19 @@
       text-align: center;
       height: 30px;
       line-height: 30px;
-      font-size: 28px;
+      font-size: 25px;
     }
+  }
+  .mdl-layout__content {
+  }
+}
+
+.user-page-group.mdl-layout {
+  align-items: center;
+  justify-content: center;
+  .mdl-layout__content {
+    background-color: whitesmoke;
+    padding: 24px;
+    flex: none;
   }
 }

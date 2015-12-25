@@ -1,0 +1,51 @@
+.group-contents {
+  background-color: white;
+  .groups-group {
+    width: 70%;
+    padding: 50px 0;
+    margin: 0 auto;
+    h2 {
+      border-bottom: 1px solid #888;
+      font-size: 25px;
+    }
+  }
+}
+
+.mdl-grid {
+  .mdl-card__media {
+      margin: 0;
+    img {
+        max-width: 100%;
+    }
+  }
+  .mdl-card__title h1 a {
+    text-decoration: none;
+  }
+  .mdl-card__actions {
+      display: flex;
+      box-sizing:border-box;
+      align-items: center;
+    .mdl-button--icon {
+        margin-right: 3px;
+        margin-left: 3px;
+    }
+  }
+}
+
+.group-users {
+  .mdl-card {
+    background-size: cover;
+    background-position: center center;
+    .mdl-card__actions {
+      height: 52px;
+      padding: 16px;
+      color: white;
+      background: rgba(0, 0, 0, 0.7);
+      .card-image__filename {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+}

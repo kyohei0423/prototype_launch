@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151219114549) do
+ActiveRecord::Schema.define(version: 20151224160934) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "sentence",    limit: 65535
@@ -32,6 +32,24 @@ ActiveRecord::Schema.define(version: 20151219114549) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "groups", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "thumbnail",  limit: 255
+  end
+
+  create_table "groups_users", force: :cascade do |t|
+    t.integer  "group_id",   limit: 4
+    t.integer  "user_id",    limit: 4
+    t.integer  "status",     limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "groups_users", ["group_id"], name: "index_groups_users_on_group_id", using: :btree
+  add_index "groups_users", ["user_id"], name: "index_groups_users_on_user_id", using: :btree
+
   create_table "keeps", force: :cascade do |t|
     t.integer  "user_id",     limit: 4
     t.integer  "question_id", limit: 4
@@ -43,14 +61,17 @@ ActiveRecord::Schema.define(version: 20151219114549) do
     t.string   "title",       limit: 255
     t.text     "sentence",    limit: 65535
     t.integer  "time_limit",  limit: 4
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.integer  "user_id",     limit: 4
     t.string   "description", limit: 255
     t.integer  "keeps_count", limit: 4,     default: 0
     t.integer  "level",       limit: 4,     default: 5
+    t.integer  "group_id",    limit: 4
+    t.boolean  "private",                   default: false, null: false
   end
 
+  add_index "questions", ["group_id"], name: "index_questions_on_group_id", using: :btree
   add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
 
   create_table "questions_users", force: :cascade do |t|
@@ -109,5 +130,8 @@ ActiveRecord::Schema.define(version: 20151219114549) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
+  add_foreign_key "groups_users", "groups"
+  add_foreign_key "groups_users", "users"
+  add_foreign_key "questions", "groups"
   add_foreign_key "questions", "users"
 end
