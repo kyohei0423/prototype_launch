@@ -142,7 +142,7 @@ $actionAndReactionButtonHeight: 50px;
 }
 
 .sider {
-  padding-top: 64px;
+  margin-top: 128px;
   position: fixed;
   top: 0;
   right: 20px;
@@ -166,4 +166,8 @@ $actionAndReactionButtonHeight: 50px;
       }
     }
   }
+}
+
+#tutorial_second {
+  margin-top: 256px;
 }

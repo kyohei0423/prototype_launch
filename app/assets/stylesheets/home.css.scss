@@ -1,7 +1,6 @@
 $question-list-title: 18px;
 $question-list-description: 14px;
 $question-list-height: 130px;
-$accent-green-color: rgb(109,194,184);
 
 nav ul li a {
   display: block;
@@ -13,5 +12,16 @@ nav ul li a {
   .mdl-card {
     float: left;
     min-width: 200px;
+  }
+}
+
+#tutorial .mdl-card {
+  .mdl-card__title {
+    background-color: #ff4081;
+    color: white;
+  }
+  .mdl-card__supporting-text {
+    font-size: 20px;
+    line-height: 25px;
   }
 }
