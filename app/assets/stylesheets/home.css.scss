@@ -8,3 +8,10 @@ nav ul li a {
   text-decoration: none;
   color: inherit;
 }
+
+.group-users {
+  .mdl-card {
+    float: left;
+    min-width: 200px;
+  }
+}

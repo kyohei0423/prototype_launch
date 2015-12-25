@@ -1,8 +1,16 @@
-.mdl-card.mdl-cell.mdl-cell--2-col.mdl-cell--4-col-tablet.mdl-shadow--2dp{ style="background-image:url(#{user.avatar})" }
+.mdl-card.mdl-cell.mdl-cell--2-col.mdl-cell--4-col-tablet.mdl-shadow--2dp{ style="background-image:url(#{user.avatar});" }
   .mdl-card__title.mdl-card--expand
   .mdl-card__actions
     - if controller.action_name == 'new'
       = link_to group_users_path(user_id: user.id), method: :post do
-        span.demo-card-image__filename{ style="color: white" }= user.nickname
+        span.demo-card-image__filename{ style="color: white" }
+          | Lv.
+          = user.level
+          | ）
+          = user.nickname
     - else
-      span.demo-card-image__filename= user.nickname
+      span.demo-card-image__filename
+        | Lv.
+        = user.level
+        | ）
+        = user.nickname
