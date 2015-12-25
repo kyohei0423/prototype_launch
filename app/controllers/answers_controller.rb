@@ -42,7 +42,7 @@ class AnswersController < ApplicationController
   private
 
     def check_reacted_user
-      redirect_to question_path(@question), id: @question.id unless @question.reacted_by?(current_user)
+      redirect_to question_path(@question) unless @question.reacted_by?(current_user)
     end
 
     def set_question
