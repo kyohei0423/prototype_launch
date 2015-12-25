@@ -1,3 +1,4 @@
+= render partial: 'common/tutorial_fourth'
 = render partial: 'common/sider'
 .article-group
   .action_menu
@@ -6,7 +7,7 @@
         li.mdl-menu__item= link_to 'Edit', edit_question_answer_path(@question, @answer)
         li.mdl-menu__item= destroy_link_to("/questions/:question_id/answers/#{@answer.id}", @question)
       - else
-        li.mdl-menu__item= link_to 'Keep This', question_keeps_path(@question), method: :post
+        li.mdl-menu__item= link_to 'Thank you !', question_keeps_path(@question), method: :post
     button#action-menu.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--colored
       i.material-icons settings
   .mdl-cell.main-article

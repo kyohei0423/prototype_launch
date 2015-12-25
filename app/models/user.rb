@@ -33,6 +33,6 @@ class User < ActiveRecord::Base
   end
 
   def act_to_question?
-    reacted_questions.present? || kept_questions.present?
+    reacted_questions.blank? || kept_questions.blank?
   end
 end

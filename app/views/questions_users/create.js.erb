@@ -1,10 +1,14 @@
 var $answerOrReactions = $("#answer-or-reactions"),
     $answeredUserCount = $('#answered_user_count'),
-    $answeredUserLists = $('#answered_users');
+    $answeredUserLists = $('#answered_users'),
+    $tutorialArea      = $('#tutorial-area');
 
 $answerOrReactions.html(
   "<%= j(render partial: 'answer_or_reaction_btn', locals: { question: @question } ) %>");
 $answeredUserCount.attr('data-badge', "<%= @question.count_answered_users %>");
 $answeredUserLists.html(
   "<%= j(render partial: 'questions/user', collection: @question.answered_users) %>"
+);
+$tutorialArea.html(
+  "<%= j(render partial: 'common/tutorial_third') %>"
 );

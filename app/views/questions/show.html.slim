@@ -1,5 +1,10 @@
-- if current_user.reacted_questions.blank?
-  = render partial: 'common/tutorial_second'
+- if @question.user.id == current_user.id
+- else
+  - if current_user.reacted_questions.blank?
+    #tutorial-area
+      = render partial: 'common/tutorial_second'
+  - elsif current_user.kept_questions.blank?
+    = render partial: 'common/tutorial_fifth'
 = render partial: 'common/sider'
 .article-group
   .action_menu

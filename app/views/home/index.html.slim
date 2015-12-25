@@ -11,5 +11,7 @@
     #tags-panel.mdl-tabs__panel.tags-group.row
       = render partial: 'tags/tag', collection: @tags
 - if user_signed_in?
-  - unless current_user.act_to_question?
+  - if current_user.act_to_question?
     = render partial: 'common/tutorial_first'
+- else
+  = render partial: 'common/tutorial_zero'
