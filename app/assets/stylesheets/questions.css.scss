@@ -140,3 +140,30 @@ $actionAndReactionButtonHeight: 50px;
     margin-bottom: 16px;
   }
 }
+
+.sider {
+  padding-top: 64px;
+  position: fixed;
+  top: 0;
+  right: 20px;
+  width: 15vw;
+  z-index: 2;
+  .mdl-card {
+    width: 100%;
+    .mdl-card__title {
+      border-bottom: 1px solid #ddd;
+    }
+    .mdl-card__supporting-text {
+      height: 200px;
+      overflow: auto;
+      #user-icon {
+        width: 30px;
+        height: 30px;
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}

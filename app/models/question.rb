@@ -45,6 +45,10 @@ class Question < ActiveRecord::Base
     questions_users.unanswered.count
   end
 
+  def answered_users
+    reacting_users.where(questions_users:{status: QuestionsUser::ANSWERED})
+  end
+
   def update_level
     total_users = reacting_users.count
     unanswered_users = questions_users.unanswered.count*10
