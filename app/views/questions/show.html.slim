@@ -6,6 +6,8 @@
   - elsif current_user.kept_questions.blank?
     = render partial: 'common/tutorial_sixth'
 = render partial: 'common/sider'
+#notice-levelup
+  =render partial: 'questions/notice_levelup'
 .article-group
   .action_menu
     ul.mdl-menu.mdl-menu--top-right.mdl-js-menu.mdl-js-ripple-effect for="action-menu"

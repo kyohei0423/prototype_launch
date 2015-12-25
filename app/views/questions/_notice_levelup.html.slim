@@ -1,0 +1,6 @@
+- if @pew_user_level != @new_user_level
+  .mdl-button.mdl-js-button.mdl-button--raised.mdl-button--accent.notice_levelup
+    = link_to user_path(current_user) do
+      | Lv.
+      strong= @new_user_level
+      | にレベルアップしました！

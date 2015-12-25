@@ -168,6 +168,22 @@ $actionAndReactionButtonHeight: 50px;
   }
 }
 
+#notice-levelup {
+  padding-top: 70px;
+  position: fixed;
+  top: 0;
+  right: 20px;
+  z-index: 3;
+  width: 300px;
+  .notice_levelup a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
 #tutorial_second, #tutorial_fourth {
   top: 300px;
 }
