@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   private
+
     def set_user
       @user = User.includes(:questions).find params[:id]
     end
